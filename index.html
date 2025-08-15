@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Valkideon RN — Pintura clásica, mirada contemporánea</title>
-  <meta name="description" content="Obras originales, ediciones limitadas y cursos de técnica pictórica. Proyecto de restauración: Fuente de Neptuno (Buenos Aires)." />
+  <meta name="description" content="Obras originales, ediciones limitadas y cursos de técnica pictórica." />
   <meta name="color-scheme" content="light" />
   <style>
     :root{
@@ -58,7 +58,7 @@
     "hero": {
       "eyebrow": "Figurativo · Academicismo · Hiperrealismo",
       "headline": "Pintura clásica, mirada contemporánea",
-      "text": "Obras originales, ediciones limitadas y cursos de técnica pictórica. También dirijo proyectos de conservación en hierro fundido, como la Fuente de Neptuno (Buenos Aires).",
+      "text": "Obras originales, ediciones limitadas y cursos de técnica pictórica.",
       "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1920&auto=format&fit=crop"
     },
     "artworks": [
@@ -80,11 +80,7 @@
       {"name": "Museo Xul Solar", "year": "2023", "url": "#"},
       {"name": "Legislatura Porteña", "year": "2022", "url": "#"},
       {"name": "MIDMAKO", "year": "2021", "url": "#"}
-    ],
-    "neptuno": {
-      "pdf": "#dossier-neptuno.pdf",
-      "image": "https://images.unsplash.com/photo-1544476915-ed1370594142?q=80&w=1600&auto=format&fit=crop"
-    }
+    ]
   }
   </script>
 
@@ -94,7 +90,7 @@
       <nav style="display:flex;gap:18px;font-size:14px">
         <a href="#galeria">Obras</a>
         <a href="#cursos">Cursos</a>
-        <a href="#neptuno">Restauración</a>
+        <a href="#terminos">Términos</a>
         <a href="#sobre">Sobre mí</a>
         <a href="#contacto">Contacto</a>
       </nav>
@@ -111,7 +107,6 @@
           <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
             <a class="btn" href="#galeria">Ver obras</a>
             <a class="btn ghost" href="#cursos">Ver cursos</a>
-            <a class="btn ghost" href="#neptuno">Proyecto Neptuno</a>
           </div>
         </div>
         <div class="hero-img"><img id="heroimg" alt="Hero Valkideon"/></div>
@@ -137,20 +132,6 @@
         <h2>Cursos para artistas</h2>
         <p class="muted">Procesos clásicos con metodología clara y materiales descargables.</p>
         <div class="grid-3" id="courses"></div>
-      </div>
-    </section>
-
-    <section id="neptuno" class="section">
-      <div class="container two">
-        <div><img id="neptunoimg" alt="Fuente de Neptuno" style="border-radius:var(--rad);border:1px solid var(--line);box-shadow:var(--shadow)"/></div>
-        <div>
-          <h2>Proyecto de restauración · Fuente de Neptuno</h2>
-          <p class="muted">Investigación histórica, diagnóstico y propuesta de intervención sobre hierro fundido. Archivo fotográfico, bibliografía en APA y plan de financiamiento para puesta en valor.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
-            <a class="btn" id="neptunopdf" href="#">Descargar dossier</a>
-            <a class="btn ghost" href="#contacto">Contactar</a>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -201,6 +182,27 @@
     </section>
   </main>
 
+  <section id="terminos" class="section">
+    <div class="container">
+      <h2>Términos y Condiciones</h2>
+      <p class="muted">Este es un resumen. Para ver el texto completo, visita 
+        <a href="https://vcarte.ar/terminos-y-condiciones/" target="_blank" rel="noopener noreferrer">esta página</a>.
+      </p>
+      <div class="panel" style="margin-top:12px">
+        <strong>Resumen</strong>
+        <ul class="muted" style="padding-left:18px;margin-top:8px">
+          <li>Propiedad intelectual: derechos de autor sobre obras, prints, fotos y textos.</li>
+          <li>Ventas: ediciones limitadas y originales; precios y disponibilidad sujetos a cambio.</li>
+          <li>Envíos y devoluciones: condiciones, plazos y estado de recepción.</li>
+          <li>Encargos (comisiones): reservas, anticipos, plazos y entregables.</li>
+          <li>Cursos: acceso personal, uso no comercial, política de reembolsos.</li>
+          <li>Privacidad: uso de datos de contacto exclusivamente para comunicación y newsletters.</li>
+          <li>Jurisdicción aplicable y vías de contacto: <span id="email-terms"></span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  
   <footer class="footer">
     <div class="container" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
       <div>
@@ -214,6 +216,10 @@
   <script>
     const data = JSON.parse(document.getElementById('content').textContent);
     const $ = (sel) => document.querySelector(sel);
+
+    // CONTACT (definir email/ig al principio para usarlo en toda la página)
+    const email = data.site.email; 
+    const ig = data.site.instagram;
 
     // HERO
     $('#eyebrow').textContent = data.hero.eyebrow;
@@ -246,12 +252,13 @@
     `).join('');
     $('#courses').innerHTML = courses;
 
-    // NEPTUNO
-    $('#neptunoimg').src = data.neptuno.image; $('#neptunopdf').href = data.neptuno.pdf;
-
-    // CONTACT
-    const email = data.site.email; const ig = data.site.instagram;
-    $('#email').textContent = email; $('#email').href = 'mailto:'+email; $('#insta').href = ig;
+    // CONTACT fill
+    $('#email').textContent = email; 
+    $('#email').href = 'mailto:'+email; 
+    $('#insta').href = ig;
+    // Términos: completar email en el resumen
+    const emailTerms = document.querySelector('#email-terms');
+    if (emailTerms) emailTerms.textContent = email;
 
     // YEAR
     $('#year').textContent = new Date().getFullYear();
