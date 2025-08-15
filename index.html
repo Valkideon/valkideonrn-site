@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Valkideon RN — Pintura clásica, mirada contemporánea</title>
+  <meta name="description" content="Obras originales, ediciones limitadas y cursos de técnica pictórica. Proyecto de restauración: Fuente de Neptuno (Buenos Aires)." />
+  <meta name="color-scheme" content="light" />
+  <style>
+    :root{
+      --bg:#faf9f7;--fg:#1f1f1e;--muted:#6b6b6b;--line:#e6e3de;--card:#ffffff;--accent:#a08a5a;--accent-2:#c7b589;
+      --rad:18px;--rad-lg:22px;--shadow:0 6px 24px rgba(0,0,0,.06);
+    }
+    *{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1120px;margin:0 auto;padding:0 20px}
+    .nav{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(8px);background:rgba(255,255,255,.7);border-bottom:1px solid var(--line)}
+    .nav-inner{height:64px;display:flex;align-items:center;justify-content:space-between}
+    .nav a:hover{opacity:.8}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--fg);padding:.7rem 1rem;border-radius:999px;transition:.2s;box-shadow:0 2px 0 rgba(0,0,0,.05)}
+    .btn.ghost{border-color:transparent}
+    .btn:hover{transform:translateY(-1px)}
+    .eyebrow{text-transform:uppercase;letter-spacing:.28em;font-size:11px;color:var(--muted)}
+    .hero{padding:72px 0;border-bottom:1px solid var(--line)}
+    .hero-grid{display:grid;gap:24px;grid-template-columns:1.1fr 1fr}
+    .hero-img{border-radius:var(--rad-lg);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
+    h1{font-size:42px;line-height:1.15;margin:.3em 0}
+    h2{font-size:32px;margin:.2em 0 .4em}
+    .muted{color:var(--muted)}
+    .section{padding:48px 0;border-top:1px solid var(--line)}
+    .cards{display:grid;gap:16px;grid-template-columns:repeat(12,1fr)}
+    .card{grid-column:span 3;background:var(--card);border:1px solid var(--line);border-radius:var(--rad);overflow:hidden;box-shadow:var(--shadow)}
+    .card .body{padding:12px 14px}
+    .badge{font-size:12px;border:1px solid var(--line);background:#f3f1ed;padding:2px 8px;border-radius:999px}
+    .two{display:grid;gap:28px;grid-template-columns:1fr 1fr}
+    .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:20px}
+    .footer{padding:40px 0;border-top:1px solid var(--line)}
+    .input, textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:#fff}
+    .grid-3{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
+    .press{display:flex;flex-wrap:wrap;gap:12px;color:var(--muted);font-size:14px}
+    @media (max-width: 960px){.hero-grid{grid-template-columns:1fr}.cards .card{grid-column:span 6}.two{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr}.nav-inner{gap:12px}}
+    @media (max-width: 560px){.cards .card{grid-column:span 12}h1{font-size:34px}}
+  </style>
+</head>
+<body>
+  <!-- Editable content lives inside the JSON block below -->
+  <script id="content" type="application/json">
+  {
+    "site": {
+      "title": "Valkideon RN — Pintura clásica, mirada contemporánea",
+      "tagline": "Pintura clásica, mirada contemporánea",
+      "email": "contacto@valkideonrn.com",
+      "instagram": "https://instagram.com/valkideon",
+      "domain_main": "valkideonrn.com",
+      "domain_ar": "valkideonrn.com.ar"
+    },
+    "hero": {
+      "eyebrow": "Figurativo · Academicismo · Hiperrealismo",
+      "headline": "Pintura clásica, mirada contemporánea",
+      "text": "Obras originales, ediciones limitadas y cursos de técnica pictórica. También dirijo proyectos de conservación en hierro fundido, como la Fuente de Neptuno (Buenos Aires).",
+      "image": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1920&auto=format&fit=crop"
+    },
+    "artworks": [
+      {"title": "Fénix", "size": "Óleo 70×100 cm", "status": "Disponible", "price": "USD 1500", "img": "https://images.unsplash.com/photo-1549880338-65ddcdfd017b?q=80&w=1600&auto=format&fit=crop"},
+      {"title": "Lady in Red", "size": "50×70 cm", "status": "Reservada", "price": "—", "img": "https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?q=80&w=1600&auto=format&fit=crop"},
+      {"title": "Alegoría de la Memoria", "size": "120×80 cm", "status": "En proceso", "price": "—", "img": "https://images.unsplash.com/photo-1526318472351-c75fcf070305?q=80&w=1600&auto=format&fit=crop"},
+      {"title": "Apeles Study", "size": "60×90 cm", "status": "Disponible", "price": "Consultar", "img": "https://images.unsplash.com/photo-1520975940409-b478c7f9b252?q=80&w=1600&auto=format&fit=crop"}
+    ],
+    "courses": [
+      {"title": "01 · Preparación del lienzo", "blurb": "Soportes, imprimaciones y sellados archivísticos."},
+      {"title": "02 · Blanco y negro / Verdaccio", "blurb": "Modelado de forma y valores como base clásica."},
+      {"title": "03 · Retrato con paleta de Apeles", "blurb": "Carnaciones creíbles con paleta restringida."},
+      {"title": "04 · Veladuras y empastes", "blurb": "Profundidad óptica y texturas controladas."},
+      {"title": "05 · Paleta restringida universal", "blurb": "Aplicable a figura, paisaje y naturaleza muerta."},
+      {"title": "06 · Fondos abstractos como base figurativa", "blurb": "Craquelados y pouring como soporte conceptual."}
+    ],
+    "press": [
+      {"name": "Embajada de México", "year": "2024", "url": "#"},
+      {"name": "Museo Xul Solar", "year": "2023", "url": "#"},
+      {"name": "Legislatura Porteña", "year": "2022", "url": "#"},
+      {"name": "MIDMAKO", "year": "2021", "url": "#"}
+    ],
+    "neptuno": {
+      "pdf": "#dossier-neptuno.pdf",
+      "image": "https://images.unsplash.com/photo-1544476915-ed1370594142?q=80&w=1600&auto=format&fit=crop"
+    }
+  }
+  </script>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <div><strong>Valkideon RN</strong></div>
+      <nav style="display:flex;gap:18px;font-size:14px">
+        <a href="#galeria">Obras</a>
+        <a href="#cursos">Cursos</a>
+        <a href="#neptuno">Restauración</a>
+        <a href="#sobre">Sobre mí</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow" id="eyebrow"></div>
+          <h1 id="headline"></h1>
+          <p class="muted" id="herotext"></p>
+          <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn" href="#galeria">Ver obras</a>
+            <a class="btn ghost" href="#cursos">Ver cursos</a>
+            <a class="btn ghost" href="#neptuno">Proyecto Neptuno</a>
+          </div>
+        </div>
+        <div class="hero-img"><img id="heroimg" alt="Hero Valkideon"/></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container" id="prensa-wrap">
+        <div class="press" id="press"></div>
+      </div>
+    </section>
+
+    <section id="galeria" class="section">
+      <div class="container">
+        <h2>Obras destacadas</h2>
+        <p class="muted">Selección reciente · estado y medidas.</p>
+        <div class="cards" id="artworks"></div>
+      </div>
+    </section>
+
+    <section id="cursos" class="section" style="background:#fff">
+      <div class="container">
+        <h2>Cursos para artistas</h2>
+        <p class="muted">Procesos clásicos con metodología clara y materiales descargables.</p>
+        <div class="grid-3" id="courses"></div>
+      </div>
+    </section>
+
+    <section id="neptuno" class="section">
+      <div class="container two">
+        <div><img id="neptunoimg" alt="Fuente de Neptuno" style="border-radius:var(--rad);border:1px solid var(--line);box-shadow:var(--shadow)"/></div>
+        <div>
+          <h2>Proyecto de restauración · Fuente de Neptuno</h2>
+          <p class="muted">Investigación histórica, diagnóstico y propuesta de intervención sobre hierro fundido. Archivo fotográfico, bibliografía en APA y plan de financiamiento para puesta en valor.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
+            <a class="btn" id="neptunopdf" href="#">Descargar dossier</a>
+            <a class="btn ghost" href="#contacto">Contactar</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="section" style="background:#fff">
+      <div class="container two">
+        <div>
+          <h2>Sobre mí</h2>
+          <p class="muted">Artista de línea academicista e hiperrealista. Formación en Conservación y Restauración de Bienes Culturales (UNA). Exposiciones en Museo Xul Solar y Legislatura Porteña; obras en el patrimonio del Museo MIDMAKO. Desarrollo cursos con estructura profesional y materiales descargables.</p>
+          <ul class="muted" style="padding-left:18px">
+            <li>Calidad de museo: materiales archivísticos y control de color para prints.</li>
+            <li>Ediciones limitadas con certificado.</li>
+            <li>Obras por encargo con contrato claro.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Suscripción</h3>
+          <p class="muted">Recibe adelantos de obras, exhibiciones y lanzamientos de cursos.</p>
+          <form onsubmit="event.preventDefault();alert('Gracias por suscribirte');">
+            <input class="input" type="email" placeholder="tu@email.com" required />
+            <div style="height:10px"></div>
+            <button class="btn" type="submit">Suscribirme</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="section">
+      <div class="container two">
+        <div>
+          <h2>Contacto</h2>
+          <p class="muted">Para propuestas curatoriales, adquisición de obra o restauración.</p>
+          <p class="muted">Email: <a id="email"></a><br/>Instagram: <a id="insta" target="_blank" rel="noreferrer noopener">@valkideon</a></p>
+        </div>
+        <div class="panel">
+          <h3>Escríbeme</h3>
+          <form onsubmit="event.preventDefault();alert('Gracias, responderé a la brevedad.');">
+            <input class="input" placeholder="Nombre" required />
+            <div style="height:10px"></div>
+            <input class="input" type="email" placeholder="Email" required />
+            <div style="height:10px"></div>
+            <textarea class="input" rows="5" placeholder="Mensaje" required></textarea>
+            <div style="height:10px"></div>
+            <button class="btn" type="submit">Enviar</button>
+            <p class="muted" style="font-size:12px;margin-top:8px">(Formulario sin backend. Luego puedes conectarlo a Formspree, Basin o MailerLite.)</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <div>
+        <strong>Valkideon RN</strong>
+        <div class="muted" style="font-size:14px">“Vive cada día como si fuera el último, pero proyecta como si vivieras para la eternidad”.</div>
+      </div>
+      <div class="muted" style="font-size:14px">© <span id="year"></span> Valkideon RN. Todos los derechos reservados.</div>
+    </div>
+  </footer>
+
+  <script>
+    const data = JSON.parse(document.getElementById('content').textContent);
+    const $ = (sel) => document.querySelector(sel);
+
+    // HERO
+    $('#eyebrow').textContent = data.hero.eyebrow;
+    $('#headline').textContent = data.hero.headline;
+    $('#herotext').textContent = data.hero.text;
+    $('#heroimg').src = data.hero.image;
+
+    // PRESS
+    const press = data.press.map(p => `<a href="${p.url}">• ${p.name} · ${p.year}</a>`).join(' ');
+    $('#press').innerHTML = press;
+
+    // ARTWORKS
+    const artworks = data.artworks.map(a => `
+      <article class="card">
+        <img src="${a.img}" alt="${a.title}">
+        <div class="body">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+            <strong>${a.title}</strong>
+            <span class="badge">${a.status}</span>
+          </div>
+          <div class="muted" style="font-size:14px">${a.size}</div>
+          <div class="muted" style="font-size:13px;margin-top:4px">${a.price || ''}</div>
+        </div>
+      </article>`).join('');
+    $('#artworks').innerHTML = artworks;
+
+    // COURSES
+    const courses = data.courses.map(c => `
+      <div class="panel"><strong>${c.title}</strong><div class="muted" style="margin-top:6px">${c.blurb}</div></div>
+    `).join('');
+    $('#courses').innerHTML = courses;
+
+    // NEPTUNO
+    $('#neptunoimg').src = data.neptuno.image; $('#neptunopdf').href = data.neptuno.pdf;
+
+    // CONTACT
+    const email = data.site.email; const ig = data.site.instagram;
+    $('#email').textContent = email; $('#email').href = 'mailto:'+email; $('#insta').href = ig;
+
+    // YEAR
+    $('#year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
