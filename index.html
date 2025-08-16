@@ -240,11 +240,19 @@
         <div class="panel">
           <h3>Suscripción</h3>
           <p class="muted">Recibe adelantos de obras, exhibiciones y lanzamientos de cursos.</p>
-          <form onsubmit="event.preventDefault();alert('Gracias por suscribirte');">
-            <input class="input" type="email" placeholder="tu@email.com" required />
-            <div style="height:10px"></div>
-            <button class="btn" type="submit">Suscribirme</button>
-          </form>
+          <form action="https://formsubmit.co/info@valkideonrn.com" method="POST" onsubmit="this.querySelector('button[type=submit]').disabled=true;">
+  <input class="input" type="email" name="email" placeholder="tu@email.com" required />
+  
+  <!-- Opcionales / recomendados -->
+  <input type="hidden" name="_subject" value="Nueva suscripción desde la web" />
+  <input type="hidden" name="_next" value="https://valkideonrn.com/gracias.html" />
+  <input type="hidden" name="_captcha" value="false" />
+  <input type="hidden" name="_template" value="table" />
+  <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+  
+  <div style="height:10px"></div>
+  <button class="btn" type="submit">Suscribirme</button>
+</form>
         </div>
       </div>
     </section>
@@ -258,16 +266,28 @@
         </div>
         <div class="panel">
           <h3>Escríbeme</h3>
-          <form onsubmit="event.preventDefault();alert('Gracias, responderé a la brevedad.');">
-            <input class="input" placeholder="Nombre" required />
-            <div style="height:10px"></div>
-            <input class="input" type="email" placeholder="Email" required />
-            <div style="height:10px"></div>
-            <textarea class="input" rows="5" placeholder="Mensaje" required></textarea>
-            <div style="height:10px"></div>
-            <button class="btn" type="submit">Enviar</button>
-            <p class="muted" style="font-size:12px;margin-top:8px">(Formulario sin backend. Luego puedes conectarlo a Formspree, Basin o MailerLite.)</p>
-          </form>
+          <form action="https://formsubmit.co/info@valkideonrn.com" method="POST" onsubmit="this.querySelector('button[type=submit]').disabled=true;">
+  <input class="input" type="text" name="name" placeholder="Nombre" required />
+  <div style="height:10px"></div>
+  <input class="input" type="email" name="email" placeholder="Email" required />
+  <div style="height:10px"></div>
+  <textarea class="input" rows="5" name="message" placeholder="Mensaje" required></textarea>
+
+  <!-- Opcionales / recomendados -->
+  <input type="hidden" name="_subject" value="Nuevo mensaje desde el sitio" />
+  <input type="hidden" name="_next" value="https://valkideonrn.com/gracias.html" />
+  <input type="hidden" name="_captcha" value="false" />
+  <input type="hidden" name="_template" value="table" />
+  <input type="hidden" name="_replyto" value="" /> <!-- FormSubmit usará el campo 'email' -->
+  <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
+  <div style="height:10px"></div>
+  <button class="btn" type="submit">Enviar</button>
+
+  <p class="muted" style="font-size:12px;margin-top:8px">
+    (Formulario gestionado por FormSubmit. Sin necesidad de backend.)
+  </p>
+</form>
         </div>
       </div>
     </section>
