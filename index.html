@@ -62,17 +62,6 @@
     .paygrid .panel{padding:14px}
     .copy{font-size:12px;color:var(--muted);}
 
-    /* Carrito flotante */
-    .cart-fab {
-      position: fixed; right: 16px; bottom: 16px; z-index: 1300;
-      border: 1px solid var(--fg); background:#fff; border-radius:999px;
-      padding: .8rem 1.1rem; box-shadow: var(--shadow); cursor:pointer;
-    }
-    .cart-empty { opacity:.6; pointer-events:none }
-    .table{width:100%;border-collapse:collapse;margin-top:8px}
-    .table th,.table td{border-top:1px solid var(--line);padding:8px;text-align:left;font-size:14px}
-    .table tfoot td{font-weight:bold}
-
     @media (max-width: 960px){.hero-grid{grid-template-columns:1fr}.cards .card{grid-column:span 6}.two{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr}.nav-inner{gap:12px}}
     @media (max-width: 560px){.cards .card{grid-column:span 12}h1{font-size:34px}.paygrid{grid-template-columns:1fr}}
   </style>
@@ -92,12 +81,6 @@
     "payments": {
       "paypal": "https://www.paypal.me/valkideonrn",
       "mercadopago": "https://mpago.la/XXXX-ENLACE",
-      "fees": {
-        "pass_fees_to_buyer": true,
-        "paypal_pct": 6.0,
-        "mp_pct": 9.0,
-        "mp_fixed": 0.0
-      },
       "bank": {
         "alias": "VALKIDEONRN.AHORA.ARTE",
         "cbu": "0000000000000000000000",
@@ -105,7 +88,7 @@
         "titular": "Gonzalo Manuel Romero Nigro",
         "cuenta": "CA$ 0000-000000/0"
       },
-      "nota": "Los importes finales pueden incluir impuestos/recargos de plataforma (+intereses). Al finalizar el pago, envíanos el comprobante por email o Instagram para liberar el acceso al curso."
+      "nota": "Al finalizar el pago, envíanos el comprobante por email o Instagram para liberar el acceso al curso."
     },
     "hero": {
       "eyebrow": "Figurativo · Academicismo · Hiperrealismo",
@@ -286,7 +269,7 @@
         <h2>Cursos para artistas</h2>
         <p class="muted">Procesos clásicos con metodología clara y materiales descargables.</p>
         <p class="muted" style="margin-top:4px">
-          <strong>Promo:</strong> Llevá <strong>3</strong> cursos y pagás <strong>2</strong>. (Se bonifica el de menor valor por cada trío).
+          <strong>Promo:</strong> Llevá <strong>3</strong> cursos y pagás <strong>2</strong>. (Aplica al menor valor.)
         </p>
         <div class="grid-3" id="courses"></div>
       </div>
@@ -296,22 +279,48 @@
       <div class="container two">
         <div>
           <h2>Sobre mí</h2>
-          <p class="muted">Artista de línea academicista e hiperrealista... (texto abreviado para el ejemplo)</p>
+          <p class="muted">Artista de línea academicista e hiperrealista. Nacido en la Ciudad Autónoma de Buenos Aires, Argentina en 1994
+ Vive en el barrio de Villa del Parque en Buenos Aires.
+ Recibido de Licenciado en Conservación y Restauración de Bienes Culturales.
+ Como artista plástico es autodidacta, realizando estudios recientemente en 2023 con el Artista Plastico Ricardo Celma, profundizando así sus conocimientos. Desde pequeño que el lápiz es una extensión de su mano, pero encontrando más adelante en la pintura al óleo una pasión. La práctica y la experiencia con distintas paletas y medios permiten que desarrolle una amplia gama de obras, incursionando también en otros ámbitos artísticos, como grabado o escultura. 
+ Algunas de sus obras fueron seleccionadas y ya incorporadas al patrimonio cultural por parte del Museo de la Discapacidad Maria Kodama como también la ONG deKids on the Movede Utah, EE.UU.
+ También en el año 2023 participó de diferentes ferias en Buenos Aires, y muestras colectivas en Barcelona, España.
+ En la noche de los museos del mismo año expuso una de sus obras en el Museo Xul Solar y también con otra obra en el Museo Central de Ciencias Médicas del cual pasó a formar parte de manera permanente.
+ En 2024 participa de muestras en la Legislatura porteña y la embajada de Mexico, donando algunas de sus obras al patrimonio cultural.</p>
+          <p>
+  <a href="https://nuevonortedigital.com.ar/secciones/personajes-ilustres/gonzalo-manuel-romero-nigro-un-artista-plastico-que-promete/" target="_blank" style="font-weight:bold; text-decoration:none; color:inherit;">
+    Gonzalo Manuel Romero Nigro, un artista plástico que promete
+  </a>
+</p>
+          <p>
+  <a href="https://www.perfil.com/noticias/cultura/sentidos-una-exhibicion-de-arte-e-inclusion-que-transforma-vidas-en-buenos-aires.phtml" target="_blank" style="font-weight:bold; text-decoration:none; color:inherit;">
+    “Sentidos”: una exhibición de arte e inclusión que transforma vidas en Buenos Aires
+  </a>
+</p>
+          <ul class="muted" style="padding-left:18px">
+            <li>Calidad de museo: materiales archivísticos y control de color para prints.</li>
+            <li>Ediciones limitadas y prints.</li>
+            <li>Obras por encargo con contrato.</li>
+            <li>Todas las obras con certificado de autenticidad.</li>
+          </ul>
           <div id="about-image-wrap" style="margin-top:12px"></div>
         </div>
         <div class="panel">
           <h3>Suscripción</h3>
           <p class="muted">Recibe adelantos de obras, exhibiciones y lanzamientos de cursos.</p>
           <form action="https://formsubmit.co/info@valkideonrn.com" method="POST" onsubmit="this.querySelector('button[type=submit]').disabled=true;">
-            <input class="input" type="email" name="email" placeholder="tu@email.com" required />
-            <input type="hidden" name="_subject" value="Nueva suscripción desde la web" />
-            <input type="hidden" name="_next" value="https://valkideonrn.com/gracias.html" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
-            <div style="height:10px"></div>
-            <button class="btn" type="submit">Suscribirme</button>
-          </form>
+  <input class="input" type="email" name="email" placeholder="tu@email.com" required />
+  
+  <!-- Opcionales / recomendados -->
+  <input type="hidden" name="_subject" value="Nueva suscripción desde la web" />
+  <input type="hidden" name="_next" value="https://valkideonrn.com/gracias.html" />
+  <input type="hidden" name="_captcha" value="false" />
+  <input type="hidden" name="_template" value="table" />
+  <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+  
+  <div style="height:10px"></div>
+  <button class="btn" type="submit">Suscribirme</button>
+</form>
         </div>
       </div>
     </section>
@@ -325,28 +334,34 @@
         </div>
         <div class="panel">
           <h3>Escríbeme</h3>
-          <form action="https://formsubmit.co/info@valkideonrn.com" method="POST" onsubmit="this.querySelector('button[type=submit)').disabled=true;">
-            <input class="input" type="text" name="name" placeholder="Nombre" required />
-            <div style="height:10px"></div>
-            <input class="input" type="email" name="email" placeholder="Email" required />
-            <div style="height:10px"></div>
-            <textarea class="input" rows="5" name="message" placeholder="Mensaje" required></textarea>
-            <input type="hidden" name="_subject" value="Nuevo mensaje desde el sitio" />
-            <input type="hidden" name="_next" value="https://valkideonrn.com/gracias.html" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_replyto" value="" />
-            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
-            <div style="height:10px"></div>
-            <button class="btn" type="submit">Enviar</button>
-            <p class="muted" style="font-size:12px;margin-top:8px">(Formulario gestionado por FormSubmit.)</p>
-          </form>
+          <form action="https://formsubmit.co/info@valkideonrn.com" method="POST" onsubmit="this.querySelector('button[type=submit]').disabled=true;">
+  <input class="input" type="text" name="name" placeholder="Nombre" required />
+  <div style="height:10px"></div>
+  <input class="input" type="email" name="email" placeholder="Email" required />
+  <div style="height:10px"></div>
+  <textarea class="input" rows="5" name="message" placeholder="Mensaje" required></textarea>
+
+  <!-- Opcionales / recomendados -->
+  <input type="hidden" name="_subject" value="Nuevo mensaje desde el sitio" />
+  <input type="hidden" name="_next" value="https://valkideonrn.com/gracias.html" />
+  <input type="hidden" name="_captcha" value="false" />
+  <input type="hidden" name="_template" value="table" />
+  <input type="hidden" name="_replyto" value="" /> <!-- FormSubmit usará el campo 'email' -->
+  <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
+  <div style="height:10px"></div>
+  <button class="btn" type="submit">Enviar</button>
+
+  <p class="muted" style="font-size:12px;margin-top:8px">
+    (Formulario gestionado por FormSubmit.)
+  </p>
+</form>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Lightbox (modal) obras -->
+  <!-- Lightbox (modal) -->
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <div class="lightbox-inner">
       <img class="lightbox-img" id="lightbox-img" alt="Obra ampliada">
@@ -355,7 +370,7 @@
     </div>
   </div>
 
-  <!-- Modal Info/Compra -->
+  <!-- Modal reutilizable para cursos (Info/Compra) -->
   <div class="modal" id="courseModal" aria-hidden="true" role="dialog" aria-modal="true">
     <div class="modal-card">
       <div class="modal-head">
@@ -366,12 +381,83 @@
     </div>
   </div>
 
-  <!-- FAB Carrito -->
-  <button id="cartFab" class="cart-fab cart-empty">🛒 Carrito (0)</button>
+ <section id="terminos" class="section">
+  <div class="container">
+    <h2>Términos y Condiciones</h2>
 
-  <section id="terminos" class="section">
-    <div class="container"><h2>Términos y Condiciones</h2><p class="muted">…</p></div>
-  </section>
+    <h3>Encargos</h3>
+    <p>
+      Al realizar un pedido, usted se compromete a adquirir los productos al precio anunciado e indicado en el sitio web (o al precio indicado por el artista en caso de pedidos de medidas o características especiales) en el momento de la compra o reserva en la lista de espera. Por favor, compruebe el tamaño y precio del retrato antes de realizar la reserva.<br>
+      Vaalkideon RN se reserva el derecho de rechazar la venta de las obras de arte a cualquier persona, por cualquier motivo y en cualquier momento.
+    </p>
+
+    <h3>Derechos de autor</h3>
+    <p>
+      El artista se reserva todos los derechos de explotación y reproducción de todo su trabajo producido, incluyendo layouts digitales e impresiones. Esto significa que puede crear tarjetas, impresiones o calendarios, entre otros, usando la imagen del retrato encargado. Además, se reserva el derecho de publicar la imagen del mismo en su página web y redes sociales.  
+      Cualquier representación y/o imagen de la obra de arte publicada por el cliente, incluyendo, pero no limitado, a redes sociales, revistas o libros, debe incluir la atribución de crédito a Valkideon RN y el título de la obra de arte.
+    </p>
+
+    <h3>Pagos dentro de Argentina</h3>
+    <p>
+      Los cupos en la agenda de Valkideon RN se reservan con un pago inicial del 30% del valor. Al encargar un retrato, el valor del mismo deberá estar saldado en su totalidad como máximo a los 90 días o antes de comenzar a trabajar en la obra (lo que ocurra primero). Con cada pago realizado, luego de ser verificado el mismo, el artista generará el recibo de pago correspondiente.  
+      En caso de no completar los pagos en las fechas correspondientes, habrá 30 días adicionales para saldar el monto pendiente. En caso de no haber abonado el monto pendiente en el plazo adicional, se actualizará el valor total del retrato al precio de lista de ese momento.
+    </p>
+    <p><strong>Medios de pago disponibles:</strong><br>
+      • Transferencia bancaria, depósito o efectivo.<br>
+      • Mercado Pago (abonando el interés correspondiente según cada banco/tarjeta).
+    </p>
+
+    <h3>Pagos internacionales</h3>
+    <p>
+      Los cupos en la agenda de Valkideon RN se reservan con un pago inicial del 30% del valor. El valor total del cuadro deberá estar saldado antes de comenzar a trabajar en la obra en la fecha agendada. Si llegada la fecha no se encuentra saldado el total del cuadro, habrá un plazo adicional de 30 días para abonar el monto pendiente. Si pasados los 30 días adicionales éste no se encuentra abonado, tu retrato se moverá al final de la lista de espera.  
+      Con cada pago realizado, luego de ser verificado, se generará el recibo correspondiente.
+    </p>
+    <p><strong>Medios de pago disponibles:</strong><br>
+      • PayPal (+6% de recargo por comisión).<br>
+      • Western Union (comisión según sucursal/país).
+    </p>
+
+    <h3>Lista de espera</h3>
+    <p>
+      El artista suele tener una lista de espera y la demora varía según la época del año y cantidad de retratos agendados. Al hacer el encargo, se te proporcionará una fecha aproximada de entrega, que podrá variar.  
+      Para fechas específicas (ej: cumpleaños), el artista hará lo posible por entregarlo en tiempo, pero no se garantiza.
+    </p>
+
+    <h3>Envíos dentro de Argentina</h3>
+    <p>
+      La mayoría de los retratos tardan 3–5 días en llegar a su destino. Se envían de forma segura a la dirección indicada al encargar. Si es un regalo, puede enviarse directamente al destinatario.
+    </p>
+
+    <h3>Envíos internacionales</h3>
+    <p>
+      Suelen tardar entre 5–8 días hábiles. El valor incluye envío a domicilio, pero no impuestos ni costos de nacionalización, que corren por cuenta del cliente.
+    </p>
+
+    <h3>Modificaciones en el diseño</h3>
+    <p>
+      Cualquier modificación tras el encargo tendrá recargos adicionales. Ejemplos: agregar flores, ropa, otra persona ,una mascota, fondo detallado, etc.  
+      Estas modificaciones implican más tiempo y materiales, y se moverán al final de la lista de espera. Una vez aprobado el layout digital y comenzado el cuadro, no se podrán realizar modificaciones.
+    </p>
+
+    <h3>Modificaciones en la medida</h3>
+    <p>
+      • Si se cambia a una medida más grande, debe abonarse la diferencia y el retrato se moverá al final de la lista.<br>
+      • Si se cambia a una medida más chica, la diferencia no es reembolsable (queda a favor de otro encargo futuro).
+    </p>
+
+    <h3>Cancelaciones</h3>
+    <p>
+      Hay 7 días de garantía desde el primer pago para cancelar y obtener reembolso total. Pasado ese plazo, el dinero será retenido por tiempo/gestión/gastos.  
+      Si el artista ya comenzó a pintar, el dinero será retenido por tiempo, materiales y demás costos.
+    </p>
+
+    <h3>Daños o extravíos</h3>
+    <p>
+      Los retratos se embalan cuidadosamente. Si sufren daños en el envío, el cliente debe notificar dentro de 48 horas con foto. Podrá hacerse un nuevo retrato (ubicado al final de la lista). Costos de envío corren por el cliente.  
+      En caso de extravío, se aplican los términos de la empresa de mensajería.
+    </p>
+  </div>
+</section>
   
   <footer class="footer">
     <div class="container" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
@@ -390,8 +476,6 @@
     // CONTACT
     const email = data.site.email; 
     const ig = data.site.instagram;
-    $('#email').textContent = email; $('#email').href = 'mailto:'+email; $('#insta').href = ig;
-    $('#year').textContent = new Date().getFullYear();
 
     // HERO
     $('#eyebrow').textContent = data.hero.eyebrow;
@@ -402,11 +486,11 @@
     heroImg.onerror = () => { heroImg.style.border = '2px solid red'; heroImg.alt = '(no se encontró: ' + data.hero.image + ')'; };
 
     // PRESS
-    const press = data.press?.map?.(p => `<a href="\${p.url}">• \${p.name} · \${p.year}</a>`).join(' ') || '';
+    const press = data.press?.map?.(p => `<a href="${p.url}">• ${p.name} · ${p.year}</a>`).join(' ') || '';
     $('#press').innerHTML = press;
 
-    // ARTWORKS
-    const artworksHTML = (data.artworks||[]).map((a,idx) => `
+    // ARTWORKS (cards)
+    const artworksHTML = data.artworks.map((a,idx) => `
       <article class="card" data-art="${idx}">
         <img src="${a.img}" alt="${a.title}"
              onerror="this.style.border='2px solid red'; this.alt='(no se encontró: ${a.img})'">
@@ -422,45 +506,63 @@
     $('#artworks').innerHTML = artworksHTML;
 
     // LIGHTBOX handlers
-    const lb = $('#lightbox'), lbImg = $('#lightbox-img'), lbCap = $('#lightbox-caption'), lbClose = $('#lightbox-close');
+    const lb = $('#lightbox');
+    const lbImg = $('#lightbox-img');
+    const lbCap = $('#lightbox-caption');
+    const lbClose = $('#lightbox-close');
+
     function openLightbox(art){
-      lbImg.src = art.img; lbImg.alt = art.title;
+      lbImg.src = art.img;
+      lbImg.alt = art.title;
       lbCap.innerHTML = `
         <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
           <div><strong>${art.title}</strong></div>
           <div class="muted" style="display:flex;gap:12px;font-size:14px">
-            <span>${art.size}</span><span>·</span><span>${art.status}</span>${art.price ? `<span>·</span><span>${art.price}</span>` : ''}
+            <span>${art.size}</span>
+            <span>·</span>
+            <span>${art.status}</span>
+            ${art.price ? `<span>·</span><span>${art.price}</span>` : ''}
           </div>
-        </div>`;
-      lb.classList.add('open'); lb.setAttribute('aria-hidden','false');
+        </div>
+      `;
+      lb.classList.add('open');
+      lb.setAttribute('aria-hidden','false');
     }
-    function closeLightbox(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); lbImg.src = ''; }
-    $('#artworks').addEventListener('click', (e)=>{ const card = e.target.closest('.card[data-art]'); if(!card) return; openLightbox(data.artworks[Number(card.getAttribute('data-art'))]); });
+    function closeLightbox(){
+      lb.classList.remove('open');
+      lb.setAttribute('aria-hidden','true');
+      lbImg.src = '';
+    }
+
+    $('#artworks').addEventListener('click', (e)=>{
+      const card = e.target.closest('.card[data-art]');
+      if(!card) return;
+      const idx = Number(card.getAttribute('data-art'));
+      const art = data.artworks[idx];
+      openLightbox(art);
+    });
     lb.addEventListener('click', (e)=>{ if(e.target === lb) closeLightbox(); });
     lbClose.addEventListener('click', closeLightbox);
-    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') { closeLightbox(); closeCourseModal(); } });
+    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeLightbox(); });
 
-    // ===== Cursos =====
+    // COURSES helpers
     function ytEmbed(url){
       if (!url) return '';
-      const m = url.match(/(?:v=|youtu\\.be\\/)([A-Za-z0-9_-]{6,})/);
+      const m = url.match(/(?:v=|youtu\.be\/)([A-Za-z0-9_-]{6,})/);
       const id = m ? m[1] : null;
       return id ? `<div class="panel" style="margin-top:10px">
         <div style="position:relative;padding-top:56.25%">
-          <iframe src="https://www.youtube.com/embed/${id}" title="Video intro"
-                  style="position:absolute;inset:0;width:100%;height:100%;border:0" allowfullscreen></iframe>
-        </div></div>` : '';
-    }
-
-    function isSoon(c){ return /PRÓXIMAMENTE|Próximamente/i.test(c.price||''); }
-    function priceNumber(c){
-      if (typeof c.priceNum === 'number') return c.priceNum;
-      const m = (c.price||'').match(/([0-9]+(?:[.,][0-9]+)?)/);
-      return m ? parseFloat(m[1].replace(',','.')) : 0;
+          <iframe src="https://www.youtube.com/embed/${id}" 
+                  title="Video intro"
+                  style="position:absolute;inset:0;width:100%;height:100%;border:0"
+                  allowfullscreen></iframe>
+        </div>
+      </div>` : '';
     }
 
     function courseCardHTML(c, idx){
-      const buyBtn = isSoon(c) ? '' : `<button class="btn" onclick="openCourseBuy(${idx})">Comprar</button>`;
+      const isSoon = /PRÓXIMAMENTE|Próximamente/i.test(c.price || '');
+      const buyBtn = isSoon ? '' : `<button class="btn" onclick="openCourseBuy(${idx})">Comprar</button>`;
       return `
         <article class="panel" style="overflow:hidden">
           ${c.thumb ? `<img src="${c.thumb}" alt="${c.title}" style="width:100%;height:auto;border-radius:12px;margin-bottom:10px"
@@ -474,51 +576,74 @@
               ${buyBtn}
             </div>
           </div>
-          <div style="margin-top:8px"><button class="btn" onclick="addToCart(${idx})" ${isSoon(c)?'disabled':''}>Agregar al carrito</button></div>
           ${ytEmbed(c.video)}
         </article>
       `;
     }
-    const courseCards = (data.courses||[]).map((c, i) => courseCardHTML(c, i)).join('');
-    document.getElementById('courses').innerHTML = courseCards;
+
+    const courseCards = data.courses.map((c, i) => courseCardHTML(c, i)).join('');
+    $('#courses').innerHTML = courseCards;
 
     // ABOUT image
     if (data.about?.image){
-      document.getElementById('about-image-wrap').innerHTML = `
+      $('#about-image-wrap').innerHTML = `
         <img src="${data.about.image}" alt="Valkideon RN — sobre mí" 
              style="border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)"
-             onerror="this.style.border='2px solid red'; this.alt='(no se encontró: ${data.about.image})'">`;
+             onerror="this.style.border='2px solid red'; this.alt='(no se encontró: ${data.about.image})'">
+      `;
     }
 
-    // ===== Modal Cursos (Info/Compra) =====
-    const mCourse = $('#courseModal'), mTitle = $('#courseModalTitle'), mBody = $('#courseModalBody'), mClose = $('#courseModalClose');
-    function openCourseModal(){ mCourse.classList.add('open'); mCourse.setAttribute('aria-hidden','false'); }
-    function closeCourseModal(){ mCourse.classList.remove('open'); mCourse.setAttribute('aria-hidden','true'); mBody.innerHTML = ''; }
+    // CONTACT fill
+    $('#email').textContent = email; 
+    $('#email').href = 'mailto:'+email; 
+    $('#insta').href = ig;
+
+    // YEAR
+    $('#year').textContent = new Date().getFullYear();
+
+    // ===== Modal de Cursos (Info/Compra) =====
+    const mCourse = $('#courseModal');
+    const mTitle  = $('#courseModalTitle');
+    const mBody   = $('#courseModalBody');
+    const mClose  = $('#courseModalClose');
+
+    function openCourseModal(){
+      mCourse.classList.add('open');
+      mCourse.setAttribute('aria-hidden','false');
+    }
+    function closeCourseModal(){
+      mCourse.classList.remove('open');
+      mCourse.setAttribute('aria-hidden','true');
+      mBody.innerHTML = '';
+    }
     mClose.addEventListener('click', closeCourseModal);
     mCourse.addEventListener('click', (e)=>{ if(e.target === mCourse) closeCourseModal(); });
+    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') { closeCourseModal(); } });
 
+    // Contenido de Info (con botón Comprar persistente)
     window.openCourseInfo = function(idx){
       const c = data.courses[idx];
+      const isSoon = /PRÓXIMAMENTE|Próximamente/i.test(c.price || '');
       mTitle.textContent = c.title;
       const specs = (c.specs || []).map(s=>`<li>${s}</li>`).join('');
-      const buyBtn = isSoon(c) ? '' : `<button class="btn" onclick="openCourseBuy(${idx})">Comprar</button>`;
+      const buyBtn = isSoon ? '' : `<button class="btn" onclick="openCourseBuy(${idx})">Comprar</button>`;
       mBody.innerHTML = `
         ${c.thumb ? `<img src="${c.thumb}" alt="${c.title}" style="width:100%;height:auto;border-radius:12px;margin-bottom:10px">` : ''}
         <div class="muted">${c.blurb}</div>
         <div style="margin-top:8px"><span class="badge">${c.price || 'Consultar'}</span></div>
         ${specs ? `<ul class="specs">${specs}</ul>` : ''}
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
-          <button class="btn" onclick="addToCart(${idx})" ${isSoon(c)?'disabled':''}>Agregar al carrito</button>
           ${buyBtn}
           <button class="btn ghost" onclick="closeCourseModal()">Cerrar</button>
         </div>
-        <p class="muted" style="margin-top:8px;font-size:12px">* Los importes finales pueden incluir impuestos/recargos de plataforma (+intereses).</p>
       `;
       openCourseModal();
     }
 
+    // Contenido de Compra (3 opciones de pago)
     window.openCourseBuy = function(idx){
-      const c = data.courses[idx], p = data.payments || {}, b = p.bank || {};
+      const c = data.courses[idx];
+      const p = data.payments || {}; const b = p.bank || {};
       mTitle.textContent = `Comprar — ${c.title}`;
       mBody.innerHTML = `
         <div class="muted">Elegí tu método de pago. <span class="badge" style="margin-left:6px">${c.price || ''}</span></div>
@@ -527,7 +652,7 @@
             <strong>PayPal</strong>
             <p class="muted" style="margin-top:6px">Para pagos internacionales.</p>
             <a class="btn" href="${p.paypal || '#'}" target="_blank" rel="noopener">Pagar con PayPal</a>
-            <p class="copy">Se abre en nueva pestaña.</p>
+            <p class="copy">Se abre en una nueva pestaña.</p>
           </div>
           <div class="panel">
             <strong>Mercado Pago</strong>
@@ -556,151 +681,7 @@
       `;
       openCourseModal();
     }
-
-    // ===== Carrito + Promo 3x2 por trío =====
-    const cart = []; // {idx, title, price}
-    const cartBtn = document.getElementById('cartFab');
-
-    function refreshFab(){
-      cartBtn.textContent = `🛒 Carrito (${cart.length})`;
-      cartBtn.classList.toggle('cart-empty', cart.length === 0);
-    }
-
-    function totals(){
-      if(cart.length===0) return {subtotal:0, discount:0, total:0};
-      const prices = cart.map(i=>i.price).sort((a,b)=>a-b);
-      const subtotal = prices.reduce((a,b)=>a+b,0);
-      // Por cada grupo de 3, se descuenta el menor de ese grupo → 3x2 escalable (6 cursos = 2 gratis)
-      let discount = 0;
-      const groups = Math.floor(prices.length / 3);
-      for (let g=0; g<groups; g++){ discount += prices[g]; }
-      const total = Math.max(0, subtotal - discount);
-      return {subtotal, discount, total};
-    }
-
-    function withFees(amount, kind){ // kind: 'paypal' | 'mp'
-      const fees = (data.payments && data.payments.fees) || {};
-      const pass = !!fees.pass_fees_to_buyer;
-      if(!pass) return {est: amount, pct:0, fixed:0};
-      if(kind==='paypal'){
-        const pct = Number(fees.paypal_pct||0)/100;
-        return {est: amount*(1+pct), pct: fees.paypal_pct||0, fixed: 0};
-      }else if(kind==='mp'){
-        const pct = Number(fees.mp_pct||0)/100, fixed = Number(fees.mp_fixed||0);
-        return {est: amount*(1+pct)+fixed, pct: fees.mp_pct||0, fixed: fees.mp_fixed||0};
-      }
-      return {est: amount, pct:0, fixed:0};
-    }
-
-    function openCart(){
-      const p = data.payments || {};
-      mTitle.textContent = 'Tu carrito';
-      const rows = cart.map((item,i)=>`
-        <tr>
-          <td>${item.title}</td>
-          <td>USD ${item.price.toFixed(2)}</td>
-          <td><button class="btn ghost" onclick="removeFromCart(${i})">Quitar</button></td>
-        </tr>`).join('') || `<tr><td colspan="3" class="muted">Tu carrito está vacío.</td></tr>`;
-
-      const {subtotal, discount, total} = totals();
-      const paypal = withFees(total,'paypal'), mp = withFees(total,'mp');
-      const hasPromo = cart.length>=3 && discount>0;
-
-      mBody.innerHTML = `
-        <div class="muted">Promo activa: <strong>3×2</strong> (se bonifica el de menor valor <em>por cada trío</em>).</div>
-        <table class="table">
-          <thead><tr><th>Curso</th><th>Precio</th><th></th></tr></thead>
-          <tbody>${rows}</tbody>
-          <tfoot>
-            <tr><td>Subtotal</td><td colspan="2">USD ${subtotal.toFixed(2)}</td></tr>
-            <tr><td>Descuento 3×2</td><td colspan="2">${hasPromo?`− USD ${discount.toFixed(2)}`:'—'}</td></tr>
-            <tr><td><strong>Total (sin intereses)</strong></td><td colspan="2"><strong>USD ${total.toFixed(2)}</strong></td></tr>
-            <tr><td>Estimado con PayPal (+${paypal.pct||0}%):</td><td colspan="2"><strong>USD ${paypal.est.toFixed(2)}</strong></td></tr>
-            <tr><td>Estimado con Mercado Pago (+${mp.pct||0}%${mp.fixed?` + USD ${Number(mp.fixed).toFixed(2)} fijo`:''}):</td><td colspan="2"><strong>USD ${mp.est.toFixed(2)}</strong></td></tr>
-          </tfoot>
-        </table>
-        <p class="muted" style="margin-top:8px">* Los importes finales pueden incluir impuestos/recargos de plataforma (+intereses). Pueden variar levemente según la operadora/tarjeta.</p>
-
-        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
-          <button class="btn" onclick="checkout('paypal')">Pagar con PayPal (USD ${paypal.est.toFixed(2)})</button>
-          <button class="btn" onclick="checkout('mp')">Pagar con Mercado Pago (USD ${mp.est.toFixed(2)})</button>
-          <button class="btn ghost" onclick="checkout('bank')">Datos de transferencia</button>
-          <button class="btn ghost" onclick="closeCourseModal()">Cerrar</button>
-        </div>
-      `;
-      openCourseModal();
-    }
-    window.openCart = openCart;
-
-    window.addToCart = function(idx){
-      const c = data.courses[idx]; if(!c || isSoon(c)) return;
-      cart.push({ idx, title: c.title, price: priceNumber(c) });
-      refreshFab();
-      // feedback rápido
-      cartBtn.classList.remove('cart-empty');
-      cartBtn.animate([{transform:'scale(1)'},{transform:'scale(1.08)'},{transform:'scale(1)'}],{duration:280});
-    }
-    window.removeFromCart = function(i){
-      cart.splice(i,1); refreshFab(); openCart();
-    }
-
-    function openInNew(url){ window.open(url,'_blank','noopener'); }
-
-    window.checkout = function(method){
-      const {total} = totals();
-      const p = data.payments || {}, b = p.bank || {};
-      if(total<=0){ alert('Tu carrito está vacío.'); return; }
-
-      if(method==='paypal'){
-        const amt = withFees(total,'paypal').est;
-        const base = (p.paypal||'').replace(/\/$/,'');
-        if(!base){ alert('Configura tu enlace de PayPal en data.payments.paypal'); return; }
-        // PayPal.me acepta /monto (en USD si la cuenta está en USD)
-        openInNew(`${base}/${amt.toFixed(2)}`);
-      }else if(method==='mp'){
-        const amt = withFees(total,'mp').est;
-        if(!p.mercadopago){ alert('Configura tu enlace de Mercado Pago en data.payments.mercadopago'); return; }
-        // Muchos links mpago.la son de monto fijo. Abrimos el link y mostramos el estimado.
-        mBody.innerHTML += `
-          <div class="panel" style="margin-top:10px">
-            <strong>Mercado Pago</strong>
-            <p class="muted" style="margin-top:6px">Importe estimado a abonar: <b>USD ${amt.toFixed(2)}</b> (o equivalente en ARS).</p>
-            <a class="btn" href="${p.mercadopago}" target="_blank" rel="noopener">Abrir link</a>
-            <p class="copy">Si el link es de monto fijo, coordinamos la diferencia por transferencia o un nuevo link.</p>
-          </div>`;
-        openInNew(p.mercadopago);
-      }else if(method==='bank'){
-        const amt = total; // sin intereses en transferencia
-        mBody.innerHTML += `
-          <div class="panel" style="margin-top:10px">
-            <strong>Transferencia bancaria</strong>
-            <div style="font-size:14px;line-height:1.35;margin-top:6px">
-              <div><b>Titular:</b> ${b.titular||'-'}</div>
-              <div><b>Banco:</b> ${b.banco||'-'}</div>
-              <div><b>Alias:</b> ${b.alias||'-'}</div>
-              <div><b>CBU:</b> ${b.cbu||'-'}</div>
-              <div><b>Cuenta:</b> ${b.cuenta||'-'}</div>
-            </div>
-            <p class="muted" style="margin-top:6px">Importe a transferir: <b>USD ${amt.toFixed(2)}</b> (o equivalente). Enviá el comprobante por email o IG.</p>
-          </div>`;
-      }
-    }
-
-    // Insertar botón "Agregar al carrito" también dentro del modal Info (después de abrir)
-    const _openCourseInfo = window.openCourseInfo;
-    window.openCourseInfo = function(idx){
-      _openCourseInfo(idx);
-      const c = data.courses[idx]; if(!c || isSoon(c)) return;
-      const addBtn = document.createElement('button');
-      addBtn.className = 'btn'; addBtn.style.marginLeft='8px'; addBtn.textContent='Agregar al carrito';
-      addBtn.onclick = ()=> addToCart(idx);
-      const btnWrap = mBody.querySelector('div[style*="gap:8px"]') || mBody;
-      btnWrap.insertBefore(addBtn, btnWrap.firstChild);
-    }
-
-    // FAB
-    cartBtn.addEventListener('click', openCart);
-    refreshFab();
   </script>
 </body>
 </html>
+
