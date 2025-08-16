@@ -44,7 +44,7 @@
   </style>
 </head>
 <body>
-  <!-- Editable content lives inside the JSON block below -->
+  <!-- EDITA SOLO ESTE JSON -->
   <script id="content" type="application/json">
   {
     "site": {
@@ -83,20 +83,35 @@
       {"title": "Esperanza", "size": "50×70 cm", "status": "Disponible", "price": "Consultar", "img": "./media/esperanza.jpg"},
       {"title": "Princesa de Jade", "size": "70×100 cm", "status": "Disponible", "price": "Consultar", "img": "./media/princesa-de-jade.jpg"},
       {"title": "Nacimiento de África", "size": "30×40 cm", "status": "Disponible", "price": "Consultar", "img": "./media/nacimiento-de-africa.jpg"}
-],
-    "courses": [
-      {"title": "01 · Preparación de tu lienzo", "blurb": "Soportes, imprimaciones y sellados archivísticos."},
-      {"title": "02 · Blanco y negro / Verdaccio", "blurb": "Modelado de forma y valores como base clásica."},
-      {"title": "03 · Retrato con paleta de Apeles", "blurb": "Carnaciones creíbles con paleta restringida."},
-      {"title": "04 · Veladuras y empastes", "blurb": "Profundidad óptica y texturas controladas."},
-      {"title": "05 · Paleta restringida universal", "blurb": "Aplicable a figura, paisaje y naturaleza muerta."},
-      {"title": "06 · Fondos abstractos como base figurativa - (PROXIMAMENTE)", "blurb": "Craquelados y pouring como soporte conceptual."}
     ],
-    "press": [
-      {"name": "Embajada de México", "year": "2024", "url": "#"},
-      {"name": "Museo Xul Solar", "year": "2023", "url": "#"},
-      {"name": "Legislatura Porteña", "year": "2022", "url": "#"},
-      {"name": "MIDMAKO", "year": "2021", "url": "#"}
+    "courses": [
+      {
+        "title": "01 · Preparación del lienzo",
+        "blurb": "Soportes, imprimaciones y sellados archivísticos.",
+        "thumb": "./media/cursos/preparacion-del-lienzo.jpg",
+        "price": "USD 49",
+        "infoUrl": "#contacto?curso=01-preparacion",
+        "buyUrl": "",
+        "video": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      },
+      {
+        "title": "02 · Blanco y negro / Verdaccio",
+        "blurb": "Modelado de forma y valores como base clásica.",
+        "thumb": "./media/cursos/verdaccio.jpg",
+        "price": "USD 59",
+        "infoUrl": "https://forms.gle/TU_FORMULARIO",
+        "buyUrl": "",
+        "video": ""
+      },
+      {
+        "title": "03 · Retrato con paleta de Apeles",
+        "blurb": "Carnaciones creíbles con paleta restringida.",
+        "thumb": "./media/cursos/apeles.jpg",
+        "price": "USD 79",
+        "infoUrl": "#contacto?curso=03-apeles",
+        "buyUrl": "",
+        "video": "https://www.youtube.com/watch?v=VIDEO_ID"
+      }
     ]
   }
   </script>
@@ -126,7 +141,10 @@
             <a class="btn ghost" href="#cursos">Ver cursos</a>
           </div>
         </div>
-        <div class="hero-img"><img id="heroimg" alt="Hero Valkideon"/></div>
+        <div class="hero-img">
+          <img id="heroimg" alt="Hero Valkideon"
+               onerror="this.style.border='2px solid red'; this.alt='(no se encontró: ' + JSON.parse(document.getElementById('content').textContent).hero.image + ')'">
+        </div>
       </div>
     </section>
 
@@ -148,6 +166,9 @@
       <div class="container">
         <h2>Cursos para artistas</h2>
         <p class="muted">Procesos clásicos con metodología clara y materiales descargables.</p>
+        <p class="muted" style="margin-top:4px">
+          <strong>Promo:</strong> Llevá <strong>3</strong> cursos y pagás <strong>2</strong>. (Aplica al menor valor.)
+        </p>
         <div class="grid-3" id="courses"></div>
       </div>
     </section>
@@ -179,7 +200,7 @@
       <div class="container two">
         <div>
           <h2>Contacto</h2>
-          <p class="muted">Para propuestas curatoriales, adquisición de obra o restauración.</p>
+          <p class="muted">Para propuestas curatoriales, adquisición de obra o cursos.</p>
           <p class="muted">Email: <a id="email"></a><br/>Instagram: <a id="insta" target="_blank" rel="noreferrer noopener">@valkideon</a></p>
         </div>
         <div class="panel">
@@ -242,16 +263,19 @@
     $('#eyebrow').textContent = data.hero.eyebrow;
     $('#headline').textContent = data.hero.headline;
     $('#herotext').textContent = data.hero.text;
-    $('#heroimg').src = data.hero.image;
+    const heroImg = document.querySelector('#heroimg');
+    heroImg.src = data.hero.image;
+    heroImg.onerror = () => { heroImg.style.border = '2px solid red'; heroImg.alt = '(no se encontró: ' + data.hero.image + ')'; };
 
     // PRESS
-    const press = data.press.map(p => `<a href="${p.url}">• ${p.name} · ${p.year}</a>`).join(' ');
+    const press = data.press?.map?.(p => `<a href="${p.url}">• ${p.name} · ${p.year}</a>`).join(' ') || '';
     $('#press').innerHTML = press;
 
-    // ARTWORKS
+    // ARTWORKS (con fallback visual cuando falla la ruta)
     const artworks = data.artworks.map(a => `
       <article class="card">
-        <img src="${a.img}" alt="${a.title}">
+        <img src="${a.img}" alt="${a.title}"
+             onerror="this.style.border='2px solid red'; this.alt='(no se encontró: ${a.img})'">
         <div class="body">
           <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
             <strong>${a.title}</strong>
@@ -263,17 +287,44 @@
       </article>`).join('');
     $('#artworks').innerHTML = artworks;
 
-    // COURSES
-    const courses = data.courses.map(c => `
-      <div class="panel"><strong>${c.title}</strong><div class="muted" style="margin-top:6px">${c.blurb}</div></div>
-    `).join('');
-    $('#courses').innerHTML = courses;
+    // COURSES shop-like cards (thumb, precio, info, comprar/solicitar, video YouTube)
+    function ytEmbed(url){
+      if (!url) return '';
+      const m = url.match(/(?:v=|youtu\.be\/)([A-Za-z0-9_-]{6,})/);
+      const id = m ? m[1] : null;
+      return id ? `<div class="panel" style="margin-top:10px">
+        <div style="position:relative;padding-top:56.25%">
+          <iframe src="https://www.youtube.com/embed/${id}" 
+                  title="Video intro"
+                  style="position:absolute;inset:0;width:100%;height:100%;border:0"
+                  allowfullscreen></iframe>
+        </div>
+      </div>` : '';
+    }
 
-    // CONTACT fill
+    const courseCards = data.courses.map(c => `
+      <article class="panel" style="overflow:hidden">
+        ${c.thumb ? `<img src="${c.thumb}" alt="${c.title}" style="width:100%;height:220px;object-fit:cover;border-radius:12px;margin-bottom:10px"
+          onerror="this.style.border='2px solid red';this.alt='(no se encontró: ${c.thumb})'">` : ''}
+        <strong style="display:block;font-size:18px">${c.title}</strong>
+        <div class="muted" style="margin-top:6px">${c.blurb}</div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px">
+          <span class="badge">${c.price || 'Consultar'}</span>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            ${c.infoUrl ? `<a class="btn ghost" href="${c.infoUrl}">Más info</a>` : ''}
+            ${c.buyUrl ? `<a class="btn" href="${c.buyUrl}" target="_blank" rel="noopener">Comprar</a>` 
+                       : `<a class="btn" href="#contacto?curso=${encodeURIComponent(c.title)}">Solicitar</a>`}
+          </div>
+        </div>
+        ${ytEmbed(c.video)}
+      </article>
+    `).join('');
+    $('#courses').innerHTML = courseCards;
+
+    // CONTACT fill + “Términos”
     $('#email').textContent = email; 
     $('#email').href = 'mailto:'+email; 
     $('#insta').href = ig;
-    // Términos: completar email en el resumen
     const emailTerms = document.querySelector('#email-terms');
     if (emailTerms) emailTerms.textContent = email;
 
