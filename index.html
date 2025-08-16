@@ -30,7 +30,7 @@
     .muted{color:var(--muted)}
     .section{padding:48px 0;border-top:1px solid var(--line)}
     .cards{display:grid;gap:16px;grid-template-columns:repeat(12,1fr)}
-    .card{grid-column:span 3;background:var(--card);border:1px solid var(--line);border-radius:var(--rad);overflow:hidden;box-shadow:var(--shadow)}
+    .card{grid-column:span 3;background:var(--card);border:1px solid var(--line);border-radius:var(--rad);overflow:hidden;box-shadow:var(--shadow);cursor:zoom-in}
     .card .body{padding:12px 14px}
     .badge{font-size:12px;border:1px solid var(--line);background:#f3f1ed;padding:2px 8px;border-radius:999px}
     .two{display:grid;gap:28px;grid-template-columns:1fr 1fr}
@@ -39,6 +39,16 @@
     .input, textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:#fff}
     .grid-3{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
     .press{display:flex;flex-wrap:wrap;gap:12px;color:var(--muted);font-size:14px}
+
+    /* Lightbox */
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.8);display:none;align-items:center;justify-content:center;z-index:1000;padding:24px}
+    .lightbox.open{display:flex}
+    .lightbox-inner{max-width:min(92vw,1400px);max-height:90vh;position:relative}
+    .lightbox-img{max-width:100%;max-height:calc(90vh - 120px);border-radius:12px;box-shadow:var(--shadow);background:#111}
+    .lightbox-caption{position:relative;margin-top:10px;background:rgba(255,255,255,.9);border-radius:12px;padding:12px 14px;color:#222;border:1px solid var(--line)}
+    .lightbox-close{position:absolute;top:-10px;right:-10px;background:#fff;border:1px solid var(--line);width:36px;height:36px;border-radius:999px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:var(--shadow)}
+    .lightbox-close:hover{transform:translateY(-1px)}
+
     @media (max-width: 960px){.hero-grid{grid-template-columns:1fr}.cards .card{grid-column:span 6}.two{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr}.nav-inner{gap:12px}}
     @media (max-width: 560px){.cards .card{grid-column:span 12}h1{font-size:34px}}
   </style>
@@ -60,6 +70,9 @@
       "headline": "Pintura clásica, mirada contemporánea",
       "text": "Obras originales, ediciones limitadas y cursos de técnica pictórica.",
       "image": "https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/artista.jpg"
+    },
+    "about": {
+      "image": "https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/artistas.jpg"
     },
     "artworks": [
       {"title": "Fénix", "size": "Óleo 70×100 cm", "status": "Disponible", "price": "Consultar", "img": "https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/fenix.JPG"},
@@ -127,7 +140,7 @@
       {
         "title": "04 · Veladuras y empastes",
         "blurb": "Profundidad óptica y texturas controladas.",
-        "thumb": "http://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-image-4.jpg",
+        "thumb": "https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-image-4.jpg",
         "price": "USD 69",
         "infoUrl": "#contacto?curso=04-veladuras",
         "buyUrl": "",
@@ -161,7 +174,7 @@
       <nav style="display:flex;gap:18px;font-size:14px">
         <a href="#galeria">Obras</a>
         <a href="#cursos">Cursos</a>
-        <a href="#terminos y condiciones">Términos y Condiciones</a>
+        <a href="#terminos">Términos y Condiciones</a>
         <a href="#sobre">Sobre mí</a>
         <a href="#contacto">Contacto</a>
       </nav>
@@ -221,10 +234,8 @@
             <li>Calidad de museo: materiales archivísticos y control de color para prints.</li>
             <li>Ediciones limitadas con certificado.</li>
             <li>Obras por encargo con contrato claro.</li>
-            {
-      "image": "https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/artistas.jpg"
-    },
           </ul>
+          <div id="about-image-wrap" style="margin-top:12px"></div>
         </div>
         <div class="panel">
           <h3>Suscripción</h3>
@@ -261,6 +272,15 @@
       </div>
     </section>
   </main>
+
+  <!-- Lightbox (modal) -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-inner">
+      <img class="lightbox-img" id="lightbox-img" alt="Obra ampliada">
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+      <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar">✕</button>
+    </div>
+  </div>
 
  <section id="terminos" class="section">
   <div class="container">
@@ -370,9 +390,9 @@
     const press = data.press?.map?.(p => `<a href="${p.url}">• ${p.name} · ${p.year}</a>`).join(' ') || '';
     $('#press').innerHTML = press;
 
-    // ARTWORKS (con fallback visual cuando falla la ruta)
-    const artworks = data.artworks.map(a => `
-      <article class="card">
+    // ARTWORKS (cards)
+    const artworksHTML = data.artworks.map((a,idx) => `
+      <article class="card" data-art="${idx}">
         <img src="${a.img}" alt="${a.title}"
              onerror="this.style.border='2px solid red'; this.alt='(no se encontró: ${a.img})'">
         <div class="body">
@@ -384,9 +404,49 @@
           <div class="muted" style="font-size:13px;margin-top:4px">${a.price || ''}</div>
         </div>
       </article>`).join('');
-    $('#artworks').innerHTML = artworks;
+    $('#artworks').innerHTML = artworksHTML;
 
-    // COURSES shop-like cards (thumb, precio, info, comprar/solicitar, video YouTube)
+    // LIGHTBOX handlers
+    const lb = $('#lightbox');
+    const lbImg = $('#lightbox-img');
+    const lbCap = $('#lightbox-caption');
+    const lbClose = $('#lightbox-close');
+
+    function openLightbox(art){
+      lbImg.src = art.img;
+      lbImg.alt = art.title;
+      lbCap.innerHTML = `
+        <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+          <div><strong>${art.title}</strong></div>
+          <div class="muted" style="display:flex;gap:12px;font-size:14px">
+            <span>${art.size}</span>
+            <span>·</span>
+            <span>${art.status}</span>
+            ${art.price ? `<span>·</span><span>${art.price}</span>` : ''}
+          </div>
+        </div>
+      `;
+      lb.classList.add('open');
+      lb.setAttribute('aria-hidden','false');
+    }
+    function closeLightbox(){
+      lb.classList.remove('open');
+      lb.setAttribute('aria-hidden','true');
+      lbImg.src = '';
+    }
+
+    $('#artworks').addEventListener('click', (e)=>{
+      const card = e.target.closest('.card[data-art]');
+      if(!card) return;
+      const idx = Number(card.getAttribute('data-art'));
+      const art = data.artworks[idx];
+      openLightbox(art);
+    });
+    lb.addEventListener('click', (e)=>{ if(e.target === lb) closeLightbox(); });
+    lbClose.addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeLightbox(); });
+
+    // COURSES (imágenes libres: sin alto fijo, solo responsive)
     function ytEmbed(url){
       if (!url) return '';
       const m = url.match(/(?:v=|youtu\.be\/)([A-Za-z0-9_-]{6,})/);
@@ -403,7 +463,7 @@
 
     const courseCards = data.courses.map(c => `
       <article class="panel" style="overflow:hidden">
-        ${c.thumb ? `<img src="${c.thumb}" alt="${c.title}" style="width:100%;height:220px;object-fit:cover;border-radius:12px;margin-bottom:10px"
+        ${c.thumb ? `<img src="${c.thumb}" alt="${c.title}" style="width:100%;height:auto;border-radius:12px;margin-bottom:10px"
           onerror="this.style.border='2px solid red';this.alt='(no se encontró: ${c.thumb})'">` : ''}
         <strong style="display:block;font-size:18px">${c.title}</strong>
         <div class="muted" style="margin-top:6px">${c.blurb}</div>
@@ -420,12 +480,19 @@
     `).join('');
     $('#courses').innerHTML = courseCards;
 
-    // CONTACT fill + “Términos”
+    // ABOUT image
+    if (data.about?.image){
+      $('#about-image-wrap').innerHTML = `
+        <img src="${data.about.image}" alt="Valkideon RN — sobre mí" 
+             style="border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)"
+             onerror="this.style.border='2px solid red'; this.alt='(no se encontró: ${data.about.image})'">
+      `;
+    }
+
+    // CONTACT fill
     $('#email').textContent = email; 
     $('#email').href = 'mailto:'+email; 
     $('#insta').href = ig;
-    const emailTerms = document.querySelector('#email-terms');
-    if (emailTerms) emailTerms.textContent = email;
 
     // YEAR
     $('#year').textContent = new Date().getFullYear();
