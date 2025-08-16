@@ -71,6 +71,12 @@
 
     @media (max-width: 960px){.hero-grid{grid-template-columns:1fr}.cards .card{grid-column:span 6}.two{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr}.nav-inner{gap:12px}}
     @media (max-width: 560px){.cards .card{grid-column:span 12}h1{font-size:34px}.paygrid{grid-template-columns:1fr}}
+    /* === Modal de cursos solo con texto (oculta imágenes del modal) === */
+#courseModal .modal-card img { display: none !important; }
+
+/* (opcional) por si hay mucho texto, que el modal pueda scrollear cómodo */
+#courseModal .modal-card { max-height: 90vh; overflow: auto; }
+
   </style>
 </head>
 <body>
