@@ -21,6 +21,10 @@
     .btn{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--fg);padding:.7rem 1rem;border-radius:999px;transition:.2s;box-shadow:0 2px 0 rgba(0,0,0,.05);cursor:pointer}
     .btn.ghost{border-color:transparent}
     .btn:hover{transform:translateY(-1px)}
+    /* Botón de compra único (verde) */
+.btn-buy{border:1px solid transparent;background:#22c55e;color:#fff;font-weight:700}
+.btn-buy:hover{background:#16a34a}
+.btn-buy:focus{outline:none;box-shadow:0 0 0 4px #bbf7d0}
     .eyebrow{text-transform:uppercase;letter-spacing:.28em;font-size:11px;color:var(--muted)}
     .hero{padding:72px 0;border-bottom:1px solid var(--line)}
     .hero-grid{display:grid;gap:24px;grid-template-columns:1.1fr 1fr}
@@ -423,10 +427,19 @@
     // LIGHTBOX
     const lb = $('#lightbox'), lbImg = $('#lightbox-img'), lbCap = $('#lightbox-caption'), lbClose = $('#lightbox-close');
     function openLightbox(art){
-      lbImg.src = art.img; lbImg.alt = art.title;
-      lbCap.innerHTML = `<div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><div><strong>${art.title}</strong></div><div class="muted" style="display:flex;gap:12px;font-size:14px"><span>${art.size}</span><span>·</span><span>${art.status}</span>${art.price?`<span>·</span><span>${art.price}</span>`:''}</div></div>`;
-      lb.classList.add('open'); lb.setAttribute('aria-hidden','false');
-    }
+  lbImg.src = art.img; lbImg.alt = art.title;
+  lbCap.innerHTML = `
+    <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+      <div><strong>${art.title}</strong></div>
+      <div class="muted" style="display:flex;gap:12px;font-size:14px">
+        <span>${art.size}</span><span>·</span><span>${art.status}</span>${art.price?`<span>·</span><span>${art.price}</span>`:''}
+      </div>
+    </div>
+    <div style="margin-top:8px;font-size:14px;color:#333">
+      <em>informacion a editar por valkideon</em>
+    </div>`;
+  lb.classList.add('open'); lb.setAttribute('aria-hidden','false');
+}
     function closeLightbox(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); lbImg.src=''; }
     $('#artworks').addEventListener('click', e => { const card = e.target.closest('.card[data-art]'); if(!card) return; openLightbox(data.artworks[+card.getAttribute('data-art')]); });
     lb.addEventListener('click', e => { if(e.target===lb) closeLightbox(); });
@@ -444,22 +457,23 @@
     const priceNumber = c => (typeof c.priceNum==='number') ? c.priceNum : ((c.price||'').match(/([0-9]+(?:[.,][0-9]+)?)/)?.[1]?.replace(',','.')*1 || 0);
 
     function courseCardHTML(c, idx){
-      const buyBtn = isSoon(c) ? '' : `<button class="btn" onclick="openCourseBuy(${idx})">Comprar</button>`;
-      return `
-        <article class="panel" style="overflow:hidden">
-          ${c.thumb?`<img src="${c.thumb}" alt="${c.title}" style="width:100%;height:auto;border-radius:12px;margin-bottom:10px" onerror="this.style.border='2px solid red';this.alt='(no se encontró: ${c.thumb})'">`:''}
-          <strong style="display:block;font-size:18px">${c.title}</strong>
-          <div class="muted" style="margin-top:6px">${c.blurb}</div>
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px">
-            <span class="badge">${c.price || 'Consultar'}</span>
-            <div style="display:flex;gap:8px;flex-wrap:wrap">
-              <button class="btn ghost" onclick="openCourseInfo(${idx})">Más info</button>${buyBtn}
-            </div>
-          </div>
-          <div style="margin-top:8px"><button class="btn" onclick="addToCart(${idx})" ${isSoon(c)?'disabled':''}>Agregar al carrito</button></div>
-          ${ytEmbed(c.video)}
-        </article>`;
-    }
+  return `
+    <article class="panel" style="overflow:hidden">
+      ${c.thumb?`<img src="${c.thumb}" alt="${c.title}" style="width:100%;height:auto;border-radius:12px;margin-bottom:10px" onerror="this.style.border='2px solid red';this.alt='(no se encontró: ${c.thumb})'">`:''}
+      <strong style="display:block;font-size:18px">${c.title}</strong>
+      <div class="muted" style="margin-top:6px">${c.blurb}</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px">
+        <span class="badge">${c.price || 'Consultar'}</span>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <button class="btn ghost" onclick="openCourseInfo(${idx})">Más info</button>
+        </div>
+      </div>
+      <div style="margin-top:8px">
+        <button class="btn btn-buy" onclick="addToCart(${idx})" ${isSoon(c)?'disabled':''}>Add to cart</button>
+      </div>
+      ${ytEmbed(c.video)}
+    </article>`;
+}
     document.getElementById('courses').innerHTML = (data.courses||[]).map(courseCardHTML).join('');
 
     // ABOUT image (se inyecta en el ÚNICO #about-image-wrap)
@@ -493,26 +507,22 @@
       openCourseModal();
     }
 
-    window.openCourseBuy = function(idx){
-      const c = data.courses[idx], p = data.payments || {}, b = p.bank || {};
-      mTitle.textContent = `Comprar — ${c.title}`;
-      mBody.innerHTML = `
-        <div class="muted">Elegí tu método de pago. <span class="badge" style="margin-left:6px">${c.price || ''}</span></div>
-        <div class="paygrid">
-          <div class="panel"><strong>PayPal</strong><p class="muted" style="margin-top:6px">Para pagos internacionales.</p><a class="btn" href="${p.paypal || '#'}" target="_blank" rel="noopener">Pagar con PayPal</a><p class="copy">Se abre en nueva pestaña.</p></div>
-          <div class="panel"><strong>Mercado Pago</strong><p class="muted" style="margin-top:6px">Para Argentina.</p><a class="btn" href="${p.mercadopago || '#'}" target="_blank" rel="noopener">Pagar con MP</a><p class="copy">Link de pago directo.</p></div>
-          <div class="panel"><strong>Transferencia bancaria</strong><p class="muted" style="margin-top:6px">Datos de cuenta</p>
-            <div style="font-size:14px;line-height:1.35">
-              <div><b>Titular:</b> ${b.titular || '-'}</div><div><b>Banco:</b> ${b.banco || '-'}</div><div><b>Alias:</b> ${b.alias || '-'}</div><div><b>CBU:</b> ${b.cbu || '-'}</div><div><b>Cuenta:</b> ${b.cuenta || '-'}</div>
-            </div><p class="copy">Enviá el comprobante por email o IG.</p></div>
-        </div>
-        <p class="muted" style="margin-top:12px">${p.nota || ''}</p>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
-          <button class="btn ghost" onclick="openCourseInfo(${idx})">Volver a info</button>
-          <button class="btn" onclick="closeCourseModal()">Cerrar</button>
-        </div>`;
-      openCourseModal();
-    }
+    window.openCourseInfo = function(idx){
+  const c = data.courses[idx];
+  mTitle.textContent = c.title;
+  const specs = (c.specs||[]).map(s=>`<li>${s}</li>`).join('');
+  mBody.innerHTML = `
+    ${c.thumb?`<img src="${c.thumb}" alt="${c.title}" style="width:100%;height:auto;border-radius:12px;margin-bottom:10px">`:''}
+    <div class="muted">${c.blurb}</div>
+    <div style="margin-top:8px"><span class="badge">${c.price || 'Consultar'}</span></div>
+    ${specs?`<ul class="specs">${specs}</ul>`:''}
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+      <button class="btn btn-buy" onclick="addToCart(${idx})" ${isSoon(c)?'disabled':''}>Add to cart</button>
+      <button class="btn ghost" onclick="closeCourseModal()">Cerrar</button>
+    </div>
+    <p class="muted" style="margin-top:8px;font-size:12px">* Los importes finales pueden incluir impuestos/recargos de plataforma (+intereses).</p>`;
+  openCourseModal();
+}
 
     // ===== Carrito + Promo 3x2 por trío (6 = 2 gratis) =====
     const cart = []; // {idx, title, price}
