@@ -594,7 +594,8 @@ const artworksHTML = (data.artworks||[]).map((a,idx) => `
         </div>
       </div>
       <div style="margin-top:8px">
-        <button class="btn btn-buy" onclick="addToCart(${idx})" ${isSoon(c)?'disabled':''}>Add to cart</button>
+        <button class="btn btn-buy" onclick="addToCart(${idx})" ${isSoon(c)?'disabled':''}>Agregar al carrito</button>
+
       </div>
       ${ytEmbed(c.video)}
     </article>`;
@@ -613,24 +614,7 @@ const artworksHTML = (data.artworks||[]).map((a,idx) => `
     mClose.addEventListener('click', closeCourseModal);
     mCourse.addEventListener('click', e => { if(e.target===mCourse) closeCourseModal(); });
 
-    window.openCourseInfo = function(idx){
-      const c = data.courses[idx];
-      mTitle.textContent = c.title;
-      const specs = (c.specs||[]).map(s=>`<li>${s}</li>`).join('');
-      const buyBtn = isSoon(c) ? '' : `<button class="btn" onclick="openCourseBuy(${idx})">Comprar</button>`;
-      mBody.innerHTML = `
-        ${c.thumb?`<img src="${c.thumb}" alt="${c.title}" style="width:100%;height:auto;border-radius:12px;margin-bottom:10px">`:''}
-        <div class="muted">${c.blurb}</div>
-        <div style="margin-top:8px"><span class="badge">${c.price || 'Consultar'}</span></div>
-        ${specs?`<ul class="specs">${specs}</ul>`:''}
-        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
-          <button class="btn" onclick="addToCart(${idx})" ${isSoon(c)?'disabled':''}>Agregar al carrito</button>
-          ${buyBtn}
-          <button class="btn ghost" onclick="closeCourseModal()">Cerrar</button>
-        </div>
-        <p class="muted" style="margin-top:8px;font-size:12px">* Los importes finales pueden incluir impuestos/recargos de plataforma (+intereses).</p>`;
-      openCourseModal();
-    }
+
 
     window.openCourseInfo = function(idx){
   const c = data.courses[idx];
@@ -642,7 +626,8 @@ const artworksHTML = (data.artworks||[]).map((a,idx) => `
     <div style="margin-top:8px"><span class="badge">${c.price || 'Consultar'}</span></div>
     ${specs?`<ul class="specs">${specs}</ul>`:''}
     <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
-      <button class="btn btn-buy" onclick="addToCart(${idx})" ${isSoon(c)?'disabled':''}>Add to cart</button>
+      <button class="btn btn-buy" onclick="addToCart(${idx})" ${isSoon(c)?'disabled':''}>Agregar al carrito</button>
+
       <button class="btn ghost" onclick="closeCourseModal()">Cerrar</button>
     </div>
     <p class="muted" style="margin-top:8px;font-size:12px">* Los importes finales pueden incluir impuestos/recargos de plataforma (+intereses).</p>`;
