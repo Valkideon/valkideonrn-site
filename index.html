@@ -6,17 +6,10 @@
   <title>Valkideon RN — Pintura clásica, mirada contemporánea</title>
   <meta name="description" content="Obras originales, ediciones limitadas y cursos de técnica pictórica." />
   <meta name="color-scheme" content="light" />
-
-  <!-- FAVICON / ICONOS -->
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta name="theme-color" content="#0ea5e9">
-
   <style>
     :root{
       --bg:#faf9f7;--fg:#1f1f1e;--muted:#6b6b6b;--line:#e6e3de;--card:#ffffff;--accent:#a08a5a;--accent-2:#c7b589;
       --rad:18px;--rad-lg:22px;--shadow:0 6px 24px rgba(0,0,0,.06);
-      --buy:#22c55e; --buy-hover:#16a34a; --ring:#bbf7d0;
     }
     *{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
     img{max-width:100%;display:block}
@@ -25,13 +18,9 @@
     .nav{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(8px);background:rgba(255,255,255,.7);border-bottom:1px solid var(--line)}
     .nav-inner{height:64px;display:flex;align-items:center;justify-content:space-between}
     .nav a:hover{opacity:.8}
-    .btn{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--fg);padding:.7rem 1rem;border-radius:999px;transition:.2s;box-shadow:0 2px 0 rgba(0,0,0,.05);cursor:pointer;background:#fff}
-    .btn.ghost{border-color:transparent;background:#fff}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--fg);padding:.7rem 1rem;border-radius:999px;transition:.2s;box-shadow:0 2px 0 rgba(0,0,0,.05);cursor:pointer}
+    .btn.ghost{border-color:transparent}
     .btn:hover{transform:translateY(-1px)}
-    /* Botón de compra único (verde) */
-    .btn-buy{border:none;background:var(--buy);color:#fff;font-weight:700}
-    .btn-buy:hover{background:var(--buy-hover)}
-    .btn-buy:focus{outline:none;box-shadow:0 0 0 4px var(--ring)}
     .eyebrow{text-transform:uppercase;letter-spacing:.28em;font-size:11px;color:var(--muted)}
     .hero{padding:72px 0;border-bottom:1px solid var(--line)}
     .hero-grid{display:grid;gap:24px;grid-template-columns:1.1fr 1fr}
@@ -55,8 +44,8 @@
     .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.8);display:none;align-items:center;justify-content:center;z-index:1000;padding:24px}
     .lightbox.open{display:flex}
     .lightbox-inner{max-width:min(92vw,1400px);max-height:90vh;position:relative}
-    .lightbox-img{max-width:100%;max-height:calc(90vh - 160px);border-radius:12px;box-shadow:var(--shadow);background:#111}
-    .lightbox-caption{position:relative;margin-top:10px;background:rgba(255,255,255,.95);border-radius:12px;padding:12px 14px;color:#222;border:1px solid var(--line)}
+    .lightbox-img{max-width:100%;max-height:calc(90vh - 120px);border-radius:12px;box-shadow:var(--shadow);background:#111}
+    .lightbox-caption{position:relative;margin-top:10px;background:rgba(255,255,255,.9);border-radius:12px;padding:12px 14px;color:#222;border:1px solid var(--line)}
     .lightbox-close{position:absolute;top:-10px;right:-10px;background:#fff;border:1px solid var(--line);width:36px;height:36px;border-radius:999px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:var(--shadow)}
     .lightbox-close:hover{transform:translateY(-1px)}
 
@@ -83,9 +72,11 @@
     @media (max-width: 960px){.hero-grid{grid-template-columns:1fr}.cards .card{grid-column:span 6}.two{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr}.nav-inner{gap:12px}}
     @media (max-width: 560px){.cards .card{grid-column:span 12}h1{font-size:34px}.paygrid{grid-template-columns:1fr}}
 
-    /* Modal de cursos solo con texto (oculta imágenes del modal) */
+    /* === Modal de cursos solo con texto (oculta imágenes del modal) === */
     #courseModal .modal-card img { display: none !important; }
+    /* (opcional) por si hay mucho texto, que el modal pueda scrollear cómodo */
     #courseModal .modal-card { max-height: 90vh; overflow: auto; }
+
   </style>
 </head>
 <body>
@@ -104,12 +95,6 @@
       "paypal": "https://www.paypal.me/valkideonrn",
       "mercadopago": "https://mpago.la/XXXX-ENLACE",
       "fees": { "pass_fees_to_buyer": true, "paypal_pct": 6.0, "mp_pct": 9.0, "mp_fixed": 0.0 },
-
-      /* === Opcional para MP con total exacto (Worker) ===
-         "mp_worker": "https://TU-WORKER.cloudflareworkers.net",
-         "fx_rate": 0
-      */
-
       "bank": { "alias": "VALKIDEONRN.AHORA.ARTE", "cbu": "0000000000000000000000", "banco": "Banco Ejemplo S.A.", "titular": "Gonzalo Manuel Romero Nigro", "cuenta": "CA$ 0000-000000/0" },
       "nota": "Los importes finales pueden incluir impuestos/recargos de plataforma (+intereses). Enviá el comprobante por email o Instagram para liberar el acceso al curso."
     },
@@ -119,9 +104,9 @@
       "text": "Obras originales, ediciones limitadas y cursos de técnica pictórica.",
       "image": "https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/artista.jpg"
     },
-    "about": { "image": "https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/artistas.jpg" },
-    "artworks": [
-       {"title":"Fénix","size":"Óleo 70×100 cm","status":"Disponible","price":"Consultar","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/fenix.JPG"},
+  "about": { "image": "https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/artistas.jpg" },
+"artworks": [
+  {"title":"Fénix","size":"Óleo 70×100 cm","status":"Disponible","price":"Consultar","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/fenix.JPG"},
   {"title":"Rapto de Perséfone","size":"70×100 cm","status":"Disponible","price":"Consultar","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/rapto-de-persefone.jpg"},
   {"title":"Nacimiento de África","size":"30×40 cm","status":"Disponible","price":"Consultar","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/nacimiento-de-africa.jpg"},
   {"title":"Prometheus’ Hope","size":"30×40 cm","status":"Disponible","price":"Consultar","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/prometheus-hope.jpg"},
@@ -167,7 +152,14 @@
   {"title":"Shankar ca Chandra","size":"70×50 cm","status":"Vendida","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/shankar-ca-chandra.jpg"},
   {"title":"Copia de Young  Pegasus (por @JulioArt)","size":"Óleo 30×40 cm","status":"No disponible","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/copia-de-young-pegasus.jpg"}
 ],
-
+"courses": [
+  { "title":"01 · Preparación del lienzo", "blurb":"Soportes, imprimaciones.", "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-preparacion-lienzo.jpg", "price":"USD 69", "video":"https://www.youtube.com/watch?v=dQw4w9WgXcQ", "specs":["Nivel del curso: principiante","Duración: 1 semana en 4 módulos: Materiales, fórmulas, preparación de bastidor entelado, preparación de bastidor en tabla","Materiales: gesso sotile, imprimaciones magra y grasa, colas, selladores","Tipo de recursos PDF complementarios: listas de materiales, plantillas, esquemas, etc.","Proyecto: el alumno terminará el curso pudiendo armar sus propios bastidores, ya sea en formato entelados o en formato de tabla."] },
+  { "title":"02 · Blanco y negro / Verdaccio", "blurb":"Modelado de forma y valores como base clásica.", "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-curso-2.jpg", "price":"USD 79", "video":"https://www.youtube.com/watch?v=dQw4w9WgXcQ", "specs":["Nivel del curso: principiante","Duración: 1~2 semanas en  5 módulos, cómo elegir una buena imagen, dibujo del boceto compartido, ejercicio de “Block in”, proyecto final.","Métodos: grisalla, verdaccio, escalas de valor","Extras: PDF de ejercicios + referencias imprimibles","Proyecto: el alumno pueda realizar un trabajo en pintura monocromática en donde aprenderá a pulir lo que se denomina valor y volumen, es una manera de aprender a SIMPLIFICAR, aplicar los valores más importantes para luego fundirlos"] },
+  { "title":"03 · Retrato con paleta de Apeles/Zorn", "blurb":"Carnaciones creíbles con paleta reducida.", "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/curso-3.jpg", "price":"USD 99", "video":"https://www.youtube.com/watch?v=dQw4w9WgXcQ", "specs":["Nivel del curso: principiante, intermedio","Duración: 1 semana en  5 módulos, materiales, paleta de apeles, dibujo, práctica de pintura, pintura final","Proyecto: aprender a trabajar con una paleta reducida, de 4 colores; ayuda al alumno a entrenar el ojo para reconocer colores, trabajar de manera más ordenada y da un vistazo al tipo de pintura tradicional más antigua así como empezar a ver la teoría del color aplicada. Lo más valioso es aprender cómo se relaciona cada color al lado de otro. Aproximación a la temperatura de los colores en la rueda, cálidos y fríos (más en relación entre ellos)"] },
+  { "title":"04 · Veladuras y empastes", "blurb":"Profundidad óptica y texturas controladas.", "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-curso-4.jpg", "price":"USD 89", "video":"https://www.youtube.com/watch?v=dQw4w9WgXcQ", "specs":["Nivel del curso: intermedio","Duración: 2~3 semanas en 4 módulos, elección de colores, glazing, scumbling, detalles finales","Proyecto: utilizando la pintura monocromática del curso anterior o alguna que hayas hecho, aprenderás a darle profundidad a tus pinturas mediante el “glazing” y “scumbling”, términos que iremos adquiriendo, y el proyecto final el cual será completar a color la pintura monocromática que decida hacer cada alumno. "] },
+  { "title":"05 · Paleta restringida universal", "blurb":"Aplicable a figura, paisaje y naturaleza muerta.", "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-curso-5.jpg", "price":"USD 79", "video":"https://www.youtube.com/watch?v=dQw4w9WgXcQ", "specs":["Nivel del curso: intermedio, avanzad","Duración: 4 semanas en 5 módulos, materiales, ordena tu paleta, dibujo, explora los colores, proyecto fina","Proyecto: lograr una pintura realista de 0 a 100%, aplicando todos los conocimientos adquiridos o sabidos hasta el momento, utilizando una paleta de colores estricta y controlada para lograr el mayor parecido con la imagen de referencia. Que el alumno pueda lograra llevar sus ideas al canvas sin miedo, con un nivel de profesionalidad y calidad"] },
+  { "title":"06 · Fondos abstractos como base figurativa - (PRÓXIMAMENTE)", "blurb":"Craquelados y pouring como soporte conceptual.", "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-curso-6.jpg", "price":"Próximamente", "video":"https://www.youtube.com/watch?v=dQw4w9WgXcQ", "specs":["Nivel del curso: principiante, intermedio","Duración estimada: 1~2 h en  5 módulos + 1 PDF complementario","Técnicas: incompatibilidades controladas, vertidos/Pouring","Proyecto: Guiar al estudiante en la creación de un fondo abstracto con alto impacto visual y profundidad material, mediante técnicas de craquelado natural y vertido controlado, que pueda ser utilizado como obra autónoma o como base expresiva para una pintura figurativa. Se busca comprender el equilibrio entre caos y composición, explorando la interacción entre textura, color y contexto"] }
+]
   }
   </script>
 
@@ -218,7 +210,7 @@
       </div>
     </section>
 
-    <!-- ===== ÚNICA sección SOBRE MÍ ===== -->
+    <!-- ===== ÚNICA sección SOBRE MÍ (texto completo + imagen + links + lista + suscripción) ===== -->
     <section id="sobre" class="section" style="background:#fff">
       <div class="container two">
         <div>
@@ -270,7 +262,7 @@
         </div>
       </div>
     </section>
-    <!-- ===== Fin SOBRE MÍ ===== -->
+    <!-- ===== Fin ÚNICA sección SOBRE MÍ ===== -->
 
     <section id="contacto" class="section">
       <div class="container two">
@@ -310,7 +302,7 @@
     </div>
   </div>
 
-  <!-- Modal general (info cursos / carrito) -->
+  <!-- Modal Info/Compra -->
   <div class="modal" id="courseModal" aria-hidden="true" role="dialog" aria-modal="true">
     <div class="modal-card">
       <div class="modal-head">
@@ -324,12 +316,71 @@
   <!-- FAB Carrito -->
   <button id="cartFab" class="cart-fab cart-empty">🛒 Carrito (0)</button>
 
-  <!-- ===== Términos y Condiciones (sin cambios) ===== -->
+  <!-- ===== Términos y Condiciones (dejado tal cual) ===== -->
   <section id="terminos" class="section">
     <div class="container">
       <h2>Términos y Condiciones</h2>
-      <!-- (contenido igual que antes) -->
-      <!-- ...lo mantuve igual para no extender demasiado... -->
+      <h3>Encargos</h3>
+      <p>
+        Al realizar un pedido, usted se compromete a adquirir los productos al precio anunciado e indicado en el sitio web (o al precio indicado por el artista en caso de pedidos de medidas o características especiales) en el momento de la compra o reserva en la lista de espera. Por favor, compruebe el tamaño y precio del retrato antes de realizar la reserva.<br>
+        Vaalkideon RN se reserva el derecho de rechazar la venta de las obras de arte a cualquier persona, por cualquier motivo y en cualquier momento.
+      </p>
+      <h3>Derechos de autor</h3>
+      <p>
+        El artista se reserva todos los derechos de explotación y reproducción de todo su trabajo producido, incluyendo layouts digitales e impresiones. Esto significa que puede crear tarjetas, impresiones o calendarios, entre otros, usando la imagen del retrato encargado. Además, se reserva el derecho de publicar la imagen del mismo en su página web y redes sociales.  
+        Cualquier representación y/o imagen de la obra de arte publicada por el cliente, incluyendo, pero no limitado, a redes sociales, revistas o libros, debe incluir la atribución de crédito a Valkideon RN y el título de la obra de arte.
+      </p>
+      <h3>Pagos dentro de Argentina</h3>
+      <p>
+        Los cupos en la agenda de Valkideon RN se reservan con un pago inicial del 30% del valor. Al encargar un retrato, el valor del mismo deberá estar saldado en su totalidad como máximo a los 90 días o antes de comenzar a trabajar en la obra (lo que ocurra primero). Con cada pago realizado, luego de ser verificado el mismo, el artista generará el recibo de pago correspondiente.  
+        En caso de no completar los pagos en las fechas correspondientes, habrá 30 días adicionales para saldar el monto pendiente. En caso de no haber abonado el monto pendiente en el plazo adicional, se actualizará el valor total del retrato al precio de lista de ese momento.
+      </p>
+      <p><strong>Medios de pago disponibles:</strong><br>
+        • Transferencia bancaria, depósito o efectivo.<br>
+        • Mercado Pago (abonando el interés correspondiente según cada banco/tarjeta).
+      </p>
+      <h3>Pagos internacionales</h3>
+      <p>
+        Los cupos en la agenda de Valkideon RN se reservan con un pago inicial del 30% del valor. El valor total del cuadro deberá estar saldado antes de comenzar a trabajar en la obra en la fecha agendada. Si llegada la fecha no se encuentra saldado el total del cuadro, habrá un plazo adicional de 30 días para abonar el monto pendiente. Si pasados los 30 días adicionales éste no se encuentra abonado, tu retrato se moverá al final de la lista de espera.  
+        Con cada pago realizado, luego de ser verificado, se generará el recibo correspondiente.
+      </p>
+      <p><strong>Medios de pago disponibles:</strong><br>
+        • PayPal (+6% de recargo por comisión).<br>
+        • Western Union (comisión según sucursal/país).
+      </p>
+      <h3>Lista de espera</h3>
+      <p>
+        El artista suele tener una lista de espera y la demora varía según la época del año y cantidad de retratos agendados. Al hacer el encargo, se te proporcionará una fecha aproximada de entrega, que podrá variar.  
+        Para fechas específicas (ej: cumpleaños), el artista hará lo posible por entregarlo en tiempo, pero no se garantiza.
+      </p>
+      <h3>Envíos dentro de Argentina</h3>
+      <p>
+        La mayoría de los retratos tardan 3–5 días en llegar a su destino. Se envían de forma segura a la dirección indicada al encargar. Si es un regalo, puede enviarse directamente al destinatario.
+      </p>
+      <h3>Envíos internacionales</h3>
+      <p>
+        Suelen tardar entre 5–8 días hábiles. El valor incluye envío a domicilio, pero no impuestos ni costos de nacionalización, que corren por cuenta del cliente.
+      </p>
+      <h3>Modificaciones en el diseño</h3>
+      <p>
+        Cualquier modificación tras el encargo tendrá recargos adicionales. Ejemplos: agregar flores, ropa, otra persona ,una mascota, fondo detallado, etc.  
+        Estas modificaciones implican más tiempo y materiales, y se moverán al final de la lista de espera. Una vez aprobado el layout digital y comenzado el cuadro, no se podrán realizar modificaciones.
+      </p>
+      <h3>Modificaciones en la medida</h3>
+      <p>
+        • Si se cambia a una medida más grande, debe abonarse la diferencia y el retrato se moverá al final de la lista.<br>
+        • Si se cambia a una medida más chica, la diferencia no es reembolsable (queda a favor de otro encargo futuro).
+      </p>
+      <h3>Cancelaciones</h3>
+      <p>
+        Hay 7 días de garantía desde el primer pago para cancelar y obtener reembolso total. Pasado ese plazo, el dinero será retenido por tiempo/gestión/gastos.  
+        Si el artista ya comenzó a pintar, el dinero será retenido por tiempo, materiales y demás costos.
+      </p>
+      <h3>Daños o extravíos</h3>
+      <p>
+        Los retratos se embalan cuidadosamente. Si sufren daños en el envío, el cliente debe notificar dentro de 48 horas con foto. Podrá hacerse un nuevo retrato (ubicado al final de la lista). Costos de envío corren por el cliente.  
+        En caso de extravío, se aplican los términos de la empresa de mensajería.
+      </p>
     </div>
   </section>
   <!-- ===== Fin Términos y Condiciones ===== -->
@@ -369,20 +420,11 @@
       </article>`).join('');
     $('#artworks').innerHTML = artworksHTML;
 
-    // LIGHTBOX (con descripción editable)
+    // LIGHTBOX
     const lb = $('#lightbox'), lbImg = $('#lightbox-img'), lbCap = $('#lightbox-caption'), lbClose = $('#lightbox-close');
     function openLightbox(art){
       lbImg.src = art.img; lbImg.alt = art.title;
-      lbCap.innerHTML = `
-        <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
-          <div><strong>${art.title}</strong></div>
-          <div class="muted" style="display:flex;gap:12px;font-size:14px">
-            <span>${art.size}</span><span>·</span><span>${art.status}</span>${art.price?`<span>·</span><span>${art.price}</span>`:''}
-          </div>
-        </div>
-        <div style="margin-top:8px;font-size:14px;color:#333">
-          <em>informacion a editar por valkideon</em>
-        </div>`;
+      lbCap.innerHTML = `<div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"><div><strong>${art.title}</strong></div><div class="muted" style="display:flex;gap:12px;font-size:14px"><span>${art.size}</span><span>·</span><span>${art.status}</span>${art.price?`<span>·</span><span>${art.price}</span>`:''}</div></div>`;
       lb.classList.add('open'); lb.setAttribute('aria-hidden','false');
     }
     function closeLightbox(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); lbImg.src=''; }
@@ -402,6 +444,7 @@
     const priceNumber = c => (typeof c.priceNum==='number') ? c.priceNum : ((c.price||'').match(/([0-9]+(?:[.,][0-9]+)?)/)?.[1]?.replace(',','.')*1 || 0);
 
     function courseCardHTML(c, idx){
+      const buyBtn = isSoon(c) ? '' : `<button class="btn" onclick="openCourseBuy(${idx})">Comprar</button>`;
       return `
         <article class="panel" style="overflow:hidden">
           ${c.thumb?`<img src="${c.thumb}" alt="${c.title}" style="width:100%;height:auto;border-radius:12px;margin-bottom:10px" onerror="this.style.border='2px solid red';this.alt='(no se encontró: ${c.thumb})'">`:''}
@@ -410,23 +453,21 @@
           <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px">
             <span class="badge">${c.price || 'Consultar'}</span>
             <div style="display:flex;gap:8px;flex-wrap:wrap">
-              <button class="btn ghost" onclick="openCourseInfo(${idx})">Más info</button>
+              <button class="btn ghost" onclick="openCourseInfo(${idx})">Más info</button>${buyBtn}
             </div>
           </div>
-          <div style="margin-top:8px">
-            <button class="btn-buy" onclick="addToCart(${idx})" ${isSoon(c)?'disabled':''}>Add to cart</button>
-          </div>
+          <div style="margin-top:8px"><button class="btn" onclick="addToCart(${idx})" ${isSoon(c)?'disabled':''}>Agregar al carrito</button></div>
           ${ytEmbed(c.video)}
         </article>`;
     }
     document.getElementById('courses').innerHTML = (data.courses||[]).map(courseCardHTML).join('');
 
-    // ABOUT image
+    // ABOUT image (se inyecta en el ÚNICO #about-image-wrap)
     if (data.about?.image){
       document.getElementById('about-image-wrap').innerHTML = `<img src="${data.about.image}" alt="Valkideon RN — sobre mí" style="border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)" onerror="this.style.border='2px solid red'; this.alt='(no se encontró: ${data.about.image})'">`;
     }
 
-    // ===== Modal genérico =====
+    // ===== Modal Cursos =====
     const mCourse = $('#courseModal'), mTitle = $('#courseModalTitle'), mBody = $('#courseModalBody'), mClose = $('#courseModalClose');
     function openCourseModal(){ mCourse.classList.add('open'); mCourse.setAttribute('aria-hidden','false'); }
     function closeCourseModal(){ mCourse.classList.remove('open'); mCourse.setAttribute('aria-hidden','true'); mBody.innerHTML = ''; }
@@ -437,15 +478,39 @@
       const c = data.courses[idx];
       mTitle.textContent = c.title;
       const specs = (c.specs||[]).map(s=>`<li>${s}</li>`).join('');
+      const buyBtn = isSoon(c) ? '' : `<button class="btn" onclick="openCourseBuy(${idx})">Comprar</button>`;
       mBody.innerHTML = `
+        ${c.thumb?`<img src="${c.thumb}" alt="${c.title}" style="width:100%;height:auto;border-radius:12px;margin-bottom:10px">`:''}
         <div class="muted">${c.blurb}</div>
         <div style="margin-top:8px"><span class="badge">${c.price || 'Consultar'}</span></div>
         ${specs?`<ul class="specs">${specs}</ul>`:''}
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
-          <button class="btn-buy" onclick="addToCart(${idx})" ${isSoon(c)?'disabled':''}>Add to cart</button>
+          <button class="btn" onclick="addToCart(${idx})" ${isSoon(c)?'disabled':''}>Agregar al carrito</button>
+          ${buyBtn}
           <button class="btn ghost" onclick="closeCourseModal()">Cerrar</button>
         </div>
         <p class="muted" style="margin-top:8px;font-size:12px">* Los importes finales pueden incluir impuestos/recargos de plataforma (+intereses).</p>`;
+      openCourseModal();
+    }
+
+    window.openCourseBuy = function(idx){
+      const c = data.courses[idx], p = data.payments || {}, b = p.bank || {};
+      mTitle.textContent = `Comprar — ${c.title}`;
+      mBody.innerHTML = `
+        <div class="muted">Elegí tu método de pago. <span class="badge" style="margin-left:6px">${c.price || ''}</span></div>
+        <div class="paygrid">
+          <div class="panel"><strong>PayPal</strong><p class="muted" style="margin-top:6px">Para pagos internacionales.</p><a class="btn" href="${p.paypal || '#'}" target="_blank" rel="noopener">Pagar con PayPal</a><p class="copy">Se abre en nueva pestaña.</p></div>
+          <div class="panel"><strong>Mercado Pago</strong><p class="muted" style="margin-top:6px">Para Argentina.</p><a class="btn" href="${p.mercadopago || '#'}" target="_blank" rel="noopener">Pagar con MP</a><p class="copy">Link de pago directo.</p></div>
+          <div class="panel"><strong>Transferencia bancaria</strong><p class="muted" style="margin-top:6px">Datos de cuenta</p>
+            <div style="font-size:14px;line-height:1.35">
+              <div><b>Titular:</b> ${b.titular || '-'}</div><div><b>Banco:</b> ${b.banco || '-'}</div><div><b>Alias:</b> ${b.alias || '-'}</div><div><b>CBU:</b> ${b.cbu || '-'}</div><div><b>Cuenta:</b> ${b.cuenta || '-'}</div>
+            </div><p class="copy">Enviá el comprobante por email o IG.</p></div>
+        </div>
+        <p class="muted" style="margin-top:12px">${p.nota || ''}</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
+          <button class="btn ghost" onclick="openCourseInfo(${idx})">Volver a info</button>
+          <button class="btn" onclick="closeCourseModal()">Cerrar</button>
+        </div>`;
       openCourseModal();
     }
 
@@ -473,25 +538,16 @@
       return {est: amount, pct:0, fixed:0};
     }
 
-    function fmtUSD(n){ return `USD ${n.toFixed(2)}`; }
-    function fmtARS(n){ return `ARS ${Math.round(n).toLocaleString('es-AR')}`; }
-    function getFxRate(){
-      const fx = +((data.payments||{}).fx_rate||0);
-      return fx>0 ? fx : null; // override manual si querés
-    }
-
     function openCart(){
       const p = data.payments || {};
       mTitle.textContent = 'Tu carrito';
       const rows = cart.map((item,i)=>`
-        <tr><td>${item.title}</td><td>${fmtUSD(item.price)}</td><td><button class="btn ghost" onclick="removeFromCart(${i})">Quitar</button></td></tr>`).join('')
+        <tr><td>${item.title}</td><td>USD ${item.price.toFixed(2)}</td><td><button class="btn ghost" onclick="removeFromCart(${i})">Quitar</button></td></tr>`).join('')
         || `<tr><td colspan="3" class="muted">Tu carrito está vacío.</td></tr>`;
 
       const {subtotal, discount, total} = totals();
       const paypal = withFees(total,'paypal'), mp = withFees(total,'mp');
-
-      const fx = getFxRate();
-      const estARS = fx ? mp.est*fx : null;
+      const hasPromo = cart.length>=3 && discount>0;
 
       mBody.innerHTML = `
         <div class="muted">Promo activa: <strong>3×2</strong> (se bonifica el de menor valor <em>por cada trío</em>).</div>
@@ -499,22 +555,20 @@
           <thead><tr><th>Curso</th><th>Precio</th><th></th></tr></thead>
           <tbody>${rows}</tbody>
           <tfoot>
-            <tr><td>Subtotal</td><td colspan="2">${fmtUSD(subtotal)}</td></tr>
-            <tr><td>Descuento 3×2</td><td colspan="2">${discount>0?`− ${fmtUSD(discount)}`:'—'}</td></tr>
-            <tr><td><strong>Total (sin intereses)</strong></td><td colspan="2"><strong>${fmtUSD(total)}</strong></td></tr>
-            <tr><td>Estimado con PayPal (+${paypal.pct||0}%):</td><td colspan="2"><strong>${fmtUSD(paypal.est)}</strong></td></tr>
-            <tr><td>Estimado con Mercado Pago (+${mp.pct||0}%${mp.fixed?` + USD ${Number(mp.fixed).toFixed(2)} fijo`:''}):</td><td colspan="2"><strong>${fmtUSD(mp.est)}${estARS?` · aprox. ${fmtARS(estARS)}`:''}</strong></td></tr>
+            <tr><td>Subtotal</td><td colspan="2">USD ${subtotal.toFixed(2)}</td></tr>
+            <tr><td>Descuento 3×2</td><td colspan="2">${hasPromo?`− USD ${discount.toFixed(2)}`:'—'}</td></tr>
+            <tr><td><strong>Total (sin intereses)</strong></td><td colspan="2"><strong>USD ${total.toFixed(2)}</strong></td></tr>
+            <tr><td>Estimado con PayPal (+${paypal.pct||0}%):</td><td colspan="2"><strong>USD ${paypal.est.toFixed(2)}</strong></td></tr>
+            <tr><td>Estimado con Mercado Pago (+${mp.pct||0}%${mp.fixed?` + USD ${Number(mp.fixed).toFixed(2)} fijo`:''}):</td><td colspan="2"><strong>USD ${mp.est.toFixed(2)}</strong></td></tr>
           </tfoot>
         </table>
         <p class="muted" style="margin-top:8px">* Los importes finales pueden incluir impuestos/recargos de plataforma (+intereses). Pueden variar según operadora/tarjeta.</p>
         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
-          <button class="btn-buy" onclick="checkout('paypal')">Pagar con PayPal (${fmtUSD(paypal.est)})</button>
-          <button class="btn-buy" onclick="checkout('mp')">Pagar con Mercado Pago</button>
+          <button class="btn" onclick="checkout('paypal')">Pagar con PayPal (USD ${paypal.est.toFixed(2)})</button>
+          <button class="btn" onclick="checkout('mp')">Pagar con Mercado Pago (USD ${mp.est.toFixed(2)})</button>
           <button class="btn ghost" onclick="checkout('bank')">Datos de transferencia</button>
           <button class="btn ghost" onclick="closeCourseModal()">Cerrar</button>
-        </div>
-        ${!p.mp_worker ? `<p class="muted" style="margin-top:6px;font-size:12px">Tip: para que Mercado Pago cobre el <b>total exacto</b> del carrito (incluida la promo), habilitá el modo “preferencia dinámica” agregando <code>payments.mp_worker</code> en el JSON.</p>` : ``}
-      `;
+        </div>`;
       openCourseModal();
     }
     window.openCart = openCart;
@@ -528,57 +582,34 @@
     window.removeFromCart = function(i){ cart.splice(i,1); refreshFab(); openCart(); }
 
     function openInNew(u){ window.open(u,'_blank','noopener'); }
-
-    // === Checkout ===
-    async function createMpPreference(items, back_urls, fxRate){
-      const worker = (data.payments||{}).mp_worker;
-      if(!worker) return null;
-      const payload = {
-        items: items.map(it => ({ title: it.title, qty: 1, price_usd: it.price })),
-        back_urls,
-        fx_rate: fxRate || null
-      };
-      const res = await fetch(worker, {
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body: JSON.stringify(payload)
-      });
-      if(!res.ok) throw new Error('No se pudo crear la preferencia de MP');
-      return await res.json(); // { init_point, id, total_ars, total_usd, fx_rate }
-    }
-
-    window.checkout = async function(method){
-      const p = data.payments || {}, b = p.bank || {};
-      const {total} = totals();
+    window.checkout = function(method){
+      const {total} = totals(); const p = data.payments || {}, b = p.bank || {};
       if(total<=0){ alert('Tu carrito está vacío.'); return; }
-
       if(method==='paypal'){
-        const amt = withFees(total,'paypal').est;
-        const base = (p.paypal||'').replace(/\/$/,'');
+        const amt = withFees(total,'paypal').est; const base = (p.paypal||'').replace(/\/$/,'');
         if(!base){ alert('Configura tu enlace de PayPal en data.payments.paypal'); return; }
         openInNew(`${base}/${amt.toFixed(2)}`);
       }else if(method==='mp'){
-        try{
-          const fx = getFxRate();
-          const pref = await createMpPreference(cart, {
-            success: location.origin + '/gracias.html?mp=ok',
-            failure: location.origin + '/gracias.html?mp=failure',
-            pending: location.origin + '/gracias.html?mp=pending'
-          }, fx);
-          if(pref && pref.init_point){ openInNew(pref.init_point); return; }
-        }catch(err){ console.warn('MP Worker error:', err); }
-        if(!p.mercadopago){
-          alert('Configura tu enlace de Mercado Pago en data.payments.mercadopago');
-          return;
-        }
+        const amt = withFees(total,'mp').est;
+        if(!p.mercadopago){ alert('Configura tu enlace de Mercado Pago en data.payments.mercadopago'); return; }
+        mBody.innerHTML += `<div class="panel" style="margin-top:10px"><strong>Mercado Pago</strong><p class="muted" style="margin-top:6px">Importe estimado: <b>USD ${amt.toFixed(2)}</b> (o equivalente en ARS).</p><a class="btn" href="${p.mercadopago}" target="_blank" rel="noopener">Abrir link</a><p class="copy">Si el link es de monto fijo, coordinamos diferencia por transferencia o nuevo link.</p></div>`;
         openInNew(p.mercadopago);
       }else if(method==='bank'){
         const amt = total;
         mBody.innerHTML += `<div class="panel" style="margin-top:10px"><strong>Transferencia bancaria</strong>
           <div style="font-size:14px;line-height:1.35;margin-top:6px">
             <div><b>Titular:</b> ${b.titular||'-'}</div><div><b>Banco:</b> ${b.banco||'-'}</div><div><b>Alias:</b> ${b.alias||'-'}</div><div><b>CBU:</b> ${b.cbu||'-'}</div><div><b>Cuenta:</b> ${b.cuenta||'-'}</div>
-          </div><p class="muted" style="margin-top:6px">Importe a transferir: <b>${fmtUSD(amt)}</b> (o equivalente). Enviá el comprobante por email o IG.</p></div>`;
+          </div><p class="muted" style="margin-top:6px">Importe a transferir: <b>USD ${amt.toFixed(2)}</b> (o equivalente). Enviá el comprobante por email o IG.</p></div>`;
       }
+    }
+
+    // Inserta botón extra en modal de info al vuelo
+    const _openCourseInfo = window.openCourseInfo;
+    window.openCourseInfo = function(idx){
+      _openCourseInfo(idx);
+      const c = data.courses[idx]; if(!c || isSoon(c)) return;
+      const addBtn = document.createElement('button'); addBtn.className='btn'; addBtn.style.marginLeft='8px'; addBtn.textContent='Agregar al carrito'; addBtn.onclick=()=>addToCart(idx);
+      const btnWrap = mBody.querySelector('div[style*="gap:8px"]') || mBody; btnWrap.insertBefore(addBtn, btnWrap.firstChild);
     }
 
     // FAB
@@ -588,3 +619,4 @@
   </script>
 </body>
 </html>
+
