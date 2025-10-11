@@ -544,6 +544,9 @@ const artworksHTML = (data.artworks||[]).map((a,idx) => `
       <div class="muted" style="font-size:13px;margin-top:4px">${a.price || ''}</div>
     </div>
   </article>`).join('');
+    document.getElementById('artworks').innerHTML = artworksHTML;
+// o si preferís con tu helper $:
+// $('#artworks').innerHTML = artworksHTML;
 
     // LIGHTBOX
     const lb = $('#lightbox'), lbImg = $('#lightbox-img'), lbCap = $('#lightbox-caption'), lbClose = $('#lightbox-close');
