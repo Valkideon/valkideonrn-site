@@ -7,7 +7,6 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-3P50VPPW71');
 </script>
   <meta charset="utf-8" />
@@ -174,14 +173,7 @@
 .hp-wrap{position:absolute;left:-9999px;top:-9999px;height:0;overflow:hidden}
 
   </style>
-<!-- Google tag (gtag.js) - GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX', { send_page_view: true });
-</script>
+
 
   <!-- Meta Pixel Code -->
 <script>
@@ -190,7 +182,7 @@ n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
 n.push=n; n.loaded=!0; n.version='2.0'; n.queue=[]; t=b.createElement(e); t.async=!0;
 t.src=v; s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', 'YOUR_PIXEL_ID');
+fbq('init', '2235231596900974');
 fbq('track', 'PageView');
 </script>
 <!-- End Meta Pixel Code -->
@@ -199,7 +191,7 @@ fbq('track', 'PageView');
 <body>
   <!-- Meta Pixel Noscript -->
 <noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"
+src="https://www.facebook.com/tr?id=2235231596900974&ev=PageView&noscript=1"
 /></noscript>
   <!-- EDITA SOLO ESTE JSON -->
   <script id="content" type="application/json">
@@ -669,20 +661,7 @@ const artworksHTML = (data.artworks||[]).map((a,idx) => `
       <em>${desc}</em>
     </div>`;
   lb.classList.add('open'); lb.setAttribute('aria-hidden','false');
-      <!-- GA4: ver obra -->
-<script>
-  if (window.gtag) {
-    gtag('event', 'view_item', {
-      item_id: art.title,
-      item_name: art.title,
-      item_category: 'Obras',
-      item_variant: art.size || '',
-      value: 0,
-      currency: 'USD'
-    });
-  }
-</script>
-      // === Track ViewContent (obra) ===
+// Track vista de obra
 try {
   if (typeof fbq === 'function') {
     fbq('track', 'ViewContent', {
@@ -693,9 +672,16 @@ try {
     });
   }
 } catch(e){}
+
 try {
   if (typeof gtag === 'function') {
     gtag('event', 'view_item', {
+      item_id: art.title,
+      item_name: art.title,
+      item_category: 'Obras',
+      item_variant: art.size || '',
+      value: 0,
+      currency: 'USD',
       item_list_id: 'artworks',
       items: [{ item_name: art.title, item_category: 'Artwork' }]
     });
@@ -836,9 +822,20 @@ try { if (typeof gtag === 'function') gtag('event', 'begin_checkout'); } catch(e
     window.addToCart = function(idx){
       const c = data.courses[idx]; if(!c || isSoon(c)) return;
       cart.push({ idx, title: c.title, price: priceNumber(c) });
-        <!-- GA4: add_to_cart -->
-<script>
-  if (window.gtag) {
+// Track AddToCart (curso)
+try {
+  if (typeof fbq === 'function') {
+    fbq('track', 'AddToCart', {
+      content_name: c.title,
+      content_category: 'Course',
+      value: priceNumber(c),
+      currency: 'USD'
+    });
+  }
+} catch(e){}
+
+try {
+  if (typeof gtag === 'function') {
     gtag('event', 'add_to_cart', {
       currency: 'USD',
       value: priceNumber(c),
@@ -851,26 +848,6 @@ try { if (typeof gtag === 'function') gtag('event', 'begin_checkout'); } catch(e
       }]
     });
   }
-</script>
-      // === Track AddToCart (curso) ===
-try {
-  if (typeof fbq === 'function') {
-    fbq('track', 'AddToCart', {
-      content_name: c.title,
-      content_category: 'Course',
-      value: priceNumber(c),
-      currency: 'USD'
-    });
-  }
-} catch(e){}
-try {
-  if (typeof gtag === 'function') {
-    gtag('event', 'add_to_cart', {
-      currency: 'USD',
-      value: priceNumber(c),
-      items: [{ item_name: c.title, item_category: 'Course' }]
-    });
-  }
 } catch(e){}
       refreshFab(); cartBtn.classList.remove('cart-empty');
       cartBtn.animate([{transform:'scale(1)'},{transform:'scale(1.08)'},{transform:'scale(1)'}],{duration:280});
@@ -878,59 +855,86 @@ try {
     window.removeFromCart = function(i){ cart.splice(i,1); refreshFab(); openCart(); }
 
     function openInNew(u){ window.open(u,'_blank','noopener'); }
-    window.checkout = function(method){
-      const {total} = totals(); const p = data.payments || {}, b = p.bank || {};
-      if(total<=0){ alert('Tu carrito está vacío.'); return; }
-      if(method==='paypal'){
-        const amt = withFees(total,'paypal').est; const base = (p.paypal||'').replace(/\/$/,'');
-        if(!base){ alert('Configura tu enlace de PayPal en data.payments.paypal'); return; }
-        openInNew(`${base}/${amt.toFixed(2)}`);
-        <!-- GA4: begin_checkout + add_payment_info (PayPal) -->
-<script>
-  if (window.gtag) {
-    gtag('event', 'begin_checkout', { currency:'USD', value: total });
-    gtag('event', 'add_payment_info', {
-      currency: 'USD',
-      value: amt,
-      payment_type: 'PayPal'
-    });
-  }
-</script>
-      }else if(method==='mp'){
-        const amt = withFees(total,'mp').est;
-        if(!p.mercadopago){ alert('Configura tu enlace de Mercado Pago en data.payments.mercadopago'); return; }
-        mBody.innerHTML += `<div class="panel" style="margin-top:10px"><strong>Mercado Pago</strong><p class="muted" style="margin-top:6px">Importe estimado: <b>USD ${amt.toFixed(2)}</b> (o equivalente en ARS).</p><a class="btn" href="${p.mercadopago}" target="_blank" rel="noopener">Abrir link</a><p class="copy">Si el link es de monto fijo, coordinamos diferencia por transferencia o nuevo link.</p></div>`;
-        openInNew(p.mercadopago);
-        <!-- GA4: begin_checkout + add_payment_info (MP) -->
-<script>
-  if (window.gtag) {
-    gtag('event', 'begin_checkout', { currency:'USD', value: total });
-    gtag('event', 'add_payment_info', {
-      currency: 'USD',
-      value: amt,
-      payment_type: 'Mercado Pago'
-    });
-  }
-</script>
-      }else if(method==='bank'){
-        const amt = total;
-        <!-- GA4: begin_checkout + add_payment_info (Transferencia) -->
-<script>
-  if (window.gtag) {
-    gtag('event', 'begin_checkout', { currency:'USD', value: total });
-    gtag('event', 'add_payment_info', {
-      currency: 'USD',
-      value: amt,
-      payment_type: 'Transferencia'
-    });
-  }
-</script>
-        mBody.innerHTML += `<div class="panel" style="margin-top:10px"><strong>Transferencia bancaria</strong>
-          <div style="font-size:14px;line-height:1.35;margin-top:6px">
-            <div><b>Titular:</b> ${b.titular||'-'}</div><div><b>Banco:</b> ${b.banco||'-'}</div><div><b>Alias:</b> ${b.alias||'-'}</div><div><b>CBU:</b> ${b.cbu||'-'}</div><div><b>Cuenta:</b> ${b.cuenta||'-'}</div>
-          </div><p class="muted" style="margin-top:6px">Importe a transferir: <b>USD ${amt.toFixed(2)}</b> (o equivalente). Enviá el comprobante por email o IG.</p></div>`;
+  window.checkout = function(method){
+  const {total} = totals();
+  const p = data.payments || {}, b = p.bank || {};
+  if (total <= 0) { alert('Tu carrito está vacío.'); return; }
+
+  if (method === 'paypal') {
+    const amt = withFees(total, 'paypal').est;
+    const base = (p.paypal || '').replace(/\/$/, '');
+    if (!base) { alert('Configura tu enlace de PayPal en data.payments.paypal'); return; }
+
+    openInNew(`${base}/${amt.toFixed(2)}`);
+
+    // GA4: begin_checkout + add_payment_info (PayPal)
+    try { if (typeof gtag === 'function') gtag('event', 'begin_checkout', { currency:'USD', value: total }); } catch(e){}
+    try {
+      if (typeof gtag === 'function') {
+        gtag('event', 'add_payment_info', {
+          currency: 'USD',
+          value: amt,
+          payment_type: 'PayPal'
+        });
       }
-    }
+    } catch(e){}
+
+  } else if (method === 'mp') {
+    const amt = withFees(total, 'mp').est;
+    if (!p.mercadopago) { alert('Configura tu enlace de Mercado Pago en data.payments.mercadopago'); return; }
+
+    mBody.innerHTML += `
+      <div class="panel" style="margin-top:10px">
+        <strong>Mercado Pago</strong>
+        <p class="muted" style="margin-top:6px">Importe estimado: <b>USD ${amt.toFixed(2)}</b> (o equivalente en ARS).</p>
+        <a class="btn" href="${p.mercadopago}" target="_blank" rel="noopener">Abrir link</a>
+        <p class="copy">Si el link es de monto fijo, coordinamos diferencia por transferencia o nuevo link.</p>
+      </div>`;
+    openInNew(p.mercadopago);
+
+    // GA4: begin_checkout + add_payment_info (Mercado Pago)
+    try { if (typeof gtag === 'function') gtag('event', 'begin_checkout', { currency:'USD', value: total }); } catch(e){}
+    try {
+      if (typeof gtag === 'function') {
+        gtag('event', 'add_payment_info', {
+          currency: 'USD',
+          value: amt,
+          payment_type: 'Mercado Pago'
+        });
+      }
+    } catch(e){}
+
+  } else if (method === 'bank') {
+    const amt = total;
+
+    // GA4: begin_checkout + add_payment_info (Transferencia)
+    try { if (typeof gtag === 'function') gtag('event', 'begin_checkout', { currency:'USD', value: total }); } catch(e){}
+    try {
+      if (typeof gtag === 'function') {
+        gtag('event', 'add_payment_info', {
+          currency: 'USD',
+          value: amt,
+          payment_type: 'Transferencia'
+        });
+      }
+    } catch(e){}
+
+    mBody.innerHTML += `
+      <div class="panel" style="margin-top:10px">
+        <strong>Transferencia bancaria</strong>
+        <div style="font-size:14px;line-height:1.35;margin-top:6px">
+          <div><b>Titular:</b> ${b.titular || '-'}</div>
+          <div><b>Banco:</b> ${b.banco || '-'}</div>
+          <div><b>Alias:</b> ${b.alias || '-'}</div>
+          <div><b>CBU:</b> ${b.cbu || '-'}</div>
+          <div><b>Cuenta:</b> ${b.cuenta || '-'}</div>
+        </div>
+        <p class="muted" style="margin-top:6px">
+          Importe a transferir: <b>USD ${amt.toFixed(2)}</b> (o equivalente). Enviá el comprobante por email o IG.
+        </p>
+      </div>`;
+  }
+}
 
 
 
@@ -994,6 +998,10 @@ function validateAndLock(form, kind) {
       alert('Contenido sospechoso detectado. Por favor, revisa tu mensaje.');
       return false;
     }
+
+      // Track lead (suscripción o contacto) cuando pasa validaciones
+try { if (typeof fbq === 'function') fbq('track','Lead'); } catch(e){}
+try { if (typeof gtag === 'function') gtag('event','generate_lead', {method: kind}); } catch(e){}
 
     if (btn) btn.disabled = true;
     return true;
