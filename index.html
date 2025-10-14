@@ -669,6 +669,19 @@ const artworksHTML = (data.artworks||[]).map((a,idx) => `
       <em>${desc}</em>
     </div>`;
   lb.classList.add('open'); lb.setAttribute('aria-hidden','false');
+      <!-- GA4: ver obra -->
+<script>
+  if (window.gtag) {
+    gtag('event', 'view_item', {
+      item_id: art.title,
+      item_name: art.title,
+      item_category: 'Obras',
+      item_variant: art.size || '',
+      value: 0,
+      currency: 'USD'
+    });
+  }
+</script>
       // === Track ViewContent (obra) ===
 try {
   if (typeof fbq === 'function') {
@@ -823,6 +836,22 @@ try { if (typeof gtag === 'function') gtag('event', 'begin_checkout'); } catch(e
     window.addToCart = function(idx){
       const c = data.courses[idx]; if(!c || isSoon(c)) return;
       cart.push({ idx, title: c.title, price: priceNumber(c) });
+        <!-- GA4: add_to_cart -->
+<script>
+  if (window.gtag) {
+    gtag('event', 'add_to_cart', {
+      currency: 'USD',
+      value: priceNumber(c),
+      items: [{
+        item_id: c.title,
+        item_name: c.title,
+        item_category: 'Cursos',
+        price: priceNumber(c),
+        quantity: 1
+      }]
+    });
+  }
+</script>
       // === Track AddToCart (curso) ===
 try {
   if (typeof fbq === 'function') {
@@ -856,13 +885,46 @@ try {
         const amt = withFees(total,'paypal').est; const base = (p.paypal||'').replace(/\/$/,'');
         if(!base){ alert('Configura tu enlace de PayPal en data.payments.paypal'); return; }
         openInNew(`${base}/${amt.toFixed(2)}`);
+        <!-- GA4: begin_checkout + add_payment_info (PayPal) -->
+<script>
+  if (window.gtag) {
+    gtag('event', 'begin_checkout', { currency:'USD', value: total });
+    gtag('event', 'add_payment_info', {
+      currency: 'USD',
+      value: amt,
+      payment_type: 'PayPal'
+    });
+  }
+</script>
       }else if(method==='mp'){
         const amt = withFees(total,'mp').est;
         if(!p.mercadopago){ alert('Configura tu enlace de Mercado Pago en data.payments.mercadopago'); return; }
         mBody.innerHTML += `<div class="panel" style="margin-top:10px"><strong>Mercado Pago</strong><p class="muted" style="margin-top:6px">Importe estimado: <b>USD ${amt.toFixed(2)}</b> (o equivalente en ARS).</p><a class="btn" href="${p.mercadopago}" target="_blank" rel="noopener">Abrir link</a><p class="copy">Si el link es de monto fijo, coordinamos diferencia por transferencia o nuevo link.</p></div>`;
         openInNew(p.mercadopago);
+        <!-- GA4: begin_checkout + add_payment_info (MP) -->
+<script>
+  if (window.gtag) {
+    gtag('event', 'begin_checkout', { currency:'USD', value: total });
+    gtag('event', 'add_payment_info', {
+      currency: 'USD',
+      value: amt,
+      payment_type: 'Mercado Pago'
+    });
+  }
+</script>
       }else if(method==='bank'){
         const amt = total;
+        <!-- GA4: begin_checkout + add_payment_info (Transferencia) -->
+<script>
+  if (window.gtag) {
+    gtag('event', 'begin_checkout', { currency:'USD', value: total });
+    gtag('event', 'add_payment_info', {
+      currency: 'USD',
+      value: amt,
+      payment_type: 'Transferencia'
+    });
+  }
+</script>
         mBody.innerHTML += `<div class="panel" style="margin-top:10px"><strong>Transferencia bancaria</strong>
           <div style="font-size:14px;line-height:1.35;margin-top:6px">
             <div><b>Titular:</b> ${b.titular||'-'}</div><div><b>Banco:</b> ${b.banco||'-'}</div><div><b>Alias:</b> ${b.alias||'-'}</div><div><b>CBU:</b> ${b.cbu||'-'}</div><div><b>Cuenta:</b> ${b.cuenta||'-'}</div>
