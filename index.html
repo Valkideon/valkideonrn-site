@@ -710,8 +710,7 @@ try {
     <article class="panel" style="overflow:hidden">
       ${c.thumb?`<img src="${c.thumb}" alt="${c.title}" style="width:100%;height:auto;border-radius:12px;margin-bottom:10px" onerror="this.style.border='2px solid red';this.alt='(no se encontró: ${c.thumb})'">`:''}
       <strong style="display:block;font-size:18px">${c.title}</strong>
-      <div class="muted" style="margin-top:6px; white-space:pre-line">${c.blurb}</div>
-
+      <div class="muted" style="margin-top:6px">${c.blurb}</div>
       <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px">
         <span class="badge">${c.price || 'Consultar'}</span>
         <div style="display:flex;gap:8px;flex-wrap:wrap">
