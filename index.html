@@ -265,7 +265,7 @@ src="https://www.facebook.com/tr?id=2235231596900974&ev=PageView&noscript=1"
 {"title":"Shankar ca Chandra","size":"70×50 cm","status":"Vendida","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/shankar-ca-chandra.jpg","desc":"Shankar ca Chandra, Ella fue una tigresa, pero no de la selva, sino del espíritu. Su rugido era silencio; su fuerza, la calma de quien ya ha conocido el fuego. Los pueblos la temían y la veneraban; decían que su andar dejaba rastros de oro y ceniza. Entre joyas y telas sagradas, guarda una mirada lunar: fría, antigua, llena de memoria. Shankar no caza… observa. Domina la oscuridad como quien ha danzado en ella. Su belleza no adorna, protege. Su poder no destruye, recuerda quién fue."},
 {"title":"Copia de Young  Pegasus (por @JulioArt)","size":"Óleo 30×40 cm","status":"No disponible","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/copia-de-young-pegasus.jpg","desc":"Copia de la obra Young Pegasus del artista JulioArt en Ig. En esta obra pude practicar una de las técnicas mas antiguas de pintura, el temple de yema, que consiste en aglutinar pigmentos en yema de huevo, para este proyecto incluso imprime (prepare) la tabla de madera tal como lo hacían los antiguos maestros, como indican los escritos de Cennino Cennini; fue una actividad increíblemente enriquecedora. En la mitología griega, el Pegaso nace de la sangre de Medusa (quien fue violada por Poseidón en venganza a la diosa Atenea quien había ganado la competencia para ser la regente de la ciudad de Atenas) una vez que Perseo corta su cabeza."}
 ],
-"coursesPromoVideo": "https://youtu.be/H8rpLpXhxV4" 
+"coursesPromoVideo": "https://youtu.be/H8rpLpXhxV4",
 "courses": [   
   { "title":"01 · Preparación del lienzo", "blurb":"Soportes, imprimaciones.", "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-preparacion-lienzo.jpg", "price":"PRÓXIMAMENTE", "video":"https://youtu.be/Kxz9AI5EfWs", "specs":["Nivel del curso: principiante","Duración: 1 semana en 4 módulos: Materiales, fórmulas, preparación de bastidor entelado, preparación de bastidor en tabla","Materiales: gesso sotile, imprimaciones magra y grasa, colas, selladores","Tipo de recursos PDF complementarios: listas de materiales, plantillas, esquemas, etc.","Proyecto: el alumno terminará el curso pudiendo armar sus propios bastidores, ya sea en formato entelados o en formato de tabla."] },
   { "title":"02 · Blanco y negro / Verdaccio", "blurb":"Modelado de forma y valores como base clásica.", "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-curso-2.jpg", "price":"PRÓXIMAMENTE", "video":"https://youtu.be/3JStHjvJ8wU", "specs":["Nivel del curso: principiante","Duración: 1~2 semanas en  5 módulos, cómo elegir una buena imagen, dibujo del boceto compartido, ejercicio de “Block in”, proyecto final.","Métodos: grisalla, verdaccio, escalas de valor","Extras: PDF de ejercicios + referencias imprimibles","Proyecto: el alumno pueda realizar un trabajo en pintura monocromática en donde aprenderá a pulir lo que se denomina valor y volumen, es una manera de aprender a SIMPLIFICAR, aplicar los valores más importantes para luego fundirlos"] },
@@ -768,15 +768,7 @@ try {
     const isSoon = c => /PRÓXIMAMENTE|Próximamente/i.test(c.price||'');
     const priceNumber = c => (typeof c.priceNum==='number') ? c.priceNum : ((c.price||'').match(/([0-9]+(?:[.,][0-9]+)?)/)?.[1]?.replace(',','.')*1 || 0);
 
-    <script>
-  function ytEmbedURL(url){
-    if(!url) return '';
-    const m = url.match(/(?:v=|youtu\.be\/)([A-Za-z0-9_-]{6,})/);
-    const id = m ? m[1] : null;
-    return id ? `https://www.youtube.com/embed/${id}` : '';
-  }
-</script>
-    
+      
     function courseCardHTML(c, idx){
   return `
     <article class="panel" style="overflow:hidden">
