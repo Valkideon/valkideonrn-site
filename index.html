@@ -730,6 +730,15 @@ try {
     const isSoon = c => /PRÓXIMAMENTE|Próximamente/i.test(c.price||'');
     const priceNumber = c => (typeof c.priceNum==='number') ? c.priceNum : ((c.price||'').match(/([0-9]+(?:[.,][0-9]+)?)/)?.[1]?.replace(',','.')*1 || 0);
 
+    <script>
+  function ytEmbedURL(url){
+    if(!url) return '';
+    const m = url.match(/(?:v=|youtu\.be\/)([A-Za-z0-9_-]{6,})/);
+    const id = m ? m[1] : null;
+    return id ? `https://www.youtube.com/embed/${id}` : '';
+  }
+</script>
+    
     function courseCardHTML(c, idx){
   return `
     <article class="panel" style="overflow:hidden">
