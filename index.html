@@ -1,14 +1,25 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3P50VPPW71"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-3P50VPPW71');
-  </script>
+ <!-- Google tag (gtag.js) con Consent Mode v2 -->
+<script>
+  // Consent por defecto (sin consentimiento) – debe ir ANTES de cargar gtag.js
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ dataLayer.push(arguments); }
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'analytics_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'functionality_storage': 'granted',
+    'security_storage': 'granted'
+  });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3P50VPPW71"></script>
+<script>
+  gtag('js', new Date());
+  gtag('config', 'G-3P50VPPW71');
+</script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Valkideon RN — Pintura clásica, mirada contemporánea</title>
@@ -22,6 +33,7 @@
   <meta name="theme-color" content="#22c55e">
   <!-- SEO general -->
   <link rel="canonical" href="https://valkideonrn.com/">
+  <meta name="google-site-verification" content="TU_TOKEN_AQUI">
   <!-- Alternates -->
   <link rel="alternate" href="https://valkideonrn.com/" hreflang="es-AR">
   <link rel="alternate" href="https://valkideonrn.com.ar/" hreflang="es-AR">
@@ -254,8 +266,10 @@
           </div>
         </div>
         <div class="hero-img">
-          <img id="heroimg" alt="Hero Valkideon"
-               onerror="this.style.border='2px solid red'; this.alt='(no se encontró: ' + JSON.parse(document.getElementById('content').textContent).hero.image + ')'">
+         <img id="heroimg" alt="Hero Valkideon" fetchpriority="high"
+     width="1200" height="800"
+     onerror="this.style.border='2px solid red'; this.alt='(no se encontró: ' + JSON.parse(document.getElementById('content').textContent).hero.image + ')'">
+
         </div>
       </div>
     </section>
@@ -528,8 +542,8 @@ Valkideon RN se reserva el derecho de rechazar la venta de las obras de arte a c
     /* ===== ARTWORKS ===== */
     const artworksHTML = (data.artworks||[]).map((a,idx) => `
       <article class="card" data-art="${idx}" itemscope itemtype="https://schema.org/VisualArtwork">
-        <img src="${a.img}" alt="${a.title}" itemprop="image"
-             onerror="this.style.border='2px solid red'; this.alt='(no se encontró: ${a.img})'">
+        <img src="${a.img}" alt="${a.title}" itemprop="image" loading="lazy" width="800" height="1000"
+     onerror="this.style.border='2px solid red'; this.alt='(no se encontró: ${a.img})'">
         <div class="body">
           <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
             <strong itemprop="name">${a.title}</strong><span class="badge" itemprop="artworkSurface">${a.status}</span>
@@ -580,8 +594,24 @@ Valkideon RN se reserva el derecho de rechazar la venta de las obras de arte a c
       lb.setAttribute('aria-hidden','false');
 
       try { if (typeof fbq === 'function') fbq('track', 'ViewContent', {content_name: art.title, content_category: 'Artwork', content_ids: [art.title], content_type: 'product'}); } catch(e){}
-      try { if (typeof gtag === 'function') gtag('event', 'view_item', {item_id: art.title, item_name: art.title, item_category: 'Obras', item_variant: art.size || '', value: 0, currency: 'USD', item_list_id: 'artworks', items: [{ item_name: art.title, item_category: 'Artwork' }]}); } catch(e){}
-    }
+try {
+  if (typeof gtag === 'function') {
+    const price = (art.price||'').match(/([0-9]+(?:[.,][0-9]+)?)/)?.[1]?.replace(',','.')*1 || 0;
+    gtag('event', 'view_item', {
+      currency: 'USD',
+      value: price,
+      item_list_id: 'artworks',
+      items: [{
+        item_id: art.title,         // ideal: un ID/slug único
+        item_name: art.title,
+        item_category: 'Obras',
+        item_variant: art.size || '',
+        price: price,
+        quantity: 1
+      }]
+    });
+  }
+} catch(e){}    }
 
     function closeLightbox(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); lbImg.src=''; }
 
@@ -613,7 +643,10 @@ Valkideon RN se reserva el derecho de rechazar la venta de las obras de arte a c
     function courseCardHTML(c, idx){
       return `
         <article class="panel" style="overflow:hidden">
-          ${c.thumb?`<img src="${c.thumb}" alt="${c.title}" style="width:100%;height:auto;border-radius:12px;margin-bottom:10px" onerror="this.style.border='2px solid red';this.alt='(no se encontró: ${c.thumb})'">`:''}
+          ${c.thumb?`<img src="${c.thumb}" alt="${c.title}" loading="lazy" width="800" height="450"
+     style="width:100%;height:auto;border-radius:12px;margin-bottom:10px"
+     onerror="this.style.border='2px solid red';this.alt='(no se encontró: ${c.thumb})'">
+`:''}
           <strong style="display:block;font-size:18px">${c.title}</strong>
           <div class="muted" style="margin-top:6px">${c.blurb||''}</div>
           <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px">
@@ -689,7 +722,23 @@ Valkideon RN se reserva el derecho de rechazar la venta de las obras de arte a c
 
     function openCart(){
       try { if (typeof fbq === 'function') fbq('track', 'InitiateCheckout'); } catch(e){}
-      try { if (typeof gtag === 'function') gtag('event', 'begin_checkout'); } catch(e){}
+      try {
+  if (typeof gtag === 'function') {
+    const items = cart.map(i => ({
+      item_id: i.title,
+      item_name: i.title,
+      item_category: 'Cursos',
+      price: i.price,
+      quantity: 1
+    }));
+    const totalsData = totals();
+    gtag('event', 'begin_checkout', {
+      currency: 'USD',
+      value: totalsData.total || 0,
+      items
+    });
+  }
+} catch(e){}
 
       const p = data.payments || {};
       mTitle.textContent = 'Tu carrito';
@@ -763,7 +812,19 @@ Valkideon RN se reserva el derecho de rechazar la venta de las obras de arte a c
         if (!base) { alert('Configura tu enlace de PayPal en data.payments.paypal'); return; }
         openInNew(`${base}/${amt.toFixed(2)}`);
         try { if (typeof gtag === 'function') gtag('event', 'begin_checkout', { currency:'USD', value: total }); } catch(e){}
-        try { if (typeof gtag === 'function') gtag('event', 'add_payment_info', { currency: 'USD', value: amt, payment_type: 'PayPal' }); } catch(e){}
+        try {
+  if (typeof gtag === 'function') {
+    const items = cart.map(i => ({
+      item_id: i.title, item_name: i.title, item_category: 'Cursos', price: i.price, quantity: 1
+    }));
+    gtag('event', 'add_payment_info', {
+      currency: 'USD',
+      value: amt,
+      payment_type: 'PayPal',
+      items
+    });
+  }
+} catch(e){}
 
       } else if (method === 'mp') {
         const amt = withFees(total, 'mp').est;
@@ -777,12 +838,35 @@ Valkideon RN se reserva el derecho de rechazar la venta de las obras de arte a c
           </div>`;
         openInNew(p.mercadopago);
         try { if (typeof gtag === 'function') gtag('event', 'begin_checkout', { currency:'USD', value: total }); } catch(e){}
-        try { if (typeof gtag === 'function') gtag('event', 'add_payment_info', { currency: 'USD', value: amt, payment_type: 'Mercado Pago' }); } catch(e){}
-
+try {
+  if (typeof gtag === 'function') {
+    const items = cart.map(i => ({
+      item_id: i.title, item_name: i.title, item_category: 'Cursos', price: i.price, quantity: 1
+    }));
+    gtag('event', 'add_payment_info', {
+      currency: 'USD',
+      value: amt,
+      payment_type: 'Mercado Pago',
+      items
+    });
+  }
+} catch(e){}
       } else if (method === 'bank') {
         const amt = total;
         try { if (typeof gtag === 'function') gtag('event', 'begin_checkout', { currency:'USD', value: total }); } catch(e){}
-        try { if (typeof gtag === 'function') gtag('event', 'add_payment_info', { currency: 'USD', value: amt, payment_type: 'Transferencia' }); } catch(e){}
+       try {
+  if (typeof gtag === 'function') {
+    const items = cart.map(i => ({
+      item_id: i.title, item_name: i.title, item_category: 'Cursos', price: i.price, quantity: 1
+    }));
+    gtag('event', 'add_payment_info', {
+      currency: 'USD',
+      value: amt,
+      payment_type: 'Transferencia',
+      items
+    });
+  }
+} catch(e){}
         mBody.innerHTML += `
           <div class="panel" style="margin-top:10px">
             <strong>Transferencia bancaria</strong>
