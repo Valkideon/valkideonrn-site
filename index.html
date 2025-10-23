@@ -266,9 +266,9 @@
           </div>
         </div>
         <div class="hero-img">
-         <img id="heroimg" alt="Hero Valkideon" fetchpriority="high"
-     width="1200" height="800"
-     onerror="this.style.border='2px solid red'; this.alt='(no se encontró: ' + JSON.parse(document.getElementById('content').textContent).hero.image + ')'">
+         <img id="heroimg" alt="Hero Valkideon"
+       onerror="this.style.border='2px solid red'; this.alt='(no se encontró: ' + JSON.parse(document.getElementById('content').textContent).hero.image + ')'">
+
 
         </div>
       </div>
@@ -542,8 +542,9 @@ Valkideon RN se reserva el derecho de rechazar la venta de las obras de arte a c
     /* ===== ARTWORKS ===== */
     const artworksHTML = (data.artworks||[]).map((a,idx) => `
       <article class="card" data-art="${idx}" itemscope itemtype="https://schema.org/VisualArtwork">
-        <img src="${a.img}" alt="${a.title}" itemprop="image" loading="lazy" width="800" height="1000"
+       <img src="${a.img}" alt="${a.title}" itemprop="image"
      onerror="this.style.border='2px solid red'; this.alt='(no se encontró: ${a.img})'">
+
         <div class="body">
           <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
             <strong itemprop="name">${a.title}</strong><span class="badge" itemprop="artworkSurface">${a.status}</span>
