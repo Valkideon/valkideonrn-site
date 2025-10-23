@@ -1,1 +1,878 @@
-<!doctype html> <html lang="es"> <head> <!-- Google tag (gtag.js) --> <script async src="https://www.googletagmanager.com/gtag/js?id=G-3P50VPPW71"></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-3P50VPPW71'); </script> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1" /> <title>Valkideon RN — Pintura clásica, mirada contemporánea</title> <meta name="description" content="Obras originales, ediciones limitadas y cursos de técnica pictórica." /> <meta name="color-scheme" content="light" /> <!-- FAVICON --> <link rel="icon" href="/favicon.ico" sizes="any"> <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"> <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"> <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"> <meta name="theme-color" content="#22c55e"> <!-- SEO general --> <link rel="canonical" href="https://valkideonrn.com/"> <!-- Alternates (solo si usás ambos dominios) --> <link rel="alternate" href="https://valkideonrn.com/" hreflang="es-AR"> <link rel="alternate" href="https://valkideonrn.com.ar/" hreflang="es-AR"> <link rel="alternate" href="https://valkideonrn.com/" hreflang="x-default"> <meta property="og:type" content="website"> <meta property="og:site_name" content="Valkideon RN"> <meta property="og:title" content="Valkideon RN — Pintura clásica, mirada contemporánea"> <meta property="og:description" content="Obras originales, ediciones limitadas y cursos de técnica pictórica."> <meta property="og:url" content="https://valkideonrn.com/"> <meta property="og:image" content="https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/artista.jpg"> <meta property="og:locale" content="es_AR"> <meta name="twitter:card" content="summary_large_image"> <meta name="twitter:title" content="Valkideon RN — Pintura clásica, mirada contemporánea"> <meta name="twitter:description" content="Obras originales, ediciones limitadas y cursos de técnica pictórica."> <meta name="twitter:image" content="https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/artista.jpg"> <!-- Organization JSON-LD --> <script type="application/ld+json"> { "@context":"https://schema.org", "@type":"Organization", "name":"Valkideon RN", "url":"https://valkideonrn.com/", "logo":"https://valkideonrn.com/apple-touch-icon.png", "sameAs":["https://instagram.com/valkideon"] } </script> <style> :root{ --bg:#faf9f7;--fg:#1f1f1e;--muted:#6b6b6b;--line:#e6e3de;--card:#ffffff;--accent:#a08a5a;--accent-2:#c7b589; --rad:18px;--rad-lg:22px;--shadow:0 6px 24px rgba(0,0,0,.06); } *{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"} img{max-width:100%;display:block} a{color:inherit;text-decoration:none} .container{max-width:1120px;margin:0 auto;padding:0 20px} .nav{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(8px);background:rgba(255,255,255,.7);border-bottom:1px solid var(--line)} .nav-inner{height:64px;display:flex;align-items:center;justify-content:space-between} .nav a:hover{opacity:.8} .btn{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--fg);padding:.7rem 1rem;border-radius:999px;transition:.2s;box-shadow:0 2px 0 rgba(0,0,0,.05);cursor:pointer} .btn.ghost{border-color:transparent} .btn:hover{transform:translateY(-1px)} /* Botón de compra único (verde) */ .btn-buy{border:1px solid transparent;background:#22c55e;color:#fff;font-weight:700} .btn-buy:hover{background:#16a34a} .btn-buy:focus{outline:none;box-shadow:0 0 0 4px #bbf7d0} .eyebrow{text-transform:uppercase;letter-spacing:.28em;font-size:11px;color:var(--muted)} .hero{padding:72px 0;border-bottom:1px solid var(--line)} .hero-grid{display:grid;gap:24px;grid-template-columns:1.1fr 1fr} .hero-img{border-radius:var(--rad-lg);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)} h1{font-size:42px;line-height:1.15;margin:.3em 0} h2{font-size:32px;margin:.2em 0 .4em} .muted{color:var(--muted)} .section{padding:48px 0;border-top:1px solid var(--line)} .cards{display:grid;gap:16px;grid-template-columns:repeat(12,1fr)} .card{grid-column:span 3;background:var(--card);border:1px solid var(--line);border-radius:var(--rad);overflow:hidden;box-shadow:var(--shadow);cursor:zoom-in} .card .body{padding:12px 14px} .badge{font-size:12px;border:1px solid var(--line);background:#f3f1ed;padding:2px 8px;border-radius:999px} .two{display:grid;gap:28px;grid-template-columns:1fr 1fr} .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:20px} .footer{padding:40px 0;border-top:1px solid var(--line)} .input, textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:#fff} .grid-3{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)} .press{display:flex;flex-wrap:wrap;gap:12px;color:var(--muted);font-size:14px} /* Lightbox obras (layout 2 columnas: imagen izquierda, texto derecha) */ .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.8);display:none;align-items:center;justify-content:center;z-index:1000;padding:24px} .lightbox.open{display:flex} /* -> GRID de dos columnas */ .lightbox-inner{ max-width:min(96vw,1400px); max-height:90vh; position:relative; display:grid; grid-template-columns: 1.1fr 1fr; gap:18px; align-items:start; } /* imagen a la izquierda, escalada dentro del alto disponible */ .lightbox-img{ width:100%; max-height:90vh; object-fit:contain; border-radius:12px; box-shadow:var(--shadow); background:#111; } /* descripción a la derecha, con scroll si hay mucho texto */ .lightbox-caption{ max-height:90vh; overflow:auto; background:#fff; border-radius:12px; padding:16px 18px; color:#222; border:1px solid var(--line); } /* botón cerrar */ .lightbox-close{ position:absolute; top:-10px; right:-10px; background:#fff; border:1px solid var(--line); width:36px; height:36px; border-radius:999px; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:var(--shadow) } .lightbox-close:hover{transform:translateY(-1px)} /* responsive: en pantallas chicas vuelve a 1 columna */ @media (max-width: 960px){ .lightbox-inner{ grid-template-columns: 1fr; } .lightbox-caption{ max-height: calc(90vh - 20px); } } /* Modal Info/Compra cursos */ .modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;z-index:1200;padding:24px} .modal.open{display:flex} .modal-card{max-width:760px;width:100%;background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:20px} .modal-head{display:flex;gap:12px;justify-content:space-between;align-items:center;margin-bottom:6px} .modal-title{font-weight:700} .modal-close{border:1px solid var(--line);background:#fff;width:34px;height:34px;border-radius:999px;display:flex;align-items:center;justify-content:center;cursor:pointer} .specs{margin:10px 0 0 0;padding-left:18px} .specs li{margin:6px 0} .paygrid{display:grid;gap:12px;grid-template-columns:1fr 1fr 1fr;margin-top:12px} .paygrid .panel{padding:14px} .copy{font-size:12px;color:var(--muted);} /* Carrito flotante */ .cart-fab { position: fixed; right: 16px; bottom: 16px; z-index: 1300; border: 1px solid var(--fg); background:#fff; border-radius:999px; padding: .8rem 1.1rem; box-shadow: var(--shadow); cursor:pointer } .cart-empty { opacity:.6; pointer-events:none } .table{width:100%;border-collapse:collapse;margin-top:8px} .table th,.table td{border-top:1px solid var(--line);padding:8px;text-align:left;font-size:14px} .table tfoot td{font-weight:bold} @media (max-width: 960px){.hero-grid{grid-template-columns:1fr}.cards .card{grid-column:span 6}.two{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr}.nav-inner{gap:12px}} @media (max-width: 560px){.cards .card{grid-column:span 12}h1{font-size:34px}.paygrid{grid-template-columns:1fr}} /* === Modal de cursos solo con texto (oculta imágenes del modal) === */ #courseModal .modal-card img { display: none !important; } /* (opcional) por si hay mucho texto, que el modal pueda scrollear cómodo */ #courseModal .modal-card { max-height: 90vh; overflow: auto; } /* Honeypots invisibles (más robusto que display:none) */ .hp-wrap{position:absolute;left:-9999px;top:-9999px;height:0;overflow:hidden} </style> <!-- Meta Pixel Code --> <script> !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n; n.push=n; n.loaded=!0; n.version='2.0'; n.queue=[]; t=b.createElement(e); t.async=!0; t.src=v; s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '2235231596900974'); fbq('track', 'PageView'); </script> <!-- End Meta Pixel Code --> </head> <body> <!-- Meta Pixel Noscript --> <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2235231596900974&ev=PageView&noscript=1" /></noscript> <!-- EDITA SOLO ESTE JSON --> <script id="content" type="application/json"> { "site": { "title": "Valkideon RN — Pintura clásica, mirada contemporánea", "tagline": "Pintura clásica, mirada contemporánea", "email": "info@valkideonrn.com", "instagram": "https://instagram.com/valkideon", "domain_main": "valkideonrn.com", "domain_ar": "valkideonrn.com.ar" }, "payments": { "paypal": "https://www.paypal.me/valkideonrn", "mercadopago": "https://mpago.la/XXXX-ENLACE", "fees": { "pass_fees_to_buyer": true, "paypal_pct": 6.0, "mp_pct": 9.0, "mp_fixed": 0.0 }, "bank": { "alias": "VALKIDEONRN.AHORA.ARTE", "cbu": "0000000000000000000000", "banco": "Banco Ejemplo S.A.", "titular": "Gonzalo Manuel Romero Nigro", "cuenta": "CA$ 0000-000000/0" }, "nota": "Los importes finales pueden incluir impuestos/recargos de plataforma (+intereses). Enviá el comprobante por email o Instagram para liberar el acceso al curso." }, "hero": { "eyebrow": "Figurativo · Academicismo · Hiperrealismo", "headline": "Pintura clásica, mirada contemporánea", "text": "Obras originales, ediciones limitadas y cursos de técnica pictórica.", "image": "https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/artista.jpg" }, "about": { "image": "https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/artistas.jpg" }, "artworks": [ {"title":"Fénix","size":"Óleo 70×100 cm","status":"Disponible","price":"USD 1500","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/fenix.JPG","desc":"Fénix, El ave que tras su muerte es consumida en llamas y de sus propias cenizas renace para comenzar de nuevo el ciclo de la vida. La rosa en su mano nos indica que ya no esta conectada a la tierra y por lo tanto esta más próxima a su muerte, pero esto no le quita su belleza. El collar de oro como símbolo de eternidad y una insignia de nobleza en el centro."}, {"title":"Rapto de Perséfone","size":"70×100 cm","status":"Disponible","price":"USD 1000","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/rapto-de-persefone.jpg","desc":"Rapto de Perséfone, es una representación de la diosa hija de Deméter y Zeus, que un día es raptada por Hades el dios que se ocupa del inframundo y le promete que sera un buen esposo, hay diferentes versiones en que Perséfone come voluntariamente las semillas de granada que la obligaban a permanecer la mitad del año en el inframundo creyendole a Hades y convirtiéndose en la reina del inframundo, a mi particularmente me gusta más esta versión ya que Hades fuera de la television y cine es un dios bastante benevolente. Por esto la represente como una mujer segura, con un pasado oscuro pero con una mirada llena de vida... pero ese pasado no es tan facil de olvidar y a veces uno se cierra."}, {"title":"Nacimiento de África","size":"30×40 cm","status":"Disponible","price":"USD 1500","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/nacimiento-de-africa.jpg","desc":"Nacimiento de África, muestra el momento en que una joven, África, queda embarazada de una diosa, por eso su vientre esta hinchado. El ambiente parece un poco oscuro, quizás por la naturaleza del embarazo, pero se trata de un dios en el vientre de la joven, por eso mismo se la ve bañada en una lluvia de luz espesa que cae sobre su cuerpo desnudo haciendo desaparecer las telas oscuras que la envolvian sobre el altar."}, {"title":"Prometheus’ Hope","size":"30×40 cm","status":"Disponible","price":"USD 450","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/prometheus-hope.jpg","desc":"Según la mitología griega, Prometeo robó el fuego de los dioses para entregárselo a los hombres. Un acto de desafío y compasión que le costó un castigo eterno, pero que encendió la chispa del progreso y la esperanza en la humanidad. En esta obra, la mujer no es solo portadora de la llama: ella es la llama. Desnuda, cruda, sin artificios, arde con la misma fuerza indomable que Prometeo regaló al mundo. Su cuerpo y su fuego se funden en un mismo lenguaje, recordándonos que toda luz nace del riesgo y la rebelión."}, {"title":"Oiran Hinako","size":"70×100 cm","status":"Disponible","price":"Consultar","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/oiran-hinako.jpg","desc":"Oiran Hinako, En el Japón antiguo, las Oiran no eran simples cortesanas. Eran mujeres instruidas en el arte, la música y la conversación; guardianas del refinamiento y del deseo elevado. Hinako encarna esa memoria: la del cuerpo que no se entrega, sino que dialoga con el alma. Su belleza no se ofrece, se comparte. Cada rosa que la envuelve es una huella de las vidas que rozó con dulzura y poder. No hay culpa en su mirada, solo consciencia. Porque ser Oiran era también ser espejo: del deseo, del arte, y de la fragilidad humana de amar lo efímero."}, {"title":"Templanza","size":"150×150 cm","status":"Disponible","price":"USD 2000","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/templanza.jpg","desc":"Templanza, Ella está rodeada de espinas. A sus lados, dos rosas violetas evocan la memoria de la madre y del padre, presencias que ya no están, pero aún florecen en su silencio. El entorno es oscuro, denso, casi hostil; sin embargo, pequeñas luces doradas asoman entre la sombra, como destellos que le recuerdan que aún hay reflejo, aún hay alma. Por ahora las rosas la lastiman, pero un día crecerán en rosales altos y poderosos, y cuando eso ocurra, ella también elevará la mirada. Comprenderá que es una de ellas: una flor nacida de la adversidad, destinada a mirar hacia el sol incluso en la noche más profunda."}, {"title":"Juicio de Afrodita","size":"70×100 cm","status":"Disponible","price":"USD 1200","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/juicio-de-afrodita.jpg","desc":"Juicio de Afrodita, la diosa de la belleza se revela desnuda, en un estado de pureza despojada de artificios, como todos llegamos y nos vamos de este mundo. Su presencia no es la de una deidad intocable: aparece atada de manos y cubierta por una máscara, pero las cadenas que la atan no son ajenas: son los juicios que aprendió a creer propios. La posibilidad de quitar la máscara y volver a verse sin miedo parecen estar al alcance de sus manos. No es prisionera de los otros, sino del reflejo que ellos dejaron en ella. Podría liberarse cuando lo desee, pero elige permanecer. Porque sabe que la verdadera libertad no está en huir del juicio, sino en habitarlo sin perder el alma. Esta elección pictórica desmantela la ilusión de la verdad inmediata, recordándonos que toda primera mirada está velada, incompleta, condicionada por filtros que impiden abarcar la totalidad. El espectador se enfrenta entonces a una paradoja: aquello que parece evidente se transforma en incógnita. La máscara impide el juicio directo, y las ataduras, más que un símbolo de sometimiento, evocan la posibilidad de una plegaria, como si las manos de la diosa custodiaran en secreto la llave que podría liberarla. En un mundo donde la apariencia gobierna y las primeras impresiones dictan sentencias, esta obra subvierte la inmediatez del veredicto. Afrodita no es aquí la vencedora del mito, sino la encarnación de la pregunta: ¿cómo juzgar lo que apenas alcanzamos a entrever? Afrodita lleva una máscara, no para ocultarse, sino porque el mundo solo sabe mirar la superficie. Detrás de ella, la diosa y la mujer conviven, juzgadas por miradas que confunden la carne con el alma."}, {"title":"Juicio de Gaia","size":"70×100 cm","status":"Disponible","price":"USD 1200","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/juicio-de-gaia.jpg","desc":"Juicio de Gaia, es una obra que intenta reflejar el ego del hombre. Gaia siendo la representación de la tierra, y Hombre siendo humus, una capa superior de la tierra, a eso se refiere la palabra hombre, significa que venimos de la tierra. Y la esfera de cristal es vista a lo largo de la historia del arte como una representación de los planetas, en general de la tierra. Aquí tenemos a la tierra sosteniendo a la tierra que le devuelve la mirada a la tierra de la tierra... Es un hermoso juego que intenta enseñar a la gente a como juzgar. Primero y principal uno debe ser capaz de emitir un juicio objetivo de sí mismo para recién poder juzgar al otro... pero incluso antes, debe darse cuenta que el otro... es uno mismo. Cuando juzgamos a alguien estamos viendo un reflejo de nuestro ser, es un juego intrincado que quise plasmar en la obra para generar conciencia de que nadie es digno de juzgar... ni siquiera a uno mismo."}, {"title":"Aluvida, Hija del Cosmos","size":"50×70 cm","status":"Disponible","price":"USD 600","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/aluvida-hija-del-cosmos.jpg","desc":"Aluvida, Hija del Cosmos, nació del ruido de las estrellas, cuando el universo aún recordaba su origen. Su espada no hiere: abre caminos entre dimensiones. Oxidada, marcada por el tiempo; no fue forjada para atacar, sino para contener. Su padre respira en silencio, disperso entre luces que no pueden tocarse, vulnerable en su inmensidad. Aluvida no pertenece al tiempo ni al género. En su armadura se mezclan polvo estelar y hierro terrenal; en su piel, la memoria de las primeras galaxias y huellas de mundos extinguidos, la memoria viva de todo lo que fue y será, la guardiana del equilibrio entre la materia y la llama interior. Su mirada es un eclipse: anuncia el fin, pero también el renacimiento."}, {"title":"Ashnan","size":"100×150 cm","status":"Disponible","price":"USD 1500","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/ashnan.jpg","desc":"Ashnan, es la diosa sumeria de los granos, de las cosechas y en esta obra decidí atribuirle también la fertilidad para acompañar con esta bella pose. En todas mis obras se refleja un deseo, un pensamiento o un sentimiento, una especie de pedido quizás, por eso siento que mis obras son capaces de conceder ciertos deseos o al menos de cambiar el estado de animo cuando las observo, quizas es mi forma de conectar."}, {"title":"Judith","size":"70×100 cm","status":"Disponible","price":"USD 850","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/judith.jpg","desc":"Judith, No hay cabeza que cortar cuando el enemigo ha sido el miedo. Su cuerpo, desnudo y luminoso, es el trofeo de su victoria silenciosa. El oro que la rodea no la adorna: la consagra. No mata, revela. Su fuerza no grita: respira, permanece, arde. Ella no huye del poder que habita en la belleza. Lo reclama. No hay espada. No hay sangre. Solo la calma después del acto. La victoria, esta vez, es ser."}, {"title":"Cólera de Hercules","size":"70×100 cm","status":"Disponible","price":"USD 1000","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/colera-de-hercules.jpg","desc":"Cólera de Hércules, refleja un momento cúspide en el mito del gran héroe griego. Hércules tuvo dos esposas a lo largo de su vida, Megara, la primera, tuvo un destino fatal junto a sus hijos a manos de su propio padre, el mismísimo Hércules... bajo un hechizo de la diosa Hera, enfurecida por las infidelidades de su marido Zeus, padre de Hércules. Bajo una cólera que enceguecio al héroe, éste asesino a su familia viéndolos como monstruos que atacaban la ciudad. Luego de algunos años busca la redención cumpliendo las conocidas 12 labores. La representación con los ojos tapados y ese grito mudo que igualmente se puede escuchar puede sugerir tanto el momento previo al acto terrible, cegado por la cólera como también el momento humillante tras ver lo que sus propias manos habían hecho... Me gusta pensar que esta obra es un video que transcurre en una sola imagen. Y bajo diferentes luces se revelan los colores o sentimientos atrapados en el pecho del héroe."}, {"title":"Esperanza","size":"50×70 cm","status":"Disponible","price":"USD 600","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/esperanza.jpg","desc":"Esperanza, es lo último que se pierde, pero a veces uno se encuentra tan profundo que la luz no llega, y en esos momentos puede que la mejor opción no sea encender una luz ya que no es agradable ver los alrededores y quiénes nos rodean. Subir las escaleras a ciegas puede ser la mejor opción. Pero la aureola de esta joven no es la típica que corona a un santo, muchas veces resulta ser que son los otros quienes escapan de nosotros que estamos cómodos en el fondo."}, {"title":"Princesa de Jade","size":"70×100 cm","status":"Disponible","price":"USD 800","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/princesa-de-jade.jpg","desc":"Princesa de Jade, es una representación de una joven, con el \"típico\" cuerpo deseado tanto por hombres como mujeres, es una representación de cómo a veces las mujeres son vistas como valiosos objetos, sin embargo aún estando en un ambiente explosivo de colores y situaciones diversas, en esta representación la princesa sabe muy bien cuál es su valor y por eso no tiene miedo de cruzar miradas al desnudo. Lo que se ve por fuera es lo que está dentro."}, {"title":"Hipnosis de Pitonisa","size":"120×120 cm","status":"Disponible","price":"USD 2000","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/hipnosis-de-pitonisa.jpg","desc":"Hipnosis de Pitonisa, fue uno de los primeros cuadros de la colección del 2022 y surgió a partir de un sueño que yo tuve, estaba en la antigua Grecia (no podía ser otro lugar) en la isla de Delfos y un oráculo me llevó a su tienda oscura y con ese movimiento se corrió el velo qué cubría su rostro para decirme el futuro que me esperaba si estaba dispuesto a atravesarlo ya que ese sería el pago por su servicio, y aquí estamos 2 años después, aún en la lucha pero siempre firmes! Sumando unos acercamientos a la mirada y a las texturas que componen lo que más llama la atención de esta obra."}, {"title":"Zalim of Ranthambore","size":"80×100 cm","status":"En proceso","price":"Consultar","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/Zalim-of-Ranthambore%20.jpg","desc":"Zalim of Ranthambore, Hay rugidos que no provienen de la garganta, sino del alma. Zalim, uno de los tigres más temidos —y a la vez más enigmáticos— de la reserva de Ranthambore, no fue solo una bestia de fuerza descomunal. Fue también un guardián improbable, una anomalía entre los suyos: uno de los pocos machos conocidos que adoptó y crió cachorros ajenos como si fueran propios. Lo vi en sueños, emergiendo entre la niebla, como si llevara consigo un linaje invisible. No era furia lo que transmitía, sino soberanía. Cada pincelada de esta obra intenta contener ese momento suspendido: cuando la fiera no ataca, pero tampoco perdona. Su mirada no es violencia: es ley. Su boca abierta no es amenaza: es sentencia.Estoy aún descubriéndolo, trazo a trazo. Pero su presencia ya se impone. Zalim no fue solo un tigre. Fue mito, fue excepción, fue espíritu salvaje con instinto de padre."}, {"title":"Lady in Red","size":"50×70 cm","status":"En proceso","price":"USD 1000","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/lady-in-red.jpg","desc":"Lady in Red, Sus manos, cubiertas de encaje, sostienen la hoja del juicio. La sangre no ha caído todavía, pero su presencia lo anuncia. En su serenidad hay fuego, en su fragilidad, poder. La pureza puede arder sin consumirse. Su vestido carmesí es un manto de fuego; ha aprendido que el sacrificio no siempre se impone: a veces se elige. La luz dibuja un halo sobre su cabeza, pero no es santidad, sino conciencia. sabe que toda pureza necesita una herida, y que la fe también sangra. El oro en su mirada no es reflejo: es memoria. De lo que perdió, de lo que ofreció, de lo que jamás volverá a entregar. Lady in Red no pertenece al tiempo. Es un instante detenido entre el fervor y el silencio."}, {"title":"Victoria alada Nike","size":"70×100 cm","status":"En proceso","price":"USD 1350","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/victoria-alada-nike.jpg","desc":"informacion a editar por valkideon"}, {"title":"Sigrund","size":"70×100 cm","status":"En proceso","price":"USD 1500","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/sigrund.jpg","desc":"Sigrund No nació para gobernar a la bestia, sino para recordarle su forma. El tigre no la obedece, la reconoce. Ambos beben de la misma fuente: el instinto que sabe amar sin miedo. El tigre, antiguo guardián del mundo salvaje, descansa bajo su voluntad serena. No por rendición, sino por respeto. Su fuerza no es furia, sino presencia. Los ojos del animal son los suyos en otro lenguaje, y en ese diálogo sin palabras el mundo recupera su equilibrio perdido. Sigrund es la frontera entre lo humano y lo eterno: la mujer que miró al abismo y vio en él a su propio compañero."}, {"title":"Poseidon","size":"100×190 cm","status":"En proceso","price":"Consultar","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/poseidon.jpg","desc":"informacion a editar por valkideon"}, {"title":"Baldr","size":"70×100 cm","status":"En proceso","price":"USD 1100","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/Baldr.jpg","desc":"informacion a editar por valkideon"}, {"title":"Isis","size":"50×70 cm","status":"En proceso","price":"Vendida","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/Isis.jpg","desc":"informacion a editar por valkideon"}, {"title":"Ánima","size":"100×190 cm","status":"En proceso","price":"USD 1800","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/angel-lindo.jpg","desc":"informacion a editar por valkideon"}, {"title":"Vestigium Virtūtis","size":"50×70 cm","status":"En proceso","price":"USD 1200","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/armadura-hombro.jpg","desc":"informacion a editar por valkideon"}, {"title":"Blue Lagoon","size":"80×100 cm","status":"En proceso","price":"USD 1500","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/blue-lagoon.jpg","desc":"informacion a editar por valkideon"}, {"title":"Flos Bellī","size":"30×40 cm","status":"En proceso","price":"Consultar","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/guerrera-china.jpg","desc":"informacion a editar por valkideon"}, {"title":"Candor Animae","size":"50×70 cm","status":"En proceso","price":"USD 1400","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/retrato-byn.jpg","desc":"informacion a editar por valkideon"}, {"title":"Enigma del Otoño","size":"40×40 cm","status":"En proceso","price":"Consultar","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/retrato-de-oto%C3%B1o.jpg","desc":"informacion a editar por valkideon"}, {"title":"Entre Oro y Sombra","size":"100×180 cm","status":"En proceso","price":"USD 2200","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/retrato-grande.jpg","desc":"informacion a editar por valkideon"}, {"title":"Ojo del Augurio","size":"30×30 cm","status":"Vendida","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/ojo-del-augurio.jpg","desc":"informacion a editar por valkideon"}, {"title":"Querubines","size":"30×40 cm","status":"Vendida","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/angeles-querubines.jpg","desc":"informacion a editar por valkideon"}, {"title":"Forjando Inicios","size":"30×40 cm","status":"Fundación MIDMAKO","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/forjando-inicios.jpg","desc":"informacion a editar por valkideon"}, {"title":"Medusa","size":"110×150 cm","status":"Fundación MIDMAKO","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/medusa.jpg","desc":"A medusa le negaron la posibilidad a elegir desde el principio, fue condicionada a la discapacidad, su transformación la desprovee de piernas, su piel se torna fétida, su mirada petrificante le evita la posibilidad del contacto humano, su condición social la terminó de llevar a la marginación y al aislamiento, convirtiéndola en un monstruo verdadero, despojada de su humanidad. Y al final de su trágica vida, al momento que nace el Pegaso, recién en ese momento la sociedad decide sacar provecho. De su muerte sacan el premio. Desde mi perspectiva y la enfermedad que estoy transitando, decidí “transferir” mi veneno interno a las serpientes de la obra para quedar libre del mismo; a diferencia de la pobre Medusa yo sí pude elegir."}, {"title":"Aurora","size":"150×150 cm","status":"Fundación MIDMAKO","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/aurora.jpg","desc":"Aurora, transmisora de paz y sanadora de mentes. Con un cálido abrazo nos invita a sumergirnos en la calma total, sin mirar lo que nos rodea y distrae. Como la canción patria de mi país dice, azul un ala del color del cielo, azul un ala del color del mar; Aurora baja con sus alas puras para purgarnos de todos nuestros \"demonios\". Y su cabeza coronada con dos dragones alados qué portan rubies que la acompañan y cuidan su mente para que permanezca en ese estado de paz. También se la observa como si estuviera en una pileta, peeo ella flota por las aguas del cosmos detrás de ella, fluyendo a través de todo y permitiendo a todo decir a través de ella manteniéndose impoluta."}, {"title":"Rachelle Rutherford","size":"50×70 cm","status":"Fundación MIDMAKO y KOTM Utah","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/rachelle.jpg","desc":"Rachelle Rutherford, presidenta de la fundación KIDS ON THE MOVE UTAH , quien se mueve sin cesar por causas humanitarias. Este encargo me llego por parte del museo de la discapacidad María Kodama y fue gracias a ellos que pude y puedo conocer a todas estas personas que apoyan esta causa tan noble. Elegí representarla con un fondo dorado a la hoja para evocar la eternidad del oro como simbologia. Y quise realizar esta imagen para darle vida al cuadro porque Rachelle es una persona que no elige a quien ayudar, sino que lo hace sin importarle quien está delante, por eso la bebe en este caso no se identifica visualmente como un único individuo."}, {"title":"Homenaje a Bruno","size":"40×30 cm","status":"Vendida","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/homenaje-a-bruno.jpg","desc":"Homenaje a Bruno, En la quietud de la materia, algo permanece. Este vaso, antiguo compañero de días simples, se ha vuelto altar discreto. Bruno lo llevaba consigo, como si dentro guardará el eco de su propio pulso. Ahora, vacío de uso, contiene lo que el cuerpo no puede retener: el gesto, la risa, la huella cálida de lo cotidiano. El tiempo lo quebró, pero también lo volvió sagrado. Cada grieta es un mapa del regreso imposible, cada marca, una forma de decir que el amor no desaparece: solo cambia de recipiente."}, {"title":"Hanami, Diosa de la Primavera","size":"100×150 cm","status":"Vendida","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/hanami-diosa-de-la-primavera.jpg","desc":"Hanami, Diosa de la primavera, Es una representación humana del florecimiento de los cerezos que dan una vista tan hermosa al paisaje Japonés. La inspiración para crear esta obra esta basada en un viaje que pude realizar en 2019, momento en que un ciclón hizo que el hanami se retrasara y no pudiese llegar a verlo, por lo cual la pintura es en parte una ofrenda para poder en algún momento poder volver a Japón y ser recibido por esta diosa."}, {"title":"Athena","size":"45×90 cm","status":"Vendida","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/athena.jpg","desc":"Athena o Atenea, la diosa griega de la sabiduría y la estrategia, representada en un atardecer previo al enfrentamiento a su hermano Poseidon para ver quién seria el protector de una ciudad sin nombre, culminando en la victoria de Atenea y posterior nombramiento de la ciudad como Athens o Atenas. Los ciudadanos eligieron a Atenea que les otorgo el olivo, que les daba madera, aceite y alimento. En el escudo vemos la cabeza cercenada de Medusa, fiel seguidora de Atenea aún cuando fue la diosa quien la convirtió en gorgona. (Ver la historia en la publicación de Medusa) y en el casco de Atenea esta representado su padre Zeus; es un juego ya que la diosa nace de una protuberancia que tenía su padre en la frente, una pequeña atribución de artista, al igual que la cabeza del minotauro que representa."}, {"title":"Velvet","size":"100×70 cm","status":"Vendida","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/velvet.jpg","desc":"Velvet, La suavidad no es sólo materia: es tiempo detenido. Ella yace entre pliegues que no son telas, sino pensamientos. El cuerpo se disuelve en el mismo aire que lo acaricia. Su mirada no busca, recuerda. Y en ese instante sin voz, el deseo se vuelve ternura, la piel se hace frontera del alma, y la luz se posa sin intención. No hay provocación ni pudor, solo el equilibrio frágil entre lo que se ofrece y lo que se guarda. Velvet es el silencio donde la belleza respira. El mundo afuera se detiene. Dentro, la mirada sostiene el hilo de un pensamiento que aún no se dice. Todo es terciopelo: el aire, la carne, el silencio. Velvet es el instante antes del sueño, cuando el alma todavía toca la luz."}, {"title":"Secreto","size":"40×50 cm","status":"Vendida","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/secreto.jpg","desc":"Secreto, No hay palabra, pero el silencio tiene forma. Ella se vuelve hacia quien la mira como quien confía un misterio sin pronunciarlo. Entre ambos se traza un pacto invisible: el de saber sin decir. en ese gesto hay algo más que belleza: un entendimiento. Su cuerpo no es ofrecimiento, sino lenguaje. Habla desde la quietud, desde la pausa entre dos respiraciones. En su mirada hay algo más antiguo que el deseo: la certeza de que lo sagrado no necesita voz. Secreto no pertenece ni a ella ni al espectador. Flota entre los dos, suspendido, como una promesa que se cumple solo en la mirada."}, {"title":"Pacto con Mammon","size":"120×120 cm","status":"Fundación MIDMAKO","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/pacto-con-mammon.jpg","desc":"Pacto con Mammon, El oro lo llamó por su nombre. Y él, que ya había olvidado el suyo, respondió. El hombre descendió sin mirar atrás. En su codicia, el hombre firmó un pacto que no necesitaba tinta. Su ambición bastó como firma. El brillo prometido lo guiaba como un sol enfermo y su avaricia era más fuerte que el eco de su conciencia. Entró al pantano creyendo que era oro líquido, avanzó sobre los cuerpos de quienes lo amaron, sin mirar atrás, pero el resplandor era engaño: el metal se oxidaba en sus manos, tornándose verde y fétido, mientras su piel se hundía en lo que ya no era agua ni sangre, sino el peso de sus propios actos. Cada moneda que lo bañaba no caía del cielo, sino de su propia carne que se deshacía. Aun así, seguía mirando hacia adelante, convencido de que la recompensa lo esperaba. No comprendía que el pacto ya se había cumplido: el tesoro prometido era su ruina."}, {"title":"Hebi Hime","size":"30×40 cm","status":"Vendida","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/hebi-hime.jpg","desc":"En la tradición antigua, se decía que las serpientes no eran símbolo del mal, sino del conocimiento. Hebi Hime, la princesa serpiente, conserva esa memoria: la del ser que observa el mundo sin juicios, con una sabiduría que inquieta. Su belleza no reside en la perfección, sino en la intensidad de su presencia. No pertenece a los cuentos, sino al territorio de lo real. Su mirada, como un espejo de agua quieta, atrae y desarma; no promete salvación, sino verdad. En sus ojos verdes habita la dualidad: la calma y el veneno, la belleza y la advertencia. No busca encantar, sino revelar lo que otros temen mirar. Es el símbolo de la mujer que conoce su poder, que se transforma y muda de piel sin pedir permiso."}, {"title":"Ojo de Cáncer","size":"Óleo 30×40 cm","status":"No disponible","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/ojo-de-cancer.jpg","desc":"Ojo de cáncer fue creado en un momento de angustia, habiendo sido diagnosticado con la misma enfermedad, decidí que no me iba a afectar y que lo iba a superar a como dé lugar. Por eso mismo decidí representar un ojo enfermo, golpeado, triste y con la mirada perdida. No para representar mi estado de salud, sino como para dejarlo atrás en los momentos que estuviese mal, como un recordatorio de lo que no soy y nunca seré."}, {"title":"Shankar ca Chandra","size":"70×50 cm","status":"Vendida","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/shankar-ca-chandra.jpg","desc":"Shankar ca Chandra, Ella fue una tigresa, pero no de la selva, sino del espíritu. Su rugido era silencio; su fuerza, la calma de quien ya ha conocido el fuego. Los pueblos la temían y la veneraban; decían que su andar dejaba rastros de oro y ceniza. Entre joyas y telas sagradas, guarda una mirada lunar: fría, antigua, llena de memoria. Shankar no caza… observa. Domina la oscuridad como quien ha danzado en ella. Su belleza no adorna, protege. Su poder no destruye, recuerda quién fue."}, {"title":"Copia de Young Pegasus (por @JulioArt)","size":"Óleo 30×40 cm","status":"No disponible","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/copia-de-young-pegasus.jpg","desc":"Copia de la obra Young Pegasus del artista JulioArt en Ig. En esta obra pude practicar una de las técnicas mas antiguas de pintura, el temple de yema, que consiste en aglutinar pigmentos en yema de huevo, para este proyecto incluso imprime (prepare) la tabla de madera tal como lo hacían los antiguos maestros, como indican los escritos de Cennino Cennini; fue una actividad increíblemente enriquecedora. En la mitología griega, el Pegaso nace de la sangre de Medusa (quien fue violada por Poseidón en venganza a la diosa Atenea quien había ganado la competencia para ser la regente de la ciudad de Atenas) una vez que Perseo corta su cabeza."} ], "courses": [ { "title":"Inicia tu camino Artístico", "blurb":"-", "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/athena.jpg", "video":"https://youtu.be/H8rpLpXhxV4", "specs":["Revoluciona tu expresión artística por completo en tan solo 6 cursos.Tus trabajos no llegan a ningún puerto o incluso te da vergüenza mostrarlos y recibir criticas?Te sentís estancado en tu proceso creativo luego de invertir tiempo y esfuerzo y ya non sabes como evolucionar?Sentis que tu arte no genera impacto y no sabes como destacar?Te sentís abrumado por la cantidad de técnicas y no sabes por donde empezar?Tus obras no transmiten el mensaje o emoción que realmente querés comunicar?.. Quizás no sos vos ni tu obra, sino la técnica.Conectá con tu propósito personal y artístico, dando sentido mas profundo a lo que haces.Eleva tu autoestima y empezá a mostrar trabajos que reflejen tu esfuerzo, ,con orgullo y seguridad.Descubrí un espacio de crecimiento personal constante donde cada obra refleje tu evolución.Potenciá tu capacidad de contar historias y emociones a otros a través de tus cuadros.Fortalecé tu identidad como artista y construí tu marca personal solida y autentica y viví la satisfacción de ver como tu esfuerzo se convierte en arte que inspira a otros.La pintura es un acto de eternidad.En esta serie de seis cursos profesionales, te enseño paso a paso el camino completo que sigo en mi propio estudio — desde la preparación del lienzo hasta las veladuras finales que dan vida a la piel y la luz.Cada curso está pensado como una inmersión total: técnica, simbólica y espiritual. Aprenderás no sólo cómo pintar, sino cómo pensar y sentir la pintura como un arte vivo.🖋️ Los cursos incluyen:Preparación del bastidor y soportes.Pintura en blanco y negro para dar volumen.Retrato con paleta de Apeles / Zorn.Veladuras y empastes.Paleta restringida y armonías cromáticas.Fondos abstractos y craquelados experimentales.🎨 Cada módulo combina técnica académica, tradición de taller y pensamiento contemporáneo, transmitidos con la misma precisión y profundidad que aplico en mis obras.💡 Ideal para artistas y creadores que buscan una formación integral en pintura figurativa, realismo y técnica clásica del siglo XIX. Además vas a adquirir acceso a mi biblioteca digital con libros artísticos que fui obteniendo a lo largo de mi carrera y que me ayudaron a cimentar mi camino."] }, { "title":"01 · Preparación del lienzo", "blurb":"Soportes, imprimaciones.", "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-preparacion-lienzo.jpg", "price":"PRÓXIMAMENTE", "video":"https://youtu.be/Kxz9AI5EfWs", "specs":["Nivel del curso: principiante","Duración: 1 semana en 4 módulos: Materiales, fórmulas, preparación de bastidor entelado, preparación de bastidor en tabla","Materiales: gesso sotile, imprimaciones magra y grasa, colas, selladores","Tipo de recursos PDF complementarios: listas de materiales, plantillas, esquemas, etc.","Proyecto: el alumno terminará el curso pudiendo armar sus propios bastidores, ya sea en formato entelados o en formato de tabla."] }, { "title":"02 · Blanco y negro / Verdaccio", "blurb":"Modelado de forma y valores como base clásica.", "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-curso-2.jpg", "price":"PRÓXIMAMENTE", "video":"https://www.youtube.com/watch?v=dQw4w9WgXcQ", "specs":["Nivel del curso: principiante","Duración: 1~2 semanas en 5 módulos, cómo elegir una buena imagen, dibujo del boceto compartido, ejercicio de “Block in”, proyecto final.","Métodos: grisalla, verdaccio, escalas de valor","Extras: PDF de ejercicios + referencias imprimibles","Proyecto: el alumno pueda realizar un trabajo en pintura monocromática en donde aprenderá a pulir lo que se denomina valor y volumen, es una manera de aprender a SIMPLIFICAR, aplicar los valores más importantes para luego fundirlos"] }, { "title":"03 · Retrato con paleta de Apeles/Zorn", "blurb":"Carnaciones creíbles con paleta reducida.", "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/curso-3.jpg", "price":"PRÓXIMAMENTE", "video":"https://youtu.be/-GJtlkhe1J0", "specs":["Nivel del curso: principiante, intermedio","Duración: 1 semana en 5 módulos, materiales, paleta de apeles, dibujo, práctica de pintura, pintura final","Proyecto: aprender a trabajar con una paleta reducida, de 4 colores; ayuda al alumno a entrenar el ojo para reconocer colores, trabajar de manera más ordenada y da un vistazo al tipo de pintura tradicional más antigua así como empezar a ver la teoría del color aplicada. Lo más valioso es aprender cómo se relaciona cada color al lado de otro. Aproximación a la temperatura de los colores en la rueda, cálidos y fríos (más en relación entre ellos)"] }, { "title":"04 · Veladuras y empastes", "blurb":"Profundidad óptica y texturas controladas.", "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-curso-4.jpg", "price":"PRÓXIMAMENTE", "video":"https://www.youtube.com/watch?v=dQw4w9WgXcQ", "specs":["Nivel del curso: intermedio","Duración: 2~3 semanas en 4 módulos, elección de colores, glazing, scumbling, detalles finales","Proyecto: utilizando la pintura monocromática del curso anterior o alguna que hayas hecho, aprenderás a darle profundidad a tus pinturas mediante el “glazing” y “scumbling”, términos que iremos adquiriendo, y el proyecto final el cual será completar a color la pintura monocromática que decida hacer cada alumno. "] }, { "title":"05 · Paleta restringida universal", "blurb":"Aplicable a figura, paisaje y naturaleza muerta.", "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-curso-5.jpg", "price":"PRÓXIMAMENTE", "video":"https://www.youtube.com/watch?v=dQw4w9WgXcQ", "specs":["Nivel del curso: intermedio, avanzad","Duración: 4 semanas en 5 módulos, materiales, ordena tu paleta, dibujo, explora los colores, proyecto fina","Proyecto: lograr una pintura realista de 0 a 100%, aplicando todos los conocimientos adquiridos o sabidos hasta el momento, utilizando una paleta de colores estricta y controlada para lograr el mayor parecido con la imagen de referencia. Que el alumno pueda lograra llevar sus ideas al canvas sin miedo, con un nivel de profesionalidad y calidad"] }, { "title":"06 · Fondos abstractos como base figurativa - (PRÓXIMAMENTE)", "blurb":"Craquelados y pouring como soporte conceptual.", "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-curso-6.jpg", "price":"PRÓXIMAMENTE", "video":"https://www.youtube.com/watch?v=dQw4w9WgXcQ", "specs":["Nivel del curso: principiante, intermedio","Duración estimada: 1~2 h en 5 módulos + 1 PDF complementario","Técnicas: incompatibilidades controladas, vertidos/Pouring","Proyecto: Guiar al estudiante en la creación de un fondo abstracto con alto impacto visual y profundidad material, mediante técnicas de craquelado natural y vertido controlado, que pueda ser utilizado como obra autónoma o como base expresiva para una pintura figurativa. Se busca comprender el equilibrio entre caos y composición, explorando la interacción entre textura, color y contexto"] } ] } </script> <header class="nav"> <div class="container nav-inner"> <div><strong>Valkideon RN</strong></div> <nav style="display:flex;gap:18px;font-size:14px"> <a href="#galeria">Obras</a><a href="#cursos">Cursos</a><a href="#terminos">Términos y Condiciones</a><a href="#sobre">Sobre mí</a><a href="#contacto">Contacto</a> </nav> </div> </header> <main> <section class="hero"> <div class="container hero-grid"> <div> <div class="eyebrow" id="eyebrow"></div> <h1 id="headline"></h1> <p class="muted" id="herotext"></p> <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap"> <a class="btn" href="#galeria">Ver obras</a> <a class="btn ghost" href="#cursos">Ver cursos</a> </div> </div> <div class="hero-img"> <img id="heroimg" alt="Hero Valkideon" onerror="this.style.border='2px solid red'; this.alt='(no se encontró: ' + JSON.parse(document.getElementById('content').textContent).hero.image + ')'"> </div> </div> </section> <section class="section"><div class="container" id="prensa-wrap"><div class="press" id="press"></div></div></section> <section id="galeria" class="section"> <div class="container"> <h2>Obras destacadas</h2> <p class="muted">Selección reciente · estado y medidas.</p> <div class="cards" id="artworks"></div> </div> </section> <section id="cursos" class="section" style="background:#fff"> <div class="container"> <h2>Cursos para artistas</h2> <p class="muted">Procesos clásicos con metodología clara y materiales descargables.</p> <p class="muted" style="margin-top:4px"><strong>Promo:</strong> Llevá <strong>3</strong> cursos y pagás <strong>2</strong>. (Se bonifica el de menor valor por cada trío).</p> <div class="grid-3" id="courses"></div> </div> </section> <!-- ===== ÚNICA sección SOBRE MÍ (texto completo + imagen + links + lista + suscripción) ===== --> <section id="sobre" class="section" style="background:#fff"> <div class="container two"> <div> <h2>Sobre mí</h2> <p class="muted"> Artista de línea academicista e hiperrealista. Nacido en la Ciudad Autónoma de Buenos Aires, Argentina en 1994. Vive en el barrio de Villa del Parque en Buenos Aires. Recibido de Licenciado en Conservación y Restauración de Bienes Culturales. Como artista plástico es autodidacta, realizando estudios recientemente en 2023 con el artista plástico Ricardo Celma, profundizando así sus conocimientos. Desde pequeño el lápiz es una extensión de su mano, encontrando más adelante en la pintura al óleo una pasión. La práctica y la experiencia con distintas paletas y medios le permiten desarrollar una amplia gama de obras, incursionando también en grabado y escultura. Algunas de sus obras fueron seleccionadas e incorporadas al patrimonio cultural por el Museo de la Discapacidad María Kodama, así como la ONG Kids on the Move de Utah, EE.UU. En 2023 participó de ferias en Buenos Aires y muestras colectivas en Barcelona, España. En la Noche de los Museos del mismo año expuso en el Museo Xul Solar y en el Museo Central de Ciencias Médicas, pasando a formar parte de manera permanente. En 2024 participa de muestras en la Legislatura porteña y la Embajada de México, donando obras al patrimonio cultural. </p> <p> <a href="https://nuevonortedigital.com.ar/secciones/personajes-ilustres/gonzalo-manuel-romero-nigro-un-artista-plastico-que-promete/" target="_blank" style="font-weight:bold; text-decoration:none; color:inherit;"> Gonzalo Manuel Romero Nigro, un artista plástico que promete </a> </p> <p> <a href="https://www.perfil.com/noticias/cultura/sentidos-una-exhibicion-de-arte-e-inclusion-que-transforma-vidas-en-buenos-aires.phtml" target="_blank" style="font-weight:bold; text-decoration:none; color:inherit;"> “Sentidos”: una exhibición de arte e inclusión que transforma vidas en Buenos Aires </a> </p> <ul class="muted" style="padding-left:18px"> <li>Calidad de museo: materiales archivísticos y control de color para prints.</li> <li>Ediciones limitadas y prints.</li> <li>Obras por encargo con contrato.</li> <li>Todas las obras con certificado de autenticidad.</li> </ul> <div id="about-image-wrap" style="margin-top:12px"></div> </div> <div class="panel"> <h3>Suscripción</h3> <p class="muted">Recibe adelantos de obras, exhibiciones y lanzamientos de cursos.</p> <form id="form-sub" action="https://formsubmit.co/info@valkideonrn.com" method="POST" onsubmit="return validateAndLock(this,'sub');"> <input class="input" type="email" name="email" placeholder="tu@email.com" required maxlength="300" /> <input type="hidden" name="_subject" value="Nueva suscripción desde la web" /> <input type="hidden" name="_next" value="https://valkideonrn.com/gracias.html" /> <input type="hidden" name="_template" value="table" /> <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" /> <!-- Segundo honeypot --> <div class="hp-wrap" aria-hidden="true"> <label>Dejar vacío <input type="text" name="website" tabindex="-1" autocomplete="off"> </label> </div> <!-- Timestamp para control de tiempo --> <input type="hidden" name="_ts" id="sub_ts" value=""> <div style="height:10px"></div><button class="btn" type="submit">Suscribirme</button> </form> </div> </div> </section> <!-- ===== Fin ÚNICA sección SOBRE MÍ ===== --> <section id="contacto" class="section"> <div class="container two"> <div> <h2>Contacto</h2> <p class="muted">Para propuestas curatoriales, adquisición de obra o cursos.</p> <p class="muted">Email: <a id="email"></a><br/>Instagram: <a id="insta" target="_blank" rel="noreferrer noopener">@valkideon</a></p> </div> <div class="panel"> <h3>Escríbeme</h3> <form id="form-contact" action="https://formsubmit.co/info@valkideonrn.com" method="POST" onsubmit="return validateAndLock(this,'contact');"> <input class="input" type="text" name="name" placeholder="Nombre" required maxlength="120" /> <div style="height:10px"></div> <input class="input" type="email" name="email" placeholder="Email" required maxlength="254" /> <div style="height:10px"></div> <textarea class="input" rows="5" name="message" placeholder="Mensaje" required maxlength="4000"></textarea> <input type="hidden" name="_subject" value="Nuevo mensaje desde el sitio" /> <input type="hidden" name="_next" value="https://valkideonrn.com/gracias.html" /> <input type="hidden" name="_template" value="table" /> <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" /> <!-- Segundo honeypot --> <div class="hp-wrap" aria-hidden="true"> <label>Dejar vacío <input type="text" name="website" tabindex="-1" autocomplete="off"> </label> </div> <!-- Timestamp para control de tiempo --> <input type="hidden" name="_ts" id="contact_ts" value=""> <div style="height:10px"></div><button class="btn" type="submit">Enviar</button> <p class="muted" style="font-size:12px;margin-top:8px">(Formulario gestionado por FormSubmit.)</p> </form> </div> </div> </section> </main> <!-- Lightbox obras --> <div class="lightbox" id="lightbox" aria-hidden="true"> <div class="lightbox-inner"> <img class="lightbox-img" id="lightbox-img" alt="Obra ampliada"> <div class="lightbox-caption" id="lightbox-caption"></div> <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar">✕</button> </div> </div> <!-- Modal Info/Compra --> <div class="modal" id="courseModal" aria-hidden="true" role="dialog" aria-modal="true"> <div class="modal-card"> <div class="modal-head"> <div class="modal-title" id="courseModalTitle">Curso</div> <button class="modal-close" id="courseModalClose" aria-label="Cerrar">✕</button> </div> <div id="courseModalBody"></div> </div> </div> <!-- FAB Carrito --> <button id="cartFab" class="cart-fab cart-empty">🛒 Carrito (0)</button> <!-- ===== Términos y Condiciones (dejado tal cual) ===== --> <section id="terminos" class="section"> <div class="container"> <h2>Términos y Condiciones</h2> <h3>Encargos</h3> <p> Al realizar un pedido, usted se compromete a adquirir los productos al precio anunciado e indicado en el sitio web (o al precio indicado por el artista en caso de pedidos de medidas o características especiales) en el momento de la compra o reserva en la lista de espera. Por favor, compruebe el tamaño y precio del retrato antes de realizar la reserva.<br> Vaalkideon RN se reserva el derecho de rechazar la venta de las obras de arte a cualquier persona, por cualquier motivo y en cualquier momento. </p> <h3>Derechos de autor</h3> <p> El artista se reserva todos los derechos de explotación y reproducción de todo su trabajo producido, incluyendo layouts digitales e impresiones. Esto significa que puede crear tarjetas, impresiones o calendarios, entre otros, usando la imagen del retrato encargado. Además, se reserva el derecho de publicar la imagen del mismo en su página web y redes sociales. Cualquier representación y/o imagen de la obra de arte publicada por el cliente, incluyendo, pero no limitado, a redes sociales, revistas o libros, debe incluir la atribución de crédito a Valkideon RN y el título de la obra de arte. </p> <h3>Pagos dentro de Argentina</h3> <p> Los cupos en la agenda de Valkideon RN se reservan con un pago inicial del 30% del valor. Al encargar un retrato, el valor del mismo deberá estar saldado en su totalidad como máximo a los 90 días o antes de comenzar a trabajar en la obra (lo que ocurra primero). Con cada pago realizado, luego de ser verificado el mismo, el artista generará el recibo de pago correspondiente. En caso de no completar los pagos en las fechas correspondientes, habrá 30 días adicionales para saldar el monto pendiente. En caso de no haber abonado el monto pendiente en el plazo adicional, se actualizará el valor total del retrato al precio de lista de ese momento. </p> <p><strong>Medios de pago disponibles:</strong><br> • Transferencia bancaria, depósito o efectivo.<br> • Mercado Pago (abonando el interés correspondiente según cada banco/tarjeta). </p> <h3>Pagos internacionales</h3> <p> Los cupos en la agenda de Valkideon RN se reservan con un pago inicial del 30% del valor. El valor total del cuadro deberá estar saldado antes de comenzar a trabajar en la obra en la fecha agendada. Si llegada la fecha no se encuentra saldado el total del cuadro, habrá un plazo adicional de 30 días para abonar el monto pendiente. Si pasados los 30 días adicionales éste no se encuentra abonado, tu retrato se moverá al final de la lista de espera. Con cada pago realizado, luego de ser verificado, se generará el recibo correspondiente. </p> <p><strong>Medios de pago disponibles:</strong><br> • PayPal (+6% de recargo por comisión).<br> • Western Union (comisión según sucursal/país). </p> <h3>Lista de espera</h3> <p> El artista suele tener una lista de espera y la demora varía según la época del año y cantidad de retratos agendados. Al hacer el encargo, se te proporcionará una fecha aproximada de entrega, que podrá variar. Para fechas específicas (ej: cumpleaños), el artista hará lo posible por entregarlo en tiempo, pero no se garantiza. </p> <h3>Envíos dentro de Argentina</h3> <p> La mayoría de los retratos tardan 3–5 días en llegar a su destino. Se envían de forma segura a la dirección indicada al encargar. Si es un regalo, puede enviarse directamente al destinatario. </p> <h3>Envíos internacionales</h3> <p> Suelen tardar entre 5–8 días hábiles. El valor incluye envío a domicilio, pero no impuestos ni costos de nacionalización, que corren por cuenta del cliente. </p> <h3>Modificaciones en el diseño</h3> <p> Cualquier modificación tras el encargo tendrá recargos adicionales. Ejemplos: agregar flores, ropa, otra persona ,una mascota, fondo detallado, etc. Estas modificaciones implican más tiempo y materiales, y se moverán al final de la lista de espera. Una vez aprobado el layout digital y comenzado el cuadro, no se podrán realizar modificaciones. </p> <h3>Modificaciones en la medida</h3> <p> • Si se cambia a una medida más grande, debe abonarse la diferencia y el retrato se moverá al final de la lista.<br> • Si se cambia a una medida más chica, la diferencia no es reembolsable (queda a favor de otro encargo futuro). </p> <h3>Cancelaciones</h3> <p> Hay 7 días de garantía desde el primer pago para cancelar y obtener reembolso total. Pasado ese plazo, el dinero será retenido por tiempo/gestión/gastos. Si el artista ya comenzó a pintar, el dinero será retenido por tiempo, materiales y demás costos. </p> <h3>Daños o extravíos</h3> <p> Los retratos se embalan cuidadosamente. Si sufren daños en el envío, el cliente debe notificar dentro de 48 horas con foto. Podrá hacerse un nuevo retrato (ubicado al final de la lista). Costos de envío corren por el cliente. En caso de extravío, se aplican los términos de la empresa de mensajería. </p> </div> </section> <!-- ===== Fin Términos y Condiciones ===== --> <footer class="footer"><div class="container" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap"><div><strong>Valkideon RN</strong><div class="muted" style="font-size:14px">“Vive cada día como si fuera el último, pero proyecta como si vivieras para la eternidad”.</div></div><div class="muted" style="font-size:14px">© <span id="year"></span> Valkideon RN. Todos los derechos reservados.</div></div></footer> <script> window.addEventListener('DOMContentLoaded', () => { const data = JSON.parse(document.getElementById('content').textContent); // === JSON-LD SEO: WebSite + VisualArtwork por cada obra === try{ const graph = []; // WebSite / Organization básico graph.push({ "@type":"WebSite", "@id": "https://valkideonrn.com/#website", "url": "https://valkideonrn.com/", "name": data.site?.title || "Valkideon RN", "potentialAction": { "@type":"SearchAction", "target":"https://valkideonrn.com/?q={search_term_string}", "query-input":"required name=search_term_string" } }); // VisualArtwork por obra (data.artworks || []).forEach((a, i) => { const desc = a.desc || "informacion a editar por valkideon"; const dims = (a.size || "").match(/([0-9]+)\D*×\D*([0-9]+)/i); const width = dims ? Number(dims[1]) : undefined; const height = dims ? Number(dims[2]) : undefined; const item = { "@type": "VisualArtwork", "@id": https://valkideonrn.com/#artwork-${i+1}, "name": a.title || Obra ${i+1}, "image": a.img, "description": desc, "artMedium": "Óleo (posible)", "artform": "Pintura", "artworkSurface": a.status || "—", "url": "https://valkideonrn.com/#galeria", "creator": { "@type": "Person", "name": "Valkideon RN" } }; if (width && height){ item.width = { "@type": "Distance", "name": a.size, "value": width, "unitCode": "CMT" }; item.height = { "@type": "Distance", "name": a.size, "value": height, "unitCode": "CMT" }; } graph.push(item); }); const ld = { "@context":"https://schema.org", "@graph": graph }; const ldScript = document.createElement('script'); ldScript.type = 'application/ld+json'; ldScript.textContent = JSON.stringify(ld); document.head.appendChild(ldScript); }catch(e){ console.warn('JSON-LD error', e); } const $ = s => document.querySelector(s); // === JSON-LD SEO: Course por cada curso === try { const courseGraph = (data.courses || []) .filter(c => !/PRÓXIMAMENTE|Próximamente/i.test(c.price||'')) .map((c,i)=>({ "@type":"Course", "name": c.title, "description": c.blurb, "provider": { "@type":"Organization", "name":"Valkideon RN", "sameAs": "https://instagram.com/valkideon" }, "hasCourseInstance": { "@type":"CourseInstance", "courseMode": "online", "inLanguage": "es-AR" }, "offers": { "@type":"Offer", "priceCurrency":"USD", "price": (c.price.match(/([0-9]+(?:[.,][0-9]+)?)/)?.[1]||"0").replace(',','.'), "availability":"https://schema.org/InStock", "url":"https://valkideonrn.com/#cursos" } })); if (courseGraph.length){ const ld2 = {"@context":"https://schema.org","@graph":courseGraph}; const s2 = document.createElement('script'); s2.type='application/ld+json'; s2.textContent = JSON.stringify(ld2); document.head.appendChild(s2); } }catch(e){ console.warn('JSON-LD Course error', e); } // CONTACT + YEAR $('#email').textContent = data.site.email; $('#email').href = 'mailto:'+data.site.email; $('#insta').href = data.site.instagram; $('#year').textContent = new Date().getFullYear(); // HERO $('#eyebrow').textContent = data.hero.eyebrow; $('#headline').textContent = data.hero.headline; $('#herotext').textContent = data.hero.text; const heroImg = $('#heroimg'); heroImg.src = data.hero.image; // PRESS (si existe) const pressHTML = (data.press || []).map(p => <a href="${p.url}" target="_blank" rel="noopener">• ${p.name} · ${p.year}</a>).join(' '); $('#press').innerHTML = pressHTML; // ARTWORKS const artworksHTML = (data.artworks||[]).map((a,idx) => <article class="card" data-art="${idx}" itemscope itemtype="https://schema.org/VisualArtwork"> <img src="${a.img}" alt="${a.title}" itemprop="image" onerror="this.style.border='2px solid red'; this.alt='(no se encontró: ${a.img})'"> <div class="body"> <div style="display:flex;justify-content:space-between;align-items:center;gap:10px"> <strong itemprop="name">${a.title}</strong><span class="badge" itemprop="artworkSurface">${a.status}</span> </div> <div class="muted" style="font-size:14px" itemprop="size">${a.size}</div> <meta itemprop="artform" content="Pintura"> <meta itemprop="creator" content="Valkideon RN"> <div class="muted" style="font-size:13px;margin-top:4px">${a.price || ''}</div> </div> </article>).join(''); document.getElementById('artworks').innerHTML = artworksHTML; // o si preferís con tu helper $: // $('#artworks').innerHTML = artworksHTML; // LIGHTBOX const lb = $('#lightbox'), lbImg = $('#lightbox-img'), lbCap = $('#lightbox-caption'), lbClose = $('#lightbox-close'); function openLightbox(art){ lbImg.src = art.img; lbImg.alt = art.title; const desc = art.desc || "informacion a editar por valkideonRN"; lbCap.innerHTML = <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap"> <div><strong>${art.title}</strong></div> <div class="muted" style="display:flex;gap:12px;font-size:14px"> <span>${art.size}</span><span>·</span><span>${art.status}</span>${art.price?<span>·</span><span>${art.price}</span>:''} </div> </div> <div style="margin-top:8px;font-size:14px;color:#333"> <em>${desc}</em> </div>; lb.classList.add('open'); lb.setAttribute('aria-hidden','false'); // Track vista de obra try { if (typeof fbq === 'function') { fbq('track', 'ViewContent', { content_name: art.title, content_category: 'Artwork', content_ids: [art.title], content_type: 'product' }); } } catch(e){} try { if (typeof gtag === 'function') { gtag('event', 'view_item', { item_id: art.title, item_name: art.title, item_category: 'Obras', item_variant: art.size || '', value: 0, currency: 'USD', item_list_id: 'artworks', items: [{ item_name: art.title, item_category: 'Artwork' }] }); } } catch(e){} } function closeLightbox(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); lbImg.src=''; } $('#artworks').addEventListener('click', e => { const card = e.target.closest('.card[data-art]'); if(!card) return; openLightbox(data.artworks[+card.getAttribute('data-art')]); }); lb.addEventListener('click', e => { if(e.target===lb) closeLightbox(); }); lbClose.addEventListener('click', closeLightbox); document.addEventListener('keydown', e => { if(e.key==='Escape'){ closeLightbox(); closeCourseModal(); } }); // ==== Cursos ==== function ytEmbed(url){ if(!url) return ''; const m = url.match(/(?:v=|youtu\.be\/)([A-Za-z0-9_-]{6,})/); const id = m ? m[1] : null; return id ? <div class="panel" style="margin-top:10px"><div style="position:relative;padding-top:56.25%"><iframe src="https://www.youtube.com/embed/${id}" title="Video intro" style="position:absolute;inset:0;width:100%;height:100%;border:0" allowfullscreen></iframe></div></div> : ''; } const isSoon = c => /PRÓXIMAMENTE|Próximamente/i.test(c.price||''); const priceNumber = c => (typeof c.priceNum==='number') ? c.priceNum : ((c.price||'').match(/([0-9]+(?:[.,][0-9]+)?)/)?.[1]?.replace(',','.')*1 || 0); function courseCardHTML(c, idx){ return <article class="panel" style="overflow:hidden"> ${c.thumb?<img src="${c.thumb}" alt="${c.title}" style="width:100%;height:auto;border-radius:12px;margin-bottom:10px" onerror="this.style.border='2px solid red';this.alt='(no se encontró: ${c.thumb})'">:''} <strong style="display:block;font-size:18px">${c.title}</strong> <div class="muted" style="margin-top:6px">${c.blurb}</div> <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px"> <span class="badge">${c.price || 'Consultar'}</span> <div style="display:flex;gap:8px;flex-wrap:wrap"> <button class="btn ghost" onclick="openCourseInfo(${idx})">Más info</button> </div> </div> <div style="margin-top:8px"> <button class="btn btn-buy" onclick="addToCart(${idx})" ${isSoon(c)?'disabled':''}>Agregar al carrito</button> </div> ${ytEmbed(c.video)} </article>; } document.getElementById('courses').innerHTML = (data.courses||[]).map(courseCardHTML).join(''); // ABOUT image (se inyecta en el ÚNICO #about-image-wrap) if (data.about?.image){ document.getElementById('about-image-wrap').innerHTML = <img src="${data.about.image}" alt="Valkideon RN — sobre mí" style="border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)" onerror="this.style.border='2px solid red'; this.alt='(no se encontró: ${data.about.image})'">; } // ===== Modal Cursos ===== const mCourse = $('#courseModal'), mTitle = $('#courseModalTitle'), mBody = $('#courseModalBody'), mClose = $('#courseModalClose'); function openCourseModal(){ mCourse.classList.add('open'); mCourse.setAttribute('aria-hidden','false'); } function closeCourseModal(){ mCourse.classList.remove('open'); mCourse.setAttribute('aria-hidden','true'); mBody.innerHTML = ''; } mClose.addEventListener('click', closeCourseModal); mCourse.addEventListener('click', e => { if(e.target===mCourse) closeCourseModal(); }); window.openCourseInfo = function(idx){ const c = data.courses[idx]; mTitle.textContent = c.title; const specs = (c.specs||[]).map(s=><li>${s}</li>).join(''); mBody.innerHTML = ${c.thumb?<img src="${c.thumb}" alt="${c.title}" style="width:100%;height:auto;border-radius:12px;margin-bottom:10px">:''} <div class="muted">${c.blurb}</div> <div style="margin-top:8px"><span class="badge">${c.price || 'Consultar'}</span></div> ${specs?<ul class="specs">${specs}</ul>:''} <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px"> <button class="btn btn-buy" onclick="addToCart(${idx})" ${isSoon(c)?'disabled':''}>Agregar al carrito</button> <button class="btn ghost" onclick="closeCourseModal()">Cerrar</button> </div> <p class="muted" style="margin-top:8px;font-size:12px">* Los importes finales pueden incluir impuestos/recargos de plataforma (+intereses).</p>; openCourseModal(); } // ===== Carrito + Promo 3x2 por trío (6 = 2 gratis) ===== const cart = []; // {idx, title, price} const cartBtn = document.getElementById('cartFab'); function refreshFab(){ cartBtn.textContent = 🛒 Carrito (${cart.length}); cartBtn.classList.toggle('cart-empty', cart.length===0); } function totals(){ if(cart.length===0) return {subtotal:0, discount:0, total:0}; const prices = cart.map(i=>i.price).sort((a,b)=>a-b); const subtotal = prices.reduce((a,b)=>a+b,0); let discount = 0, groups = Math.floor(prices.length/3); for(let g=0; g<groups; g++) discount += prices[g]; // 3x2 escalable return {subtotal, discount, total: Math.max(0, subtotal - discount)}; } function withFees(amount, kind){ const fees = (data.payments && data.payments.fees) || {}; const pass = !!fees.pass_fees_to_buyer; if(!pass) return {est: amount, pct:0, fixed:0}; if(kind==='paypal'){ const pct=(+fees.paypal_pct||0)/100; return {est: amount*(1+pct), pct:+(fees.paypal_pct||0), fixed:0}; } if(kind==='mp'){ const pct=(+fees.mp_pct||0)/100, fixed=+(fees.mp_fixed||0); return {est: amount*(1+pct)+fixed, pct:+(fees.mp_pct||0), fixed:+(fees.mp_fixed||0)}; } return {est: amount, pct:0, fixed:0}; } function openCart(){ // === Track Begin Checkout === try { if (typeof fbq === 'function') fbq('track', 'InitiateCheckout'); } catch(e){} try { if (typeof gtag === 'function') gtag('event', 'begin_checkout'); } catch(e){} const p = data.payments || {}; mTitle.textContent = 'Tu carrito'; const rows = cart.map((item,i)=> <tr><td>${item.title}</td><td>USD ${item.price.toFixed(2)}</td><td><button class="btn ghost" onclick="removeFromCart(${i})">Quitar</button></td></tr>).join('') || <tr><td colspan="3" class="muted">Tu carrito está vacío.</td></tr>; const {subtotal, discount, total} = totals(); const paypal = withFees(total,'paypal'), mp = withFees(total,'mp'); const hasPromo = cart.length>=3 && discount>0; mBody.innerHTML = <div class="muted">Promo activa: <strong>3×2</strong> (se bonifica el de menor valor <em>por cada trío</em>).</div> <table class="table"> <thead><tr><th>Curso</th><th>Precio</th><th></th></tr></thead> <tbody>${rows}</tbody> <tfoot> <tr><td>Subtotal</td><td colspan="2">USD ${subtotal.toFixed(2)}</td></tr> <tr><td>Descuento 3×2</td><td colspan="2">${hasPromo?− USD ${discount.toFixed(2)}:'—'}</td></tr> <tr><td><strong>Total (sin intereses)</strong></td><td colspan="2"><strong>USD ${total.toFixed(2)}</strong></td></tr> <tr><td>Estimado con PayPal (+${paypal.pct||0}%):</td><td colspan="2"><strong>USD ${paypal.est.toFixed(2)}</strong></td></tr> <tr><td>Estimado con Mercado Pago (+${mp.pct||0}%${mp.fixed? + USD ${Number(mp.fixed).toFixed(2)} fijo:''}):</td><td colspan="2"><strong>USD ${mp.est.toFixed(2)}</strong></td></tr> </tfoot> </table> <p class="muted" style="margin-top:8px">* Los importes finales pueden incluir impuestos/recargos de plataforma (+intereses). Pueden variar según operadora/tarjeta.</p> <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px"> <button class="btn" onclick="checkout('paypal')">Pagar con PayPal (USD ${paypal.est.toFixed(2)})</button> <button class="btn" onclick="checkout('mp')">Pagar con Mercado Pago (USD ${mp.est.toFixed(2)})</button> <button class="btn ghost" onclick="checkout('bank')">Datos de transferencia</button> <button class="btn ghost" onclick="closeCourseModal()">Cerrar</button> </div>; openCourseModal(); } window.openCart = openCart; window.addToCart = function(idx){ const c = data.courses[idx]; if(!c || isSoon(c)) return; cart.push({ idx, title: c.title, price: priceNumber(c) }); // Track AddToCart (curso) try { if (typeof fbq === 'function') { fbq('track', 'AddToCart', { content_name: c.title, content_category: 'Course', value: priceNumber(c), currency: 'USD' }); } } catch(e){} try { if (typeof gtag === 'function') { gtag('event', 'add_to_cart', { currency: 'USD', value: priceNumber(c), items: [{ item_id: c.title, item_name: c.title, item_category: 'Cursos', price: priceNumber(c), quantity: 1 }] }); } } catch(e){} refreshFab(); cartBtn.classList.remove('cart-empty'); cartBtn.animate([{transform:'scale(1)'},{transform:'scale(1.08)'},{transform:'scale(1)'}],{duration:280}); } window.removeFromCart = function(i){ cart.splice(i,1); refreshFab(); openCart(); } function openInNew(u){ window.open(u,'_blank','noopener'); } window.checkout = function(method){ const {total} = totals(); const p = data.payments || {}, b = p.bank || {}; if (total <= 0) { alert('Tu carrito está vacío.'); return; } if (method === 'paypal') { const amt = withFees(total, 'paypal').est; const base = (p.paypal || '').replace(/\/$/, ''); if (!base) { alert('Configura tu enlace de PayPal en data.payments.paypal'); return; } openInNew(${base}/${amt.toFixed(2)}); // GA4: begin_checkout + add_payment_info (PayPal) try { if (typeof gtag === 'function') gtag('event', 'begin_checkout', { currency:'USD', value: total }); } catch(e){} try { if (typeof gtag === 'function') { gtag('event', 'add_payment_info', { currency: 'USD', value: amt, payment_type: 'PayPal' }); } } catch(e){} } else if (method === 'mp') { const amt = withFees(total, 'mp').est; if (!p.mercadopago) { alert('Configura tu enlace de Mercado Pago en data.payments.mercadopago'); return; } mBody.innerHTML += <div class="panel" style="margin-top:10px"> <strong>Mercado Pago</strong> <p class="muted" style="margin-top:6px">Importe estimado: <b>USD ${amt.toFixed(2)}</b> (o equivalente en ARS).</p> <a class="btn" href="${p.mercadopago}" target="_blank" rel="noopener">Abrir link</a> <p class="copy">Si el link es de monto fijo, coordinamos diferencia por transferencia o nuevo link.</p> </div>; openInNew(p.mercadopago); // GA4: begin_checkout + add_payment_info (Mercado Pago) try { if (typeof gtag === 'function') gtag('event', 'begin_checkout', { currency:'USD', value: total }); } catch(e){} try { if (typeof gtag === 'function') { gtag('event', 'add_payment_info', { currency: 'USD', value: amt, payment_type: 'Mercado Pago' }); } } catch(e){} } else if (method === 'bank') { const amt = total; // GA4: begin_checkout + add_payment_info (Transferencia) try { if (typeof gtag === 'function') gtag('event', 'begin_checkout', { currency:'USD', value: total }); } catch(e){} try { if (typeof gtag === 'function') { gtag('event', 'add_payment_info', { currency: 'USD', value: amt, payment_type: 'Transferencia' }); } } catch(e){} mBody.innerHTML += <div class="panel" style="margin-top:10px"> <strong>Transferencia bancaria</strong> <div style="font-size:14px;line-height:1.35;margin-top:6px"> <div><b>Titular:</b> ${b.titular || '-'}</div> <div><b>Banco:</b> ${b.banco || '-'}</div> <div><b>Alias:</b> ${b.alias || '-'}</div> <div><b>CBU:</b> ${b.cbu || '-'}</div> <div><b>Cuenta:</b> ${b.cuenta || '-'}</div> </div> <p class="muted" style="margin-top:6px"> Importe a transferir: <b>USD ${amt.toFixed(2)}</b> (o equivalente). Enviá el comprobante por email o IG. </p> </div>; } } // FAB document.getElementById('cartFab').addEventListener('click', openCart); refreshFab(); // === Antispam para formularios FormSubmit === function setTS() { const now = Date.now(); const sub = document.getElementById('sub_ts'); const con = document.getElementById('contact_ts'); if (sub) sub.value = String(now); if (con) con.value = String(now); // Bloqueo inicial de botones por 3s document.querySelectorAll('form button[type=submit]').forEach(btn => btn.disabled = true); setTimeout(() => { document.querySelectorAll('form button[type=submit]').forEach(btn => btn.disabled = false); }, 3000); } function looksSpammyText(txt) { if (!txt) return false; const emailLike = txt.match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi) || []; if (emailLike.length > 3) return true; // demasiados emails pegados if (/[a-f0-9]{24,}/i.test(txt)) return true; // blobs hex largos if (/\b(pass|password|pwd)\b/i.test(txt)) return true; // credenciales const glued = txt.replace(/\s+/g, ''); if (/([A-Z][a-z]{2,}){3,}/.test(glued)) return true; // nombres pegados tipo VeldaBahringerJorge... return false; } function validateAndLock(form, kind) { try { const tsInput = form.querySelector('input[name="_ts"]'); const honey1 = form.querySelector('input[name="_honey"]'); const honey2 = form.querySelector('input[name="website"]'); const btn = form.querySelector('button[type=submit]'); const now = Date.now(); const sentAt = Number(tsInput?.value || 0); if (honey1 && honey1.value.trim() !== '') { alert('Error de validación.'); return false; } if (honey2 && honey2.value.trim() !== '') { alert('Error de validación.'); return false; } if (!Number.isFinite(sentAt) || (now - sentAt) < 3000) { alert('Por favor, espera unos segundos antes de enviar.'); return false; } const name = (form.querySelector('input[name="name"]')?.value || '').trim(); const email = (form.querySelector('input[name="email"]')?.value || '').trim().toLowerCase(); const message = (form.querySelector('textarea[name="message"]')?.value || '').trim(); const blob = ${name} ${message}; if (name && (name.length < 1 || name.length > 120)) { alert('Nombre inválido.'); return false; } if (email && email.length > 254) { alert('Email demasiado largo.'); return false; } if (message && (message.length < 5 || message.length > 4000)) { alert('Mensaje inválido.'); return false; } if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { alert('Email inválido.'); return false; } if (looksSpammyText(blob)) { alert('Contenido sospechoso detectado. Por favor, revisa tu mensaje.'); return false; } // Track lead (suscripción o contacto) cuando pasa validaciones try { if (typeof fbq === 'function') fbq('track','Lead'); } catch(e){} try { if (typeof gtag === 'function') gtag('event','generate_lead', {method: kind}); } catch(e){} if (btn) btn.disabled = true; return true; } catch (e) { console.warn('validateAndLock error', e); return false; } } // Ejecutar al cargar (marca timestamps y aplica la demora mínima) setTS(); }); </script> </body> </html>
+<!doctype html>
+<html lang="es">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3P50VPPW71"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-3P50VPPW71');
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Valkideon RN — Pintura clásica, mirada contemporánea</title>
+  <meta name="description" content="Obras originales, ediciones limitadas y cursos de técnica pictórica." />
+  <meta name="color-scheme" content="light" />
+  <!-- FAVICON -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#22c55e">
+  <!-- SEO general -->
+  <link rel="canonical" href="https://valkideonrn.com/">
+  <!-- Alternates -->
+  <link rel="alternate" href="https://valkideonrn.com/" hreflang="es-AR">
+  <link rel="alternate" href="https://valkideonrn.com.ar/" hreflang="es-AR">
+  <link rel="alternate" href="https://valkideonrn.com/" hreflang="x-default">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Valkideon RN">
+  <meta property="og:title" content="Valkideon RN — Pintura clásica, mirada contemporánea">
+  <meta property="og:description" content="Obras originales, ediciones limitadas y cursos de técnica pictórica.">
+  <meta property="og:url" content="https://valkideonrn.com/">
+  <meta property="og:image" content="https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/artista.jpg">
+  <meta property="og:locale" content="es_AR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Valkideon RN — Pintura clásica, mirada contemporánea">
+  <meta name="twitter:description" content="Obras originales, ediciones limitadas y cursos de técnica pictórica.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/artista.jpg">
+  <!-- Organization JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Valkideon RN",
+    "url":"https://valkideonrn.com/",
+    "logo":"https://valkideonrn.com/apple-touch-icon.png",
+    "sameAs":["https://instagram.com/valkideon"]
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg:#faf9f7;--fg:#1f1f1e;--muted:#6b6b6b;--line:#e6e3de;--card:#ffffff;--accent:#a08a5a;--accent-2:#c7b589;
+      --rad:18px;--rad-lg:22px;--shadow:0 6px 24px rgba(0,0,0,.06);
+    }
+    *{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1120px;margin:0 auto;padding:0 20px}
+    .nav{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(8px);background:rgba(255,255,255,.7);border-bottom:1px solid var(--line)}
+    .nav-inner{height:64px;display:flex;align-items:center;justify-content:space-between}
+    .nav a:hover{opacity:.8}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;border:1px solid var(--fg);padding:.7rem 1rem;border-radius:999px;transition:.2s;box-shadow:0 2px 0 rgba(0,0,0,.05);cursor:pointer}
+    .btn.ghost{border-color:transparent}
+    .btn:hover{transform:translateY(-1px)}
+    /* Botón de compra (verde) */
+    .btn-buy{border:1px solid transparent;background:#22c55e;color:#fff;font-weight:700}
+    .btn-buy:hover{background:#16a34a}
+    .btn-buy:focus{outline:none;box-shadow:0 0 0 4px #bbf7d0}
+    .eyebrow{text-transform:uppercase;letter-spacing:.28em;font-size:11px;color:var(--muted)}
+    .hero{padding:72px 0;border-bottom:1px solid var(--line)}
+    .hero-grid{display:grid;gap:24px;grid-template-columns:1.1fr 1fr}
+    .hero-img{border-radius:var(--rad-lg);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow)}
+    h1{font-size:42px;line-height:1.15;margin:.3em 0}
+    h2{font-size:32px;margin:.2em 0 .4em}
+    .muted{color:var(--muted)}
+    .section{padding:48px 0;border-top:1px solid var(--line)}
+    .cards{display:grid;gap:16px;grid-template-columns:repeat(12,1fr)}
+    .card{grid-column:span 3;background:var(--card);border:1px solid var(--line);border-radius:var(--rad);overflow:hidden;box-shadow:var(--shadow);cursor:zoom-in}
+    .card .body{padding:12px 14px}
+    .badge{font-size:12px;border:1px solid var(--line);background:#f3f1ed;padding:2px 8px;border-radius:999px}
+    .two{display:grid;gap:28px;grid-template-columns:1fr 1fr}
+    .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:20px}
+    .footer{padding:40px 0;border-top:1px solid var(--line)}
+    .input, textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:#fff}
+    .grid-3{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
+    .press{display:flex;flex-wrap:wrap;gap:12px;color:var(--muted);font-size:14px}
+
+    /* Lightbox obras */
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.8);display:none;align-items:center;justify-content:center;z-index:1000;padding:24px}
+    .lightbox.open{display:flex}
+    .lightbox-inner{max-width:min(96vw,1400px);max-height:90vh;position:relative;display:grid;grid-template-columns:1.1fr 1fr;gap:18px;align-items:start}
+    .lightbox-img{width:100%;max-height:90vh;object-fit:contain;border-radius:12px;box-shadow:var(--shadow);background:#111}
+    .lightbox-caption{max-height:90vh;overflow:auto;background:#fff;border-radius:12px;padding:16px 18px;color:#222;border:1px solid var(--line)}
+    .lightbox-close{position:absolute;top:-10px;right:-10px;background:#fff;border:1px solid var(--line);width:36px;height:36px;border-radius:999px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:var(--shadow)}
+    .lightbox-close:hover{transform:translateY(-1px)}
+    @media (max-width: 960px){
+      .lightbox-inner{grid-template-columns:1fr}
+      .lightbox-caption{max-height:calc(90vh - 20px)}
+    }
+
+    /* Modal cursos */
+    .modal{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;z-index:1200;padding:24px}
+    .modal.open{display:flex}
+    .modal-card{max-width:760px;width:100%;background:var(--card);border:1px solid var(--line);border-radius:20px;box-shadow:var(--shadow);padding:20px}
+    .modal-head{display:flex;gap:12px;justify-content:space-between;align-items:center;margin-bottom:6px}
+    .modal-title{font-weight:700}
+    .modal-close{border:1px solid var(--line);background:#fff;width:34px;height:34px;border-radius:999px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+    .specs{margin:10px 0 0 0;padding-left:18px}
+    .specs li{margin:6px 0}
+    .paygrid{display:grid;gap:12px;grid-template-columns:1fr 1fr 1fr;margin-top:12px}
+    .paygrid .panel{padding:14px}
+    .copy{font-size:12px;color:var(--muted);}
+
+    /* Carrito flotante */
+    .cart-fab{position:fixed;right:16px;bottom:16px;z-index:1300;border:1px solid var(--fg);background:#fff;border-radius:999px;padding:.8rem 1.1rem;box-shadow:var(--shadow);cursor:pointer}
+    .cart-empty{opacity:.6;pointer-events:none}
+    .table{width:100%;border-collapse:collapse;margin-top:8px}
+    .table th,.table td{border-top:1px solid var(--line);padding:8px;text-align:left;font-size:14px}
+    .table tfoot td{font-weight:bold}
+
+    @media (max-width: 960px){.hero-grid{grid-template-columns:1fr}.cards .card{grid-column:span 6}.two{grid-template-columns:1fr}.grid-3{grid-template-columns:1fr}.nav-inner{gap:12px}}
+    @media (max-width: 560px){.cards .card{grid-column:span 12}h1{font-size:34px}.paygrid{grid-template-columns:1fr}}
+
+    /* Modal cursos solo texto */
+    #courseModal .modal-card img{display:none !important;}
+    #courseModal .modal-card{max-height:90vh;overflow:auto}
+
+    /* Honeypots */
+    .hp-wrap{position:absolute;left:-9999px;top:-9999px;height:0;overflow:hidden}
+  </style>
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2235231596900974');
+    fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
+</head>
+<body>
+  <!-- Meta Pixel Noscript -->
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2235231596900974&ev=PageView&noscript=1"/></noscript>
+
+  <!-- EDITA SOLO ESTE JSON -->
+  <script id="content" type="application/json">
+  {
+    "site": {
+      "title": "Valkideon RN — Pintura clásica, mirada contemporánea",
+      "tagline": "Pintura clásica, mirada contemporánea",
+      "email": "info@valkideonrn.com",
+      "instagram": "https://instagram.com/valkideon",
+      "domain_main": "valkideonrn.com",
+      "domain_ar": "valkideonrn.com.ar"
+    },
+    "payments": {
+      "paypal": "https://www.paypal.me/valkideonrn",
+      "mercadopago": "https://mpago.la/XXXX-ENLACE",
+      "fees": { "pass_fees_to_buyer": true, "paypal_pct": 6.0, "mp_pct": 9.0, "mp_fixed": 0.0 },
+      "bank": { "alias": "VALKIDEONRN.AHORA.ARTE", "cbu": "0000000000000000000000", "banco": "Banco Ejemplo S.A.", "titular": "Gonzalo Manuel Romero Nigro", "cuenta": "CA$ 0000-000000/0" },
+      "nota": "Los importes finales pueden incluir impuestos/recargos de plataforma (+intereses). Enviá el comprobante por email o Instagram para liberar el acceso al curso."
+    },
+    "hero": {
+      "eyebrow": "Figurativo · Academicismo · Hiperrealismo",
+      "headline": "Pintura clásica, mirada contemporánea",
+      "text": "Obras originales, ediciones limitadas y cursos de técnica pictórica.",
+      "image": "https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/artista.jpg"
+    },
+    "about": { "image": "https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/artistas.jpg" },
+    "artworks": [
+      {"title":"Fénix","size":"Óleo 70×100 cm","status":"Disponible","price":"USD 1500","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/fenix.JPG","desc":"Fénix, El ave..."},
+      {"title":"Rapto de Perséfone","size":"70×100 cm","status":"Disponible","price":"USD 1000","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/rapto-de-persefone.jpg","desc":"Rapto de Perséfone..."},
+      {"title":"Nacimiento de África","size":"30×40 cm","status":"Disponible","price":"USD 1500","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/nacimiento-de-africa.jpg","desc":"Nacimiento de África..."},
+      {"title":"Prometheus’ Hope","size":"30×40 cm","status":"Disponible","price":"USD 450","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/prometheus-hope.jpg","desc":"Según la mitología..."},
+      {"title":"Oiran Hinako","size":"70×100 cm","status":"Disponible","price":"Consultar","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/oiran-hinako.jpg","desc":"Oiran Hinako..."},
+      {"title":"Templanza","size":"150×150 cm","status":"Disponible","price":"USD 2000","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/templanza.jpg","desc":"Templanza..."},
+      {"title":"Juicio de Afrodita","size":"70×100 cm","status":"Disponible","price":"USD 1200","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/juicio-de-afrodita.jpg","desc":"Juicio de Afrodita..."},
+      {"title":"Juicio de Gaia","size":"70×100 cm","status":"Disponible","price":"USD 1200","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/juicio-de-gaia.jpg","desc":"Juicio de Gaia..."},
+      {"title":"Aluvida, Hija del Cosmos","size":"50×70 cm","status":"Disponible","price":"USD 600","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/aluvida-hija-del-cosmos.jpg","desc":"Aluvida..."},
+      {"title":"Ashnan","size":"100×150 cm","status":"Disponible","price":"USD 1500","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/ashnan.jpg","desc":"Ashnan..."},
+      {"title":"Judith","size":"70×100 cm","status":"Disponible","price":"USD 850","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/judith.jpg","desc":"Judith..."},
+      {"title":"Cólera de Hercules","size":"70×100 cm","status":"Disponible","price":"USD 1000","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/colera-de-hercules.jpg","desc":"Cólera de Hércules..."},
+      {"title":"Esperanza","size":"50×70 cm","status":"Disponible","price":"USD 600","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/esperanza.jpg","desc":"Esperanza..."},
+      {"title":"Princesa de Jade","size":"70×100 cm","status":"Disponible","price":"USD 800","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/princesa-de-jade.jpg","desc":"Princesa de Jade..."},
+      {"title":"Hipnosis de Pitonisa","size":"120×120 cm","status":"Disponible","price":"USD 2000","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/hipnosis-de-pitonisa.jpg","desc":"Hipnosis de Pitonisa..."},
+      {"title":"Zalim of Ranthambore","size":"80×100 cm","status":"En proceso","price":"Consultar","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/Zalim-of-Ranthambore%20.jpg","desc":"Zalim of Ranthambore..."},
+      {"title":"Lady in Red","size":"50×70 cm","status":"En proceso","price":"USD 1000","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/lady-in-red.jpg","desc":"Lady in Red..."},
+      {"title":"Victoria alada Nike","size":"70×100 cm","status":"En proceso","price":"USD 1350","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/victoria-alada-nike.jpg","desc":"informacion a editar por valkideon"},
+      {"title":"Sigrund","size":"70×100 cm","status":"En proceso","price":"USD 1500","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/sigrund.jpg","desc":"Sigrund..."},
+      {"title":"Poseidon","size":"100×190 cm","status":"En proceso","price":"Consultar","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/poseidon.jpg","desc":"informacion a editar por valkideon"},
+      {"title":"Baldr","size":"70×100 cm","status":"En proceso","price":"USD 1100","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/Baldr.jpg","desc":"informacion a editar por valkideon"},
+      {"title":"Isis","size":"50×70 cm","status":"En proceso","price":"Vendida","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/Isis.jpg","desc":"informacion a editar por valkideon"},
+      {"title":"Ánima","size":"100×190 cm","status":"En proceso","price":"USD 1800","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/angel-lindo.jpg","desc":"informacion a editar por valkideon"},
+      {"title":"Vestigium Virtūtis","size":"50×70 cm","status":"En proceso","price":"USD 1200","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/armadura-hombro.jpg","desc":"informacion a editar por valkideon"},
+      {"title":"Blue Lagoon","size":"80×100 cm","status":"En proceso","price":"USD 1500","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/blue-lagoon.jpg","desc":"informacion a editar por valkideon"},
+      {"title":"Flos Bellī","size":"30×40 cm","status":"En proceso","price":"Consultar","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/guerrera-china.jpg","desc":"informacion a editar por valkideon"},
+      {"title":"Candor Animae","size":"50×70 cm","status":"En proceso","price":"USD 1400","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/retrato-byn.jpg","desc":"informacion a editar por valkideon"},
+      {"title":"Enigma del Otoño","size":"40×40 cm","status":"En proceso","price":"Consultar","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/retrato-de-oto%C3%B1o.jpg","desc":"informacion a editar por valkideon"},
+      {"title":"Entre Oro y Sombra","size":"100×180 cm","status":"En proceso","price":"USD 2200","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/retrato-grande.jpg","desc":"informacion a editar por valkideon"},
+      {"title":"Ojo del Augurio","size":"30×30 cm","status":"Vendida","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/ojo-del-augurio.jpg","desc":"informacion a editar por valkideon"},
+      {"title":"Querubines","size":"30×40 cm","status":"Vendida","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/angeles-querubines.jpg","desc":"informacion a editar por valkideon"},
+      {"title":"Forjando Inicios","size":"30×40 cm","status":"Fundación MIDMAKO","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/forjando-inicios.jpg","desc":"informacion a editar por valkideon"},
+      {"title":"Medusa","size":"110×150 cm","status":"Fundación MIDMAKO","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/medusa.jpg","desc":"A medusa le negaron..."},
+      {"title":"Aurora","size":"150×150 cm","status":"Fundación MIDMAKO","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/aurora.jpg","desc":"Aurora..."},
+      {"title":"Rachelle Rutherford","size":"50×70 cm","status":"Fundación MIDMAKO y KOTM Utah","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/rachelle.jpg","desc":"Rachelle Rutherford..."},
+      {"title":"Homenaje a Bruno","size":"40×30 cm","status":"Vendida","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/homenaje-a-bruno.jpg","desc":"Homenaje a Bruno..."},
+      {"title":"Hanami, Diosa de la Primavera","size":"100×150 cm","status":"Vendida","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/hanami-diosa-de-la-primavera.jpg","desc":"Hanami..."},
+      {"title":"Athena","size":"45×90 cm","status":"Vendida","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/athena.jpg","desc":"Athena..."},
+      {"title":"Velvet","size":"100×70 cm","status":"Vendida","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/velvet.jpg","desc":"Velvet..."},
+      {"title":"Secreto","size":"40×50 cm","status":"Vendida","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/secreto.jpg","desc":"Secreto..."},
+      {"title":"Pacto con Mammon","size":"120×120 cm","status":"Fundación MIDMAKO","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/pacto-con-mammon.jpg","desc":"Pacto con Mammon..."},
+      {"title":"Hebi Hime","size":"30×40 cm","status":"Vendida","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/hebi-hime.jpg","desc":"En la tradición..."},
+      {"title":"Ojo de Cáncer","size":"Óleo 30×40 cm","status":"No disponible","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/ojo-de-cancer.jpg","desc":"Ojo de cáncer..."},
+      {"title":"Shankar ca Chandra","size":"70×50 cm","status":"Vendida","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/shankar-ca-chandra.jpg","desc":"Shankar ca Chandra..."},
+      {"title":"Copia de Young Pegasus (por @JulioArt)","size":"Óleo 30×40 cm","status":"No disponible","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/copia-de-young-pegasus.jpg","desc":"Copia de la obra Young Pegasus..."}
+    ],
+    "courses": [
+      { "title":"Inicia tu camino Artístico", "blurb":"-", "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/athena.jpg", "video":"https://youtu.be/H8rpLpXhxV4", "specs":["Revoluciona tu expresión artística por completo en tan solo 6 cursos..."] },
+      { "title":"01 · Preparación del lienzo", "blurb":"Soportes, imprimaciones.", "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-preparacion-lienzo.jpg", "price":"PRÓXIMAMENTE", "video":"https://youtu.be/Kxz9AI5EfWs", "specs":["Nivel del curso: principiante","Duración: 1 semana en 4 módulos..."] },
+      { "title":"02 · Blanco y negro / Verdaccio", "blurb":"Modelado de forma y valores como base clásica.", "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-curso-2.jpg", "price":"PRÓXIMAMENTE", "video":"https://www.youtube.com/watch?v=dQw4w9WgXcQ", "specs":["Nivel del curso: principiante","Duración: 1~2 semanas..."] },
+      { "title":"03 · Retrato con paleta de Apeles/Zorn", "blurb":"Carnaciones creíbles con paleta reducida.", "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/curso-3.jpg", "price":"PRÓXIMAMENTE", "video":"https://youtu.be/-GJtlkhe1J0", "specs":["Nivel del curso: principiante, intermedio","Duración: 1 semana..."] },
+      { "title":"04 · Veladuras y empastes", "blurb":"Profundidad óptica y texturas controladas.", "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-curso-4.jpg", "price":"PRÓXIMAMENTE", "video":"https://www.youtube.com/watch?v=dQw4w9WgXcQ", "specs":["Nivel del curso: intermedio","Duración: 2~3 semanas..."] },
+      { "title":"05 · Paleta restringida universal", "blurb":"Aplicable a figura, paisaje y naturaleza muerta.", "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-curso-5.jpg", "price":"PRÓXIMAMENTE", "video":"https://www.youtube.com/watch?v=dQw4w9WgXcQ", "specs":["Nivel del curso: intermedio, avanzad","Duración: 4 semanas..."] },
+      { "title":"06 · Fondos abstractos como base figurativa - (PRÓXIMAMENTE)", "blurb":"Craquelados y pouring como soporte conceptual.", "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-curso-6.jpg", "price":"PRÓXIMAMENTE", "video":"https://www.youtube.com/watch?v=dQw4w9WgXcQ", "specs":["Nivel del curso: principiante, intermedio","Duración estimada: 1~2 h..."] }
+    ]
+  }
+  </script>
+
+  <header class="nav">
+    <div class="container nav-inner">
+      <div><strong>Valkideon RN</strong></div>
+      <nav style="display:flex;gap:18px;font-size:14px">
+        <a href="#galeria">Obras</a><a href="#cursos">Cursos</a><a href="#terminos">Términos y Condiciones</a><a href="#sobre">Sobre mí</a><a href="#contacto">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow" id="eyebrow"></div>
+          <h1 id="headline"></h1>
+          <p class="muted" id="herotext"></p>
+          <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn" href="#galeria">Ver obras</a>
+            <a class="btn ghost" href="#cursos">Ver cursos</a>
+          </div>
+        </div>
+        <div class="hero-img">
+          <img id="heroimg" alt="Hero Valkideon"
+               onerror="this.style.border='2px solid red'; this.alt='(no se encontró: ' + JSON.parse(document.getElementById('content').textContent).hero.image + ')'">
+        </div>
+      </div>
+    </section>
+
+    <section class="section"><div class="container" id="prensa-wrap"><div class="press" id="press"></div></div></section>
+
+    <section id="galeria" class="section">
+      <div class="container">
+        <h2>Obras destacadas</h2>
+        <p class="muted">Selección reciente · estado y medidas.</p>
+        <div class="cards" id="artworks"></div>
+      </div>
+    </section>
+
+    <section id="cursos" class="section" style="background:#fff">
+      <div class="container">
+        <h2>Cursos para artistas</h2>
+        <p class="muted">Procesos clásicos con metodología clara y materiales descargables.</p>
+        <p class="muted" style="margin-top:4px"><strong>Promo:</strong> Llevá <strong>3</strong> cursos y pagás <strong>2</strong>. (Se bonifica el de menor valor por cada trío).</p>
+        <div class="grid-3" id="courses"></div>
+      </div>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section id="sobre" class="section" style="background:#fff">
+      <div class="container two">
+        <div>
+          <h2>Sobre mí</h2>
+          <p class="muted">
+            Artista de línea academicista e hiperrealista. Nacido en la Ciudad Autónoma de Buenos Aires, Argentina en 1994.
+            Vive en el barrio de Villa del Parque en Buenos Aires. Recibido de Licenciado en Conservación y Restauración de Bienes Culturales.
+            Como artista plástico es autodidacta, realizando estudios recientemente en 2023 con el artista plástico Ricardo Celma, profundizando así sus conocimientos.
+            Desde pequeño el lápiz es una extensión de su mano, encontrando más adelante en la pintura al óleo una pasión. La práctica y la experiencia con distintas paletas
+            y medios le permiten desarrollar una amplia gama de obras, incursionando también en grabado y escultura.
+            Algunas de sus obras fueron seleccionadas e incorporadas al patrimonio cultural por el Museo de la Discapacidad María Kodama, así como la ONG Kids on the Move de Utah, EE.UU.
+            En 2023 participó de ferias en Buenos Aires y muestras colectivas en Barcelona, España. En la Noche de los Museos del mismo año expuso en el Museo Xul Solar y en el
+            Museo Central de Ciencias Médicas, pasando a formar parte de manera permanente. En 2024 participa de muestras en la Legislatura porteña y la Embajada de México, donando obras al patrimonio cultural.
+          </p>
+
+          <p>
+            <a href="https://nuevonortedigital.com.ar/secciones/personajes-ilustres/gonzalo-manuel-romero-nigro-un-artista-plastico-que-promete/" target="_blank" style="font-weight:bold; text-decoration:none; color:inherit;">
+              Gonzalo Manuel Romero Nigro, un artista plástico que promete
+            </a>
+          </p>
+          <p>
+            <a href="https://www.perfil.com/noticias/cultura/sentidos-una-exhibicion-de-arte-e-inclusion-que-transforma-vidas-en-buenos-aires.phtml" target="_blank" style="font-weight:bold; text-decoration:none; color:inherit;">
+              “Sentidos”: una exhibición de arte e inclusión que transforma vidas en Buenos Aires
+            </a>
+          </p>
+
+          <ul class="muted" style="padding-left:18px">
+            <li>Calidad de museo: materiales archivísticos y control de color para prints.</li>
+            <li>Ediciones limitadas y prints.</li>
+            <li>Obras por encargo con contrato.</li>
+            <li>Todas las obras con certificado de autenticidad.</li>
+          </ul>
+
+          <div id="about-image-wrap" style="margin-top:12px"></div>
+        </div>
+
+        <div class="panel">
+          <h3>Suscripción</h3>
+          <p class="muted">Recibe adelantos de obras, exhibiciones y lanzamientos de cursos.</p>
+          <form id="form-sub" action="https://formsubmit.co/info@valkideonrn.com" method="POST" onsubmit="return validateAndLock(this,'sub');">
+            <input class="input" type="email" name="email" placeholder="tu@email.com" required maxlength="300" />
+            <input type="hidden" name="_subject" value="Nueva suscripción desde la web" />
+            <input type="hidden" name="_next" value="https://valkideonrn.com/gracias.html" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+            <div class="hp-wrap" aria-hidden="true">
+              <label>Dejar vacío
+                <input type="text" name="website" tabindex="-1" autocomplete="off">
+              </label>
+            </div>
+            <input type="hidden" name="_ts" id="sub_ts" value="">
+            <div style="height:10px"></div><button class="btn" type="submit">Suscribirme</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="section">
+      <div class="container two">
+        <div>
+          <h2>Contacto</h2>
+          <p class="muted">Para propuestas curatoriales, adquisición de obra o cursos.</p>
+          <p class="muted">Email: <a id="email"></a><br/>Instagram: <a id="insta" target="_blank" rel="noreferrer noopener">@valkideon</a></p>
+        </div>
+        <div class="panel">
+          <h3>Escríbeme</h3>
+          <form id="form-contact" action="https://formsubmit.co/info@valkideonrn.com" method="POST" onsubmit="return validateAndLock(this,'contact');">
+            <input class="input" type="text" name="name" placeholder="Nombre" required maxlength="120" />
+            <div style="height:10px"></div>
+            <input class="input" type="email" name="email" placeholder="Email" required maxlength="254" />
+            <div style="height:10px"></div>
+            <textarea class="input" rows="5" name="message" placeholder="Mensaje" required maxlength="4000"></textarea>
+            <input type="hidden" name="_subject" value="Nuevo mensaje desde el sitio" />
+            <input type="hidden" name="_next" value="https://valkideonrn.com/gracias.html" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+            <div class="hp-wrap" aria-hidden="true">
+              <label>Dejar vacío
+                <input type="text" name="website" tabindex="-1" autocomplete="off">
+              </label>
+            </div>
+            <input type="hidden" name="_ts" id="contact_ts" value="">
+            <div style="height:10px"></div><button class="btn" type="submit">Enviar</button>
+            <p class="muted" style="font-size:12px;margin-top:8px">(Formulario gestionado por FormSubmit.)</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox obras -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-inner">
+      <img class="lightbox-img" id="lightbox-img" alt="Obra ampliada">
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+      <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar">✕</button>
+    </div>
+  </div>
+
+  <!-- Modal Info/Compra -->
+  <div class="modal" id="courseModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <div class="modal-head">
+        <div class="modal-title" id="courseModalTitle">Curso</div>
+        <button class="modal-close" id="courseModalClose" aria-label="Cerrar">✕</button>
+      </div>
+      <div id="courseModalBody"></div>
+    </div>
+  </div>
+
+  <!-- FAB Carrito -->
+  <button id="cartFab" class="cart-fab cart-empty">🛒 Carrito (0)</button>
+
+  <!-- Términos -->
+  <section id="terminos" class="section">
+    <div class="container">
+      <h2>Términos y Condiciones</h2>
+      <h3>Encargos</h3>
+      <p>Al realizar un pedido, usted se compromete a adquirir los productos al precio anunciado e indicado en el sitio web (o al precio indicado por el artista en caso de pedidos de medidas o características especiales) en el momento de la compra o reserva en la lista de espera. Por favor, compruebe el tamaño y precio del retrato antes de realizar la reserva.
+Vaalkideon RN se reserva el derecho de rechazar la venta de las obras de arte a cualquier persona, por cualquier motivo y en cualquier momento.</p>
+      <h3>Derechos de autor</h3>
+      <p>El artista se reserva todos los derechos de explotación y reproducción de todo su trabajo producido, incluyendo layouts digitales e impresiones. Esto significa que puede crear tarjetas, impresiones o calendarios, entre otros, usando la imagen del retrato encargado. Además, se reserva el derecho de publicar la imagen del mismo en su página web y redes sociales. Cualquier representación y/o imagen de la obra de arte publicada por el cliente, incluyendo, pero no limitado, a redes sociales, revistas o libros, debe incluir la atribución de crédito a Valkideon RN y el título de la obra de arte.</p>
+      <h3>Pagos dentro de Argentina</h3>
+      <p>Los cupos en la agenda de Valkideon RN se reservan con un pago inicial del 30% del valor. Al encargar un retrato, el valor del mismo deberá estar saldado en su totalidad como máximo a los 90 días o antes de comenzar a trabajar en la obra (lo que ocurra primero). Con cada pago realizado, luego de ser verificado el mismo, el artista generará el recibo de pago correspondiente. En caso de no completar los pagos en las fechas correspondientes, habrá 30 días adicionales para saldar el monto pendiente. En caso de no haber abonado el monto pendiente en el plazo adicional, se actualizará el valor total del retrato al precio de lista de ese momento.</p>
+      <p><strong>Medios de pago disponibles:</strong><br>• Transferencia bancaria, depósito o efectivo.<br>• Mercado Pago  (abonando el interés correspondiente según cada banco/tarjeta)</p>
+      <h3>Pagos internacionales</h3>
+      <p>Los cupos en la agenda de Valkideon RN se reservan con un pago inicial del 30% del valor. El valor total del cuadro deberá estar saldado antes de comenzar a trabajar en la obra en la fecha agendada. Si llegada la fecha no se encuentra saldado el total del cuadro, habrá un plazo adicional de 30 días para abonar el monto pendiente. Si pasados los 30 días adicionales éste no se encuentra abonado, tu retrato se moverá al final de la lista de espera. Con cada pago realizado, luego de ser verificado, se generará el recibo correspondiente.</p>
+      <p><strong>Medios de pago disponibles:</strong><br>• PayPal (+6% de recargo por comisión)<br>• Western Union (comisión según sucursal/país)</p>
+      <h3>Lista de espera</h3>
+      <p>El artista suele tener una lista de espera y la demora varía según la época del año y cantidad de retratos agendados. Al hacer el encargo, se te proporcionará una fecha aproximada de entrega, que podrá variar. Para fechas específicas (ej: cumpleaños), el artista hará lo posible por entregarlo en tiempo, pero no se garantiza.</p>
+      <h3>Envíos dentro de Argentina</h3>
+      <p>La mayoría de los retratos tardan 3–5 días en llegar a su destino. Se envían de forma segura a la dirección indicada al encargar. Si es un regalo, puede enviarse directamente al destinatario.</p>
+      <h3>Envíos internacionales</h3>
+      <p>Suelen tardar entre 5–8 días hábiles. El valor incluye envío a domicilio, pero no impuestos ni costos de nacionalización, que corren por cuenta del cliente.</p>
+      <h3>Modificaciones en el diseño</h3>
+      <p>Cualquier modificación tras el encargo tendrá recargos adicionales. Ejemplos: agregar flores, ropa, otra persona ,una mascota, fondo detallado, etc. Estas modificaciones implican más tiempo y materiales, y se moverán al final de la lista de espera. Una vez aprobado el layout digital y comenzado el cuadro, no se podrán realizar modificaciones.</p>
+      <h3>Modificaciones en la medida</h3>
+      <p>• Si se cambia a una medida más grande, debe abonarse la diferencia y el retrato se moverá al final de la lista.
+• Si se cambia a una medida más chica, la diferencia no es reembolsable (queda a favor de otro encargo futuro).</p>
+      <h3>Cancelaciones</h3>
+      <p>Hay 7 días de garantía desde el primer pago para cancelar y obtener reembolso total. Pasado ese plazo, el dinero será retenido por tiempo/gestión/gastos. Si el artista ya comenzó a pintar, el dinero será retenido por tiempo, materiales y demás costos.</p>
+      <h3>Daños o extravíos</h3>
+      <p>Los retratos se embalan cuidadosamente. Si sufren daños en el envío, el cliente debe notificar dentro de 48 horas con foto. Podrá hacerse un nuevo retrato (ubicado al final de la lista). Costos de envío corren por el cliente. En caso de extravío, se aplican los términos de la empresa de mensajería.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <div><strong>Valkideon RN</strong><div class="muted" style="font-size:14px">“Vive cada día como si fuera el último, pero proyecta como si vivieras para la eternidad”.</div></div>
+      <div class="muted" style="font-size:14px">© <span id="year"></span> Valkideon RN. Todos los derechos reservados.</div>
+    </div>
+  </footer>
+
+  <script>
+  window.addEventListener('DOMContentLoaded', () => {
+    const data = JSON.parse(document.getElementById('content').textContent);
+    const $ = s => document.querySelector(s);
+
+    /* ===== JSON-LD SEO: WebSite + VisualArtwork por obra ===== */
+    try{
+      const graph = [];
+      graph.push({
+        "@type":"WebSite",
+        "@id": "https://valkideonrn.com/#website",
+        "url": "https://valkideonrn.com/",
+        "name": data.site?.title || "Valkideon RN",
+        "potentialAction": {
+          "@type":"SearchAction",
+          "target":"https://valkideonrn.com/?q={search_term_string}",
+          "query-input":"required name=search_term_string"
+        }
+      });
+      (data.artworks || []).forEach((a, i) => {
+        const desc = a.desc || "informacion a editar por valkideon";
+        const dims = (a.size || "").match(/([0-9]+)\D*×\D*([0-9]+)/i);
+        const width = dims ? Number(dims[1]) : undefined;
+        const height = dims ? Number(dims[2]) : undefined;
+        const item = {
+          "@type": "VisualArtwork",
+          "@id": `https://valkideonrn.com/#artwork-${i+1}`,
+          "name": a.title || `Obra ${i+1}`,
+          "image": a.img,
+          "description": desc,
+          "artMedium": "Óleo (posible)",
+          "artform": "Pintura",
+          "artworkSurface": a.status || "—",
+          "url": "https://valkideonrn.com/#galeria",
+          "creator": { "@type": "Person", "name": "Valkideon RN" }
+        };
+        if (width && height){
+          item.width  = { "@type": "Distance", "name": a.size, "value": width,  "unitCode": "CMT" };
+          item.height = { "@type": "Distance", "name": a.size, "value": height, "unitCode": "CMT" };
+        }
+        graph.push(item);
+      });
+      const ld = { "@context":"https://schema.org", "@graph": graph };
+      const ldScript = document.createElement('script');
+      ldScript.type = 'application/ld+json';
+      ldScript.textContent = JSON.stringify(ld);
+      document.head.appendChild(ldScript);
+    }catch(e){ console.warn('JSON-LD error', e); }
+
+    /* ===== JSON-LD: Course por curso (solo si tienen precio numérico) ===== */
+    try {
+      const courseGraph = (data.courses || [])
+        .filter(c => !/PRÓXIMAMENTE|Próximamente/i.test(c.price||''))
+        .map(c => ({
+          "@type":"Course",
+          "name": c.title,
+          "description": c.blurb,
+          "provider": { "@type":"Organization", "name":"Valkideon RN", "sameAs": "https://instagram.com/valkideon" },
+          "hasCourseInstance": { "@type":"CourseInstance", "courseMode": "online", "inLanguage": "es-AR" },
+          "offers": {
+            "@type":"Offer",
+            "priceCurrency":"USD",
+            "price": (c.price||'').match(/([0-9]+(?:[.,][0-9]+)?)/)?.[1]?.replace(',','.') || "0",
+            "availability":"https://schema.org/InStock",
+            "url":"https://valkideonrn.com/#cursos"
+          }
+        }));
+      if (courseGraph.length){
+        const s2 = document.createElement('script');
+        s2.type='application/ld+json';
+        s2.textContent = JSON.stringify({"@context":"https://schema.org","@graph":courseGraph});
+        document.head.appendChild(s2);
+      }
+    }catch(e){ console.warn('JSON-LD Course error', e); }
+
+    /* ===== CONTACT + YEAR ===== */
+    $('#email').textContent = data.site.email;
+    $('#email').href = 'mailto:'+data.site.email;
+    $('#insta').href = data.site.instagram;
+    $('#year').textContent = new Date().getFullYear();
+
+    /* ===== HERO ===== */
+    $('#eyebrow').textContent = data.hero.eyebrow;
+    $('#headline').textContent = data.hero.headline;
+    $('#herotext').textContent = data.hero.text;
+    const heroImg = $('#heroimg'); heroImg.src = data.hero.image;
+
+    /* ===== PRESS (si existe) ===== */
+    const pressHTML = (data.press || []).map(p => (
+      `<a href="${p.url}" target="_blank" rel="noopener">• ${p.name} · ${p.year}</a>`
+    )).join(' ');
+    $('#press').innerHTML = pressHTML;
+
+    /* ===== ARTWORKS ===== */
+    const artworksHTML = (data.artworks||[]).map((a,idx) => `
+      <article class="card" data-art="${idx}" itemscope itemtype="https://schema.org/VisualArtwork">
+        <img src="${a.img}" alt="${a.title}" itemprop="image"
+             onerror="this.style.border='2px solid red'; this.alt='(no se encontró: ${a.img})'">
+        <div class="body">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+            <strong itemprop="name">${a.title}</strong><span class="badge" itemprop="artworkSurface">${a.status}</span>
+          </div>
+          <div class="muted" style="font-size:14px" itemprop="size">${a.size}</div>
+          <meta itemprop="artform" content="Pintura">
+          <meta itemprop="creator" content="Valkideon RN">
+          <div class="muted" style="font-size:13px;margin-top:4px">${a.price || ''}</div>
+        </div>
+      </article>
+    `).join('');
+    document.getElementById('artworks').innerHTML = artworksHTML;
+
+    /* ===== LIGHTBOX ===== */
+    const lb = $('#lightbox'), lbImg = $('#lightbox-img'), lbCap = $('#lightbox-caption'), lbClose = $('#lightbox-close');
+
+    function ytId(url){
+      if(!url) return null;
+      const m = url.match(/(?:v=|youtu\.be\/)([A-Za-z0-9_-]{6,})/);
+      return m ? m[1] : null;
+    }
+
+    function openLightbox(art){
+      lbImg.src = art.img;
+      lbImg.alt = art.title;
+      const desc = art.desc || "informacion a editar por valkideonRN";
+      const vid = ytId(art.video);
+      const videoHTML = vid ? `
+        <div style="margin-top:12px">
+          <div style="position:relative;padding-top:56.25%">
+            <iframe src="https://www.youtube.com/embed/${vid}" title="Relato del artista"
+                    style="position:absolute;inset:0;width:100%;height:100%;border:0" allowfullscreen></iframe>
+          </div>
+        </div>` : '';
+
+      lbCap.innerHTML = `
+        <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+          <div><strong>${art.title}</strong></div>
+          <div class="muted" style="display:flex;gap:12px;font-size:14px">
+            <span>${art.size}</span><span>·</span><span>${art.status}</span>${art.price?`<span>·</span><span>${art.price}</span>`:''}
+          </div>
+        </div>
+        <div style="margin-top:8px;font-size:14px;color:#333"><em>${desc}</em></div>
+        ${videoHTML}
+      `;
+
+      lb.classList.add('open');
+      lb.setAttribute('aria-hidden','false');
+
+      try { if (typeof fbq === 'function') fbq('track', 'ViewContent', {content_name: art.title, content_category: 'Artwork', content_ids: [art.title], content_type: 'product'}); } catch(e){}
+      try { if (typeof gtag === 'function') gtag('event', 'view_item', {item_id: art.title, item_name: art.title, item_category: 'Obras', item_variant: art.size || '', value: 0, currency: 'USD', item_list_id: 'artworks', items: [{ item_name: art.title, item_category: 'Artwork' }]}); } catch(e){}
+    }
+
+    function closeLightbox(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); lbImg.src=''; }
+
+    $('#artworks').addEventListener('click', e => {
+      const card = e.target.closest('.card[data-art]');
+      if(!card) return;
+      openLightbox(data.artworks[+card.getAttribute('data-art')]);
+    });
+    lb.addEventListener('click', e => { if(e.target===lb) closeLightbox(); });
+    lbClose.addEventListener('click', closeLightbox);
+    document.addEventListener('keydown', e => { if(e.key==='Escape'){ closeLightbox(); closeCourseModal(); } });
+
+    /* ===== Cursos ===== */
+    function ytEmbed(url){
+      if(!url) return '';
+      const m = url.match(/(?:v=|youtu\.be\/)([A-Za-z0-9_-]{6,})/);
+      const id = m ? m[1] : null;
+      return id ? `
+        <div class="panel" style="margin-top:10px">
+          <div style="position:relative;padding-top:56.25%">
+            <iframe src="https://www.youtube.com/embed/${id}" title="Video intro"
+                    style="position:absolute;inset:0;width:100%;height:100%;border:0" allowfullscreen></iframe>
+          </div>
+        </div>` : '';
+    }
+    const isSoon = c => /PRÓXIMAMENTE|Próximamente/i.test(c.price||'');
+    const priceNumber = c => (typeof c.priceNum==='number') ? c.priceNum : ((c.price||'').match(/([0-9]+(?:[.,][0-9]+)?)/)?.[1]?.replace(',','.')*1 || 0);
+
+    function courseCardHTML(c, idx){
+      return `
+        <article class="panel" style="overflow:hidden">
+          ${c.thumb?`<img src="${c.thumb}" alt="${c.title}" style="width:100%;height:auto;border-radius:12px;margin-bottom:10px" onerror="this.style.border='2px solid red';this.alt='(no se encontró: ${c.thumb})'">`:''}
+          <strong style="display:block;font-size:18px">${c.title}</strong>
+          <div class="muted" style="margin-top:6px">${c.blurb||''}</div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:10px">
+            <span class="badge">${c.price || 'Consultar'}</span>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <button class="btn ghost" onclick="openCourseInfo(${idx})">Más info</button>
+            </div>
+          </div>
+          <div style="margin-top:8px">
+            <button class="btn btn-buy" onclick="addToCart(${idx})" ${isSoon(c)?'disabled':''}>Agregar al carrito</button>
+          </div>
+          ${ytEmbed(c.video)}
+        </article>`;
+    }
+    document.getElementById('courses').innerHTML = (data.courses||[]).map(courseCardHTML).join('');
+
+    /* About image */
+    if (data.about?.image){
+      document.getElementById('about-image-wrap').innerHTML =
+        `<img src="${data.about.image}" alt="Valkideon RN — sobre mí" style="border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)" onerror="this.style.border='2px solid red'; this.alt='(no se encontró: ${data.about.image})'">`;
+    }
+
+    /* ===== Modal Cursos ===== */
+    const mCourse = $('#courseModal'), mTitle = $('#courseModalTitle'), mBody = $('#courseModalBody'), mClose = $('#courseModalClose');
+    function openCourseModal(){ mCourse.classList.add('open'); mCourse.setAttribute('aria-hidden','false'); }
+    function closeCourseModal(){ mCourse.classList.remove('open'); mCourse.setAttribute('aria-hidden','true'); mBody.innerHTML = ''; }
+    mClose.addEventListener('click', closeCourseModal);
+    mCourse.addEventListener('click', e => { if(e.target===mCourse) closeCourseModal(); });
+
+    window.openCourseInfo = function(idx){
+      const c = data.courses[idx];
+      mTitle.textContent = c.title;
+      const specs = (c.specs||[]).map(s=>`<li>${s}</li>`).join('');
+      mBody.innerHTML = `
+        ${c.thumb?`<img src="${c.thumb}" alt="${c.title}" style="width:100%;height:auto;border-radius:12px;margin-bottom:10px">`:''}
+        <div class="muted">${c.blurb||''}</div>
+        <div style="margin-top:8px"><span class="badge">${c.price || 'Consultar'}</span></div>
+        ${specs?`<ul class="specs">${specs}</ul>`:''}
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+          <button class="btn btn-buy" onclick="addToCart(${idx})" ${isSoon(c)?'disabled':''}>Agregar al carrito</button>
+          <button class="btn ghost" onclick="closeCourseModal()">Cerrar</button>
+        </div>
+        <p class="muted" style="margin-top:8px;font-size:12px">* Los importes finales pueden incluir impuestos/recargos de plataforma (+intereses).</p>`;
+      openCourseModal();
+    }
+
+    /* ===== Carrito + Promo 3x2 ===== */
+    const cart = []; // {idx, title, price}
+    const cartBtn = document.getElementById('cartFab');
+
+    function refreshFab(){
+      cartBtn.textContent = `🛒 Carrito (${cart.length})`;
+      cartBtn.classList.toggle('cart-empty', cart.length===0);
+    }
+
+    function totals(){
+      if(cart.length===0) return {subtotal:0, discount:0, total:0};
+      const prices = cart.map(i=>i.price).sort((a,b)=>a-b);
+      const subtotal = prices.reduce((a,b)=>a+b,0);
+      let discount = 0, groups = Math.floor(prices.length/3);
+      for(let g=0; g<groups; g++) discount += prices[g]; // 3x2 escalable
+      return {subtotal, discount, total: Math.max(0, subtotal - discount)};
+    }
+
+    function withFees(amount, kind){
+      const fees = (data.payments && data.payments.fees) || {};
+      const pass = !!fees.pass_fees_to_buyer;
+      if(!pass) return {est: amount, pct:0, fixed:0};
+      if(kind==='paypal'){ const pct=(+fees.paypal_pct||0)/100; return {est: amount*(1+pct), pct:+(fees.paypal_pct||0), fixed:0}; }
+      if(kind==='mp'){ const pct=(+fees.mp_pct||0)/100, fixed=+(fees.mp_fixed||0); return {est: amount*(1+pct)+fixed, pct:+(fees.mp_pct||0), fixed:+(fees.mp_fixed||0)}; }
+      return {est: amount, pct:0, fixed:0};
+    }
+
+    function openCart(){
+      try { if (typeof fbq === 'function') fbq('track', 'InitiateCheckout'); } catch(e){}
+      try { if (typeof gtag === 'function') gtag('event', 'begin_checkout'); } catch(e){}
+
+      const p = data.payments || {};
+      mTitle.textContent = 'Tu carrito';
+
+      const rows = cart.map((item,i)=>`
+        <tr>
+          <td>${item.title}</td>
+          <td>USD ${item.price.toFixed(2)}</td>
+          <td><button class="btn ghost" onclick="removeFromCart(${i})">Quitar</button></td>
+        </tr>`).join('') || `<tr><td colspan="3" class="muted">Tu carrito está vacío.</td></tr>`;
+
+      const {subtotal, discount, total} = totals();
+      const paypal = withFees(total,'paypal'), mp = withFees(total,'mp');
+      const hasPromo = cart.length>=3 && discount>0;
+
+      mBody.innerHTML = `
+        <div class="muted">Promo activa: <strong>3×2</strong> (se bonifica el de menor valor <em>por cada trío</em>).</div>
+        <table class="table">
+          <thead><tr><th>Curso</th><th>Precio</th><th></th></tr></thead>
+          <tbody>${rows}</tbody>
+          <tfoot>
+            <tr><td>Subtotal</td><td colspan="2">USD ${subtotal.toFixed(2)}</td></tr>
+            <tr><td>Descuento 3×2</td><td colspan="2">${hasPromo?`− USD ${discount.toFixed(2)}`:'—'}</td></tr>
+            <tr><td><strong>Total (sin intereses)</strong></td><td colspan="2"><strong>USD ${total.toFixed(2)}</strong></td></tr>
+            <tr><td>Estimado con PayPal (+${paypal.pct||0}%):</td><td colspan="2"><strong>USD ${paypal.est.toFixed(2)}</strong></td></tr>
+            <tr><td>Estimado con Mercado Pago (+${mp.pct||0}%${mp.fixed?` + USD ${Number(mp.fixed).toFixed(2)} fijo`:''}):</td><td colspan="2"><strong>USD ${mp.est.toFixed(2)}</strong></td></tr>
+          </tfoot>
+        </table>
+        <p class="muted" style="margin-top:8px">* Los importes finales pueden incluir impuestos/recargos de plataforma (+intereses). Pueden variar según operadora/tarjeta.</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+          <button class="btn" onclick="checkout('paypal')">Pagar con PayPal (USD ${paypal.est.toFixed(2)})</button>
+          <button class="btn" onclick="checkout('mp')">Pagar con Mercado Pago (USD ${mp.est.toFixed(2)})</button>
+          <button class="btn ghost" onclick="checkout('bank')">Datos de transferencia</button>
+          <button class="btn ghost" onclick="closeCourseModal()">Cerrar</button>
+        </div>`;
+      openCourseModal();
+    }
+    window.openCart = openCart;
+
+    window.addToCart = function(idx){
+      const c = data.courses[idx]; if(!c || isSoon(c)) return;
+      cart.push({ idx, title: c.title, price: priceNumber(c) });
+
+      try { if (typeof fbq === 'function') fbq('track', 'AddToCart', {content_name: c.title, content_category: 'Course', value: priceNumber(c), currency: 'USD'}); } catch(e){}
+      try {
+        if (typeof gtag === 'function') {
+          gtag('event', 'add_to_cart', {
+            currency: 'USD',
+            value: priceNumber(c),
+            items: [{ item_id: c.title, item_name: c.title, item_category: 'Cursos', price: priceNumber(c), quantity: 1 }]
+          });
+        }
+      } catch(e){}
+
+      refreshFab(); cartBtn.classList.remove('cart-empty');
+      cartBtn.animate([{transform:'scale(1)'},{transform:'scale(1.08)'},{transform:'scale(1)'}],{duration:280});
+    }
+
+    window.removeFromCart = function(i){ cart.splice(i,1); refreshFab(); openCart(); }
+
+    function openInNew(u){ window.open(u,'_blank','noopener'); }
+
+    window.checkout = function(method){
+      const {total} = totals();
+      const p = data.payments || {}, b = p.bank || {};
+      if (total <= 0) { alert('Tu carrito está vacío.'); return; }
+
+      if (method === 'paypal') {
+        const amt = withFees(total, 'paypal').est;
+        const base = (p.paypal || '').replace(/\/$/, '');
+        if (!base) { alert('Configura tu enlace de PayPal en data.payments.paypal'); return; }
+        openInNew(`${base}/${amt.toFixed(2)}`);
+        try { if (typeof gtag === 'function') gtag('event', 'begin_checkout', { currency:'USD', value: total }); } catch(e){}
+        try { if (typeof gtag === 'function') gtag('event', 'add_payment_info', { currency: 'USD', value: amt, payment_type: 'PayPal' }); } catch(e){}
+
+      } else if (method === 'mp') {
+        const amt = withFees(total, 'mp').est;
+        if (!p.mercadopago) { alert('Configura tu enlace de Mercado Pago en data.payments.mercadopago'); return; }
+        mBody.innerHTML += `
+          <div class="panel" style="margin-top:10px">
+            <strong>Mercado Pago</strong>
+            <p class="muted" style="margin-top:6px">Importe estimado: <b>USD ${amt.toFixed(2)}</b> (o equivalente en ARS).</p>
+            <a class="btn" href="${p.mercadopago}" target="_blank" rel="noopener">Abrir link</a>
+            <p class="copy">Si el link es de monto fijo, coordinamos diferencia por transferencia o nuevo link.</p>
+          </div>`;
+        openInNew(p.mercadopago);
+        try { if (typeof gtag === 'function') gtag('event', 'begin_checkout', { currency:'USD', value: total }); } catch(e){}
+        try { if (typeof gtag === 'function') gtag('event', 'add_payment_info', { currency: 'USD', value: amt, payment_type: 'Mercado Pago' }); } catch(e){}
+
+      } else if (method === 'bank') {
+        const amt = total;
+        try { if (typeof gtag === 'function') gtag('event', 'begin_checkout', { currency:'USD', value: total }); } catch(e){}
+        try { if (typeof gtag === 'function') gtag('event', 'add_payment_info', { currency: 'USD', value: amt, payment_type: 'Transferencia' }); } catch(e){}
+        mBody.innerHTML += `
+          <div class="panel" style="margin-top:10px">
+            <strong>Transferencia bancaria</strong>
+            <div style="font-size:14px;line-height:1.35;margin-top:6px">
+              <div><b>Titular:</b> ${b.titular || '-'}</div>
+              <div><b>Banco:</b> ${b.banco || '-'}</div>
+              <div><b>Alias:</b> ${b.alias || '-'}</div>
+              <div><b>CBU:</b> ${b.cbu || '-'}</div>
+              <div><b>Cuenta:</b> ${b.cuenta || '-'}</div>
+            </div>
+            <p class="muted" style="margin-top:6px">
+              Importe a transferir: <b>USD ${amt.toFixed(2)}</b> (o equivalente). Enviá el comprobante por email o IG.
+            </p>
+          </div>`;
+      }
+    }
+
+    /* FAB */
+    document.getElementById('cartFab').addEventListener('click', openCart);
+    refreshFab();
+
+    /* ===== Antispam FormSubmit ===== */
+    function setTS() {
+      const now = Date.now();
+      const sub = document.getElementById('sub_ts');
+      const con = document.getElementById('contact_ts');
+      if (sub) sub.value = String(now);
+      if (con) con.value = String(now);
+      document.querySelectorAll('form button[type=submit]').forEach(btn => btn.disabled = true);
+      setTimeout(() => {
+        document.querySelectorAll('form button[type=submit]').forEach(btn => btn.disabled = false);
+      }, 3000);
+    }
+
+    function looksSpammyText(txt) {
+      if (!txt) return false;
+      const emailLike = txt.match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi) || [];
+      if (emailLike.length > 3) return true;
+      if (/[a-f0-9]{24,}/i.test(txt)) return true;
+      if (/\b(pass|password|pwd)\b/i.test(txt)) return true;
+      const glued = txt.replace(/\s+/g, '');
+      if (/([A-Z][a-z]{2,}){3,}/.test(glued)) return true;
+      return false;
+    }
+
+    window.validateAndLock = function(form, kind) {
+      try {
+        const tsInput = form.querySelector('input[name="_ts"]');
+        const honey1 = form.querySelector('input[name="_honey"]');
+        const honey2 = form.querySelector('input[name="website"]');
+        const btn = form.querySelector('button[type=submit]');
+        const now = Date.now();
+        const sentAt = Number(tsInput?.value || 0);
+
+        if (honey1 && honey1.value.trim() !== '') { alert('Error de validación.'); return false; }
+        if (honey2 && honey2.value.trim() !== '') { alert('Error de validación.'); return false; }
+
+        if (!Number.isFinite(sentAt) || (now - sentAt) < 3000) {
+          alert('Por favor, espera unos segundos antes de enviar.');
+          return false;
+        }
+
+        const name = (form.querySelector('input[name="name"]')?.value || '').trim();
+        const email = (form.querySelector('input[name="email"]')?.value || '').trim().toLowerCase();
+        const message = (form.querySelector('textarea[name="message"]')?.value || '').trim();
+        const blob = `${name} ${message}`;
+
+        if (name && (name.length < 1 || name.length > 120)) { alert('Nombre inválido.'); return false; }
+        if (email && email.length > 254) { alert('Email demasiado largo.'); return false; }
+        if (message && (message.length < 5 || message.length > 4000)) { alert('Mensaje inválido.'); return false; }
+        if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)) { alert('Email inválido.'); return false; }
+
+        if (looksSpammyText(blob)) {
+          alert('Contenido sospechoso detectado. Por favor, revisa tu mensaje.');
+          return false;
+        }
+
+        try { if (typeof fbq === 'function') fbq('track','Lead'); } catch(e){}
+        try { if (typeof gtag === 'function') gtag('event','generate_lead', {method: kind}); } catch(e){}
+
+        if (btn) btn.disabled = true;
+        return true;
+      } catch (e) {
+        console.warn('validateAndLock error', e);
+        return false;
+      }
+    }
+
+    setTS();
+  });
+  </script>
+</body>
+</html>
