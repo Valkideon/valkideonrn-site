@@ -267,8 +267,7 @@
           </div>
         </div>
         <div class="hero-img">
-         <img id="heroimg" alt="Hero Valkideon"
-       onerror="this.style.border='2px solid red'; this.alt='(no se encontró: ' + JSON.parse(document.getElementById('content').textContent).hero.image + ')'">
+        <img id="heroimg" alt="Hero Valkideon" fetchpriority="high" loading="eager">
 
 
         </div>
@@ -528,11 +527,89 @@ Valkideon RN se reserva el derecho de rechazar la venta de las obras de arte a c
     $('#insta').href = data.site.instagram;
     $('#year').textContent = new Date().getFullYear();
 
+   /* ===== IMG FALLBACK + LAZY LOADER ===== */
+function toJsDelivr(u){
+  // raw → jsDelivr (gh CDN)
+  // raw: https://raw.githubusercontent.com/<user>/<repo>/<branch or refs/heads/main>/<path>
+  const m = u.match(/^https:\/\/raw\.githubusercontent\.com\/([^/]+)\/([^/]+)\/(.+?)\/(.+)$/i);
+  if(!m) return null;
+  // m[1]=user, m[2]=repo, m[3]=branchOrRef, m[4]=path
+  // normalizamos branch a "main" cuando venga como refs/heads/main
+  const branch = /refs\/heads\/main/i.test(m[3]) ? 'main' : m[3];
+  return `https://cdn.jsdelivr.net/gh/${m[1]}/${m[2]}@${branch}/${m[4]}`;
+}
+
+function normalizeRawMain(u){
+  // convierte refs/heads/main → /main/
+  return u.replace('/refs/heads/main/', '/main/');
+}
+
+function buildCandidates(u){
+  const list = [];
+  if(!u) return list;
+  list.push(u);
+  if(u.includes('/refs/heads/main/')) list.push(normalizeRawMain(u));
+  const cdn = toJsDelivr(u);
+  if(cdn) list.push(cdn);
+  return Array.from(new Set(list)); // únicos
+}
+
+function applyFallback(imgEl, candidates){
+  let i = 0;
+  function tryNext(){
+    if(i >= candidates.length){
+      imgEl.style.border = '2px solid red';
+      imgEl.alt = '(no se encontró la imagen)';
+      return;
+    }
+    // Evita reintentos en bucle si el navegador cacheó un error
+    const url = candidates[i] + (candidates[i].includes('?') ? '&' : '?') + 'v=' + Date.now();
+    imgEl.src = url;
+  }
+  imgEl.addEventListener('error', () => { i++; tryNext(); }, { once:false });
+  tryNext();
+}
+
+function enhanceImage(el){
+  const u = el.getAttribute('data-src') || el.getAttribute('src') || '';
+  if(!u){
+    // si no hay URL (ej: Sonrisas de Kodama), mostramos placeholder sobrio
+    el.removeAttribute('loading');
+    el.alt = '(imagen pendiente)';
+    el.style.background = '#eee';
+    el.style.height = '320px';
+    el.style.border = '1px solid var(--line)';
+    return;
+  }
+  const candidates = buildCandidates(u);
+  applyFallback(el, candidates);
+}
+
+/* Lazy init para todas las imágenes con data-src o las clave (hero/about) */
+const lazyObserver = ('IntersectionObserver' in window) ? new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      enhanceImage(entry.target);
+      lazyObserver.unobserve(entry.target);
+    }
+  });
+}) : null;
+
+function queueImage(el){
+  if(lazyObserver && el.hasAttribute('loading') && el.getAttribute('loading') === 'lazy'){
+    lazyObserver.observe(el);
+  } else {
+    enhanceImage(el);
+  }
+}
+   
     /* ===== HERO ===== */
     $('#eyebrow').textContent = data.hero.eyebrow;
     $('#headline').textContent = data.hero.headline;
     $('#herotext').textContent = data.hero.text;
-    const heroImg = $('#heroimg'); heroImg.src = data.hero.image;
+    const heroImg = $('#heroimg');
+heroImg.setAttribute('data-src', data.hero.image);
+queueImage(heroImg);
 
     /* ===== PRESS (si existe) ===== */
     const pressHTML = (data.press || []).map(p => (
@@ -543,8 +620,7 @@ Valkideon RN se reserva el derecho de rechazar la venta de las obras de arte a c
     /* ===== ARTWORKS ===== */
     const artworksHTML = (data.artworks||[]).map((a,idx) => `
       <article class="card" data-art="${idx}" itemscope itemtype="https://schema.org/VisualArtwork">
-       <img src="${a.img}" alt="${a.title}" itemprop="image"
-     onerror="this.style.border='2px solid red'; this.alt='(no se encontró: ${a.img})'">
+       <img data-src="${a.img}" alt="${a.title}" itemprop="image" loading="lazy">
 
         <div class="body">
           <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
@@ -558,7 +634,8 @@ Valkideon RN se reserva el derecho de rechazar la venta de las obras de arte a c
       </article>
     `).join('');
     document.getElementById('artworks').innerHTML = artworksHTML;
-
+document.querySelectorAll('#artworks img[itemprop="image"]').forEach(queueImage);
+   
     /* ===== LIGHTBOX ===== */
     const lb = $('#lightbox'), lbImg = $('#lightbox-img'), lbCap = $('#lightbox-caption'), lbClose = $('#lightbox-close');
 
@@ -645,9 +722,8 @@ try {
     function courseCardHTML(c, idx){
       return `
         <article class="panel" style="overflow:hidden">
-          ${c.thumb?`<img src="${c.thumb}" alt="${c.title}" loading="lazy" width="800" height="450"
-     style="width:100%;height:auto;border-radius:12px;margin-bottom:10px"
-     onerror="this.style.border='2px solid red';this.alt='(no se encontró: ${c.thumb})'">
+          ${c.thumb?`<img data-src="${c.thumb}" alt="${c.title}" loading="lazy" width="800" height="450"
+     style="width:100%;height:auto;border-radius:12px;margin-bottom:10px">
 `:''}
           <strong style="display:block;font-size:18px">${c.title}</strong>
           <div class="muted" style="margin-top:6px">${c.blurb||''}</div>
@@ -664,12 +740,16 @@ try {
         </article>`;
     }
     document.getElementById('courses').innerHTML = (data.courses||[]).map(courseCardHTML).join('');
+document.querySelectorAll('#courses img[loading="lazy"]').forEach(queueImage);
 
+   
     /* About image */
-    if (data.about?.image){
-      document.getElementById('about-image-wrap').innerHTML =
-        `<img src="${data.about.image}" alt="Valkideon RN — sobre mí" style="border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)" onerror="this.style.border='2px solid red'; this.alt='(no se encontró: ${data.about.image})'">`;
-    }
+   if (data.about?.image){
+  document.getElementById('about-image-wrap').innerHTML =
+    `<img data-src="${data.about.image}" alt="Valkideon RN — sobre mí" loading="lazy"
+       style="border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)">`;
+  const aboutImg = document.querySelector('#about-image-wrap img');
+  queueImage(aboutImg);
 
     /* ===== Modal Cursos ===== */
     const mCourse = $('#courseModal'), mTitle = $('#courseModalTitle'), mBody = $('#courseModalBody'), mClose = $('#courseModalClose');
