@@ -233,66 +233,13 @@
       {"title":"Copia de Young Pegasus (por @JulioArt)","size":"Óleo 30×40 cm","status":"No disponible","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/copia-de-young-pegasus.jpg","desc":"Copia de la obra Young Pegasus del artista JulioArt en Ig. En esta obra pude practicar una de las técnicas mas antiguas de pintura, el temple de yema, que consiste en aglutinar pigmentos en yema de huevo, para este proyecto incluso imprime (prepare) la tabla de madera tal como lo hacían los antiguos maestros, como indican los escritos de Cennino Cennini; fue una actividad increíblemente enriquecedora. En la mitología griega, el Pegaso nace de la sangre de Medusa (quien fue violada por Poseidón en venganza a la diosa Atenea quien había ganado la competencia para ser la regente de la ciudad de Atenas) una vez que Perseo corta su cabeza."}
     ],
         "courses": [
-      { "title":"Inicia tu camino Artístico", "blurb":"-", "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/athena.jpg", "video":"https://youtu.be/H8rpLpXhxV4", "specs":["Revoluciona tu expresión artística por completo en tan solo 6 cursos.<br>Tus trabajos no llegan a ningún puerto o incluso te da vergüenza mostrarlos y recibir criticas?<br>Te sentís estancado en tu proceso creativo luego de invertir tiempo y esfuerzo y ya non sabes como evolucionar?<br>Sentis que tu arte no genera impacto y no sabes como destacar?<br>Te sentís abrumado por la cantidad de técnicas y no sabes por donde empezar?<br>Tus obras no transmiten el mensaje o emoción que realmente querés comunicar? Quizás no sos vos ni tu obra, sino la técnica.<br>Conectá con tu propósito personal y artístico, dando sentido mas profundo a lo que haces.<br>Eleva tu autoestima y empezá a mostrar trabajos que reflejen tu esfuerzo, con orgullo y seguridad.<br>Descubrí un espacio de crecimiento personal constante donde cada obra refleje tu evolución.<br>Potenciá tu capacidad de contar historias y emociones a otros a través de tus cuadros.<br>Fortalecé tu identidad como artista y construí tu marca personal solida y autentica y viví la satisfacción de ver como tu esfuerzo se convierte en arte que inspira a otros.<br>La pintura es un acto de eternidad. En esta serie de seis cursos profesionales, te enseño paso a paso el camino completo que sigo en mi propio estudio — desde la preparación del lienzo hasta las veladuras finales que dan vida a la piel y la luz.<br>Cada curso está pensado como una inmersión total: técnica, simbólica y espiritual. <br>Aprenderás no sólo cómo pintar, sino cómo pensar y sentir la pintura como un arte vivo.<br> Los cursos incluyen:Preparación del bastidor y soportes.<br>Pintura en blanco y negro para dar volumen.<br>Retrato con paleta de Apeles / Zorn.<br>Veladuras y empastes.<br>Paleta restringida y armonías cromáticas.<br>Fondos abstractos y craquelados experimentales.<br>🎨 Cada módulo combina técnica académica, tradición de taller y pensamiento contemporáneo, transmitidos con la misma precisión y profundidad que aplico en mis obras.<br>💡 Ideal para artistas y creadores que buscan una formación integral en pintura figurativa, realismo y técnica clásica del siglo XIX.<br>Además vas a adquirir acceso a mi biblioteca digital con libros artísticos que fui obteniendo a lo largo de mi carrera y que me ayudaron a cimentar mi camino."] },
-      {
-  "title":"01 · Preparación del lienzo",
-  "blurb":"Soportes, imprimaciones.",
-  "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-preparacion-lienzo.jpg",
-  "price":"46.99 USD",
-  "video":"https://youtu.be/Kxz9AI5EfWs",
-  "url":"https://valkideonrn.store/products/curso1",
-  "specs":["Nivel del curso: principiante","Duración: 1 semana en 4 módulos: Materiales, fórmulas, preparación de bastidor entelado, preparación de bastidor en tabla","Materiales: gesso sotile, imprimaciones magra, colas, selladores","Tipo de recursos PDF complementarios: listas de materiales, plantillas, esquemas, etc.","Proyecto: el alumno terminará el curso pudiendo armar sus propios bastidores, ya sea en formato entelados o en formato de tabla."]
-},
-
-      {
-  "title":"02 · Blanco y negro / Verdaccio",
-  "blurb":"Modelado de forma y valores como base clásica.",
-  "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-curso-2.jpg",
-  "price":"54.99 USD",
-  "video":"https://youtu.be/3JStHjvJ8wU",
-  "url":"https://TU-LINK-CURSO-1.com",
-  "specs":["Nivel del curso: principiante","Duración: 1~2 semanas en  5 módulos, cómo elegir una buena imagen, dibujo del boceto compartido, ejercicio de “Block in”, proyecto final.","Métodos: grisalla, verdaccio, escalas de valor","Extras: PDF de ejercicios + referencias imprimibles","Proyecto: el alumno pueda realizar un trabajo en pintura monocromática en donde aprenderá a pulir lo que se denomina valor y volumen, es una manera de aprender a SIMPLIFICAR, aplicar los valores más importantes para luego fundirlos"]
-},
-
-      {
-  "title":"03 · Retrato Alla Prima con paleta de Apeles/Zorn",
-  "blurb":"Carnaciones creíbles con paleta reducida.", 
-  "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/curso-3.jpg",
-  "Price":"37.99 USD",
-  "video":"https://youtu.be/-GJtlkhe1J0",
-  "url":"https://valkideonrn.store/products/curso3",
-  "specs":["Nivel del curso: principiante, intermedio","Duración: 1 semana en  5 módulos, materiales, paleta de apeles, dibujo, práctica de pintura, pintura final","Proyecto: aprender a trabajar con una paleta reducida, de 4 colores; ayuda al alumno a entrenar el ojo para reconocer colores, trabajar de manera más ordenada y da un vistazo al tipo de pintura tradicional más antigua así como empezar a ver la teoría del color aplicada. Lo más valioso es aprender cómo se relaciona cada color al lado de otro. Aproximación a la temperatura de los colores en la rueda, cálidos y fríos (más en relación entre ellos)"]
-},
-
-      {
-  "title":"04 · Veladuras y empastes",
-  "blurb":"Profundidad óptica y texturas controladas.", 
-  "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-curso-4.jpg",
-  "Price":"39.99 USD",
-  "video":"https://youtu.be/lTi47_j1IVw",
-  "url":"https://TU-LINK-CURSO-4.com",
-  "specs":["Nivel del curso: intermedio","Duración: 2~3 semanas en 4 módulos, elección de colores, glazing, scumbling, detalles finales","Proyecto: utilizando la pintura monocromática del curso anterior o alguna que hayas hecho, aprenderás a darle profundidad a tus pinturas mediante el “glazing” y “scumbling”, términos que iremos adquiriendo, y el proyecto final el cual será completar a color la pintura monocromática que decida hacer cada alumno."]
-},
-
-      {
-  "title":"05 · Paleta restringida universal",
-  "blurb":"Aplicable a figura, paisaje y naturaleza muerta.",
-  "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-curso-5.jpg",
-  "Price":"67.99 USD",
- "video":"https://youtu.be/wb5MYLqhvFw", 
-  "url":"https://TU-LINK-CURSO-4.com",
-  "specs":["Nivel del curso: intermedio, avanzado","Duración: 4 semanas en 5 módulos, materiales, ordena tu paleta, dibujo, explora los colores, proyecto final","Proyecto: lograr una pintura realista de 0 a 100%, aplicando todos los conocimientos adquiridos o sabidos hasta el momento, utilizando una paleta de colores estricta y controlada para lograr el mayor parecido con la imagen de referencia. Que el alumno pueda lograra llevar sus ideas al canvas sin miedo, con un nivel de profesionalidad y calidad."]
-},
-
-      {
-  "title":"06 · Fondos abstractos como base figurativa",
-  "blurb":"Craquelados y pouring como soporte conceptual.", 
-  "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-curso-6.jpg",
-  "Price":"84.99 USD",
- "video":"https://youtu.be/DpcjAogMO5E",
-  "url":"https://TU-LINK-CURSO-6.com",
-  "specs":["Nivel del curso: principiante, intermedio","Duración estimada: 1~2 h en  5 módulos + 1 PDF complementario","Técnicas: incompatibilidades controladas, vertidos/Pouring","Proyecto: Guiar al estudiante en la creación de un fondo abstracto con alto impacto visual y profundidad material, mediante técnicas de craquelado natural y vertido controlado, que pueda ser utilizado como obra autónoma o como base expresiva para una pintura figurativa. Se busca comprender el equilibrio entre caos y composición, explorando la interacción entre textura, color y contexto."]
-},
+      { "title":"01 · Preparación del lienzo", "blurb":"Soportes, imprimaciones.", "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-preparacion-lienzo.jpg", "price":"PRÓXIMAMENTE", "video":"https://youtu.be/Kxz9AI5EfWs", "specs":["Nivel del curso: principiante","Duración: 1 semana en 4 módulos: Materiales, fórmulas, preparación de bastidor entelado, preparación de bastidor en tabla","Materiales: gesso sotile, imprimaciones magra, colas, selladores","Tipo de recursos PDF complementarios: listas de materiales, plantillas, esquemas, etc.","Proyecto: el alumno terminará el curso pudiendo armar sus propios bastidores, ya sea en formato entelados o en formato de tabla."] },
+      { "title":"02 · Blanco y negro / Verdaccio", "blurb":"Modelado de forma y valores como base clásica.", "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-curso-2.jpg", "price":"PRÓXIMAMENTE", "video":"https://youtu.be/3JStHjvJ8wU", "specs":["Nivel del curso: principiante","Duración: 1~2 semanas en  5 módulos, cómo elegir una buena imagen, dibujo del boceto compartido, ejercicio de “Block in”, proyecto final.","Métodos: grisalla, verdaccio, escalas de valor","Extras: PDF de ejercicios + referencias imprimibles","Proyecto: el alumno pueda realizar un trabajo en pintura monocromática en donde aprenderá a pulir lo que se denomina valor y volumen, es una manera de aprender a SIMPLIFICAR, aplicar los valores más importantes para luego fundirlos"] },
+      { "title":"03 · Retrato con paleta de Apeles/Zorn", "blurb":"Carnaciones creíbles con paleta reducida.", "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/curso-3.jpg", "price":"PRÓXIMAMENTE", "video":"https://youtu.be/-GJtlkhe1J0", "specs":["Nivel del curso: principiante, intermedio","Duración: 1 semana en  5 módulos, materiales, paleta de apeles, dibujo, práctica de pintura, pintura final","Proyecto: aprender a trabajar con una paleta reducida, de 4 colores; ayuda al alumno a entrenar el ojo para reconocer colores, trabajar de manera más ordenada y da un vistazo al tipo de pintura tradicional más antigua así como empezar a ver la teoría del color aplicada. Lo más valioso es aprender cómo se relaciona cada color al lado de otro. Aproximación a la temperatura de los colores en la rueda, cálidos y fríos (más en relación entre ellos)"] },
+      { "title":"04 · Veladuras y empastes", "blurb":"Profundidad óptica y texturas controladas.", "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-curso-4.jpg", "price":"PRÓXIMAMENTE", "video":"https://youtu.be/lTi47_j1IVw", "specs":["Nivel del curso: intermedio","Duración: 2~3 semanas en 4 módulos, elección de colores, glazing, scumbling, detalles finales","Proyecto: utilizando la pintura monocromática del curso anterior o alguna que hayas hecho, aprenderás a darle profundidad a tus pinturas mediante el “glazing” y “scumbling”, términos que iremos adquiriendo, y el proyecto final el cual será completar a color la pintura monocromática que decida hacer cada alumno."] },
+      { "title":"05 · Paleta restringida universal", "blurb":"Aplicable a figura, paisaje y naturaleza muerta.", "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-curso-5.jpg", "price":"PRÓXIMAMENTE", "video":"https://youtu.be/wb5MYLqhvFw", "specs":["Nivel del curso: intermedio, avanzado","Duración: 4 semanas en 5 módulos, materiales, ordena tu paleta, dibujo, explora los colores, proyecto final","Proyecto: lograr una pintura realista de 0 a 100%, aplicando todos los conocimientos adquiridos o sabidos hasta el momento, utilizando una paleta de colores estricta y controlada para lograr el mayor parecido con la imagen de referencia. Que el alumno pueda lograra llevar sus ideas al canvas sin miedo, con un nivel de profesionalidad y calidad"] },
+      { "title":"06 · Fondos abstractos como base figurativa - (PRÓXIMAMENTE)", "blurb":"Craquelados y pouring como soporte conceptual.", "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-curso-6.jpg", "price":"PRÓXIMAMENTE", "video":"https://youtu.be/DpcjAogMO5E", "specs":["Nivel del curso: principiante, intermedio","Duración estimada: 1~2 h en  5 módulos + 1 PDF complementario","Técnicas: incompatibilidades controladas, vertidos/Pouring","Proyecto: Guiar al estudiante en la creación de un fondo abstracto con alto impacto visual y profundidad material, mediante técnicas de craquelado natural y vertido controlado, que pueda ser utilizado como obra autónoma o como base expresiva para una pintura figurativa. Se busca comprender el equilibrio entre caos y composición, explorando la interacción entre textura, color y contexto"] }
+,
 
     ]
   }
@@ -624,13 +571,6 @@ Valkideon RN se reserva el derecho de rechazar la venta de las obras de arte a c
           <meta itemprop="artform" content="Pintura">
           <meta itemprop="creator" content="Valkideon RN">
           <div class="muted" style="font-size:13px;margin-top:4px">${a.price || ''}</div>
-          ${a.paypal ? `
-            <div style="margin-top:8px">
-              <a class="btn btn-buy" href="${a.paypal}" target="_blank" rel="noopener">
-                Comprar obra
-              </a>
-            </div>
-          ` : ''}
         </div>
       </article>
     `).join('');
@@ -658,13 +598,6 @@ Valkideon RN se reserva el derecho de rechazar la venta de las obras de arte a c
           </div>
         </div>` : '';
 
-     const buyHTML = art.paypal ? `
-        <div style="margin-top:10px">
-          <a class="btn btn-buy" href="${art.paypal}" target="_blank" rel="noopener">
-            Comprar esta obra
-          </a>
-        </div>
-      ` : '';
       lbCap.innerHTML = `
         <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
           <div><strong>${art.title}</strong></div>
@@ -673,7 +606,6 @@ Valkideon RN se reserva el derecho de rechazar la venta de las obras de arte a c
           </div>
         </div>
         <div style="margin-top:8px;font-size:14px;color:#333"><em>${desc}</em></div>
-        ${buyHTML}
         ${videoHTML}
       `;
 
@@ -742,15 +674,9 @@ try {
               <button class="btn ghost" onclick="openCourseInfo(${idx})">Más info</button>
             </div>
           </div>
-         <div style="margin-top:8px">
-        ${c.url ? `
-          <a class="btn btn-buy" href="${c.url}" target="_blank" rel="noopener">
-            Ir al curso
-          </a>
-        ` : `
-          <button class="btn btn-buy" disabled>Próximamente</button>
-        `}
-      </div>
+          <div style="margin-top:8px">
+            <button class="btn btn-buy" onclick="addToCart(${idx})" ${isSoon(c)?'disabled':''}>Agregar al carrito</button>
+          </div>
           ${ytEmbed(c.video)}
         </article>`;
     }
@@ -778,14 +704,8 @@ try {
         <div class="muted">${c.blurb||''}</div>
         <div style="margin-top:8px"><span class="badge">${c.price || 'Consultar'}</span></div>
         ${specs?`<ul class="specs">${specs}</ul>`:''}
-         <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
-          ${c.url ? `
-            <a class="btn btn-buy" href="${c.url}" target="_blank" rel="noopener">
-              Ir al curso
-            </a>
-          ` : `
-            <button class="btn btn-buy" disabled>Próximamente</button>
-          `}
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+          <button class="btn btn-buy" onclick="addToCart(${idx})" ${isSoon(c)?'disabled':''}>Agregar al carrito</button>
           <button class="btn ghost" onclick="closeCourseModal()">Cerrar</button>
         </div>
         <p class="muted" style="margin-top:8px;font-size:12px">* Los importes finales pueden incluir impuestos/recargos de plataforma (+intereses).</p>`;
@@ -795,8 +715,6 @@ try {
     /* ===== Carrito + Promo 3x2 ===== */
     const cart = []; // {idx, title, price}
     const cartBtn = document.getElementById('cartFab');
-       cartBtn.style.display = 'none';
-
 
     function refreshFab(){
       cartBtn.textContent = `🛒 Carrito (${cart.length})`;
@@ -1061,4 +979,5 @@ try {
   </script>
 </body>
 </html>
+
 
