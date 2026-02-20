@@ -92,7 +92,19 @@
     .card{grid-column:span 3;background:var(--card);border:1px solid var(--line);border-radius:var(--rad);overflow:hidden;box-shadow:var(--shadow);cursor:zoom-in}
     .card .body{padding:12px 14px}
     .badge{font-size:12px;border:1px solid var(--line);background:#f3f1ed;padding:2px 8px;border-radius:999px}
-    .two{display:grid;gap:28px;grid-template-columns:1fr 1fr}
+
+    /* Badge verde tipo carrito SOLO para "Disponible" */
+    .badge-available{
+      background:#22c55e;
+      color:#fff;
+      border-color:transparent;
+      font-weight:800;
+      font-size:13px;
+      padding:4px 10px;
+      box-shadow:0 2px 0 rgba(0,0,0,.08);
+    }
+   
+   .two{display:grid;gap:28px;grid-template-columns:1fr 1fr}
     .panel{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:20px}
     .footer{padding:40px 0;border-top:1px solid var(--line)}
     .input, textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:14px;background:#fff}
@@ -234,65 +246,14 @@
     ],
         "courses": [
       {
-"title":"01 · Preparación del lienzo",
-"blurb":"Soportes, imprimaciones.",
-"thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-preparacion-lienzo.jpg",
-"price":"46.99 USD",
-"video":"https://youtu.be/Kxz9AI5EfWs", 
-"url":"https://valkideonrn.store/products/curso1",
-"specs":["Nivel del curso: principiante","Duración: 1 semana en 4 módulos: Materiales, fórmulas, preparación de bastidor entelado, preparación de bastidor en tabla","Materiales: gesso sotile, imprimaciones magra, colas, selladores","Tipo de recursos PDF complementarios: listas de materiales, plantillas, esquemas, etc.","Proyecto: el alumno terminará el curso pudiendo armar sus propios bastidores, ya sea en formato entelados o en formato de tabla."]
-},
-
-{
-"title":"02 · Blanco y negro / Verdaccio",
-"blurb":"Modelado de forma y valores como base clásica.", 
-"thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-curso-2.jpg",
-"price":"54.99 USD",
-"video":"https://valkideonrn.store/products/curso2", 
-"url":"url a curso 2",
-"specs":["Nivel del curso: principiante","Duración: 1~2 semanas en  5 módulos, cómo elegir una buena imagen, dibujo del boceto compartido, ejercicio de “Block in”, proyecto final.","Métodos: grisalla, verdaccio, escalas de valor","Extras: PDF de ejercicios + referencias imprimibles","Proyecto: el alumno pueda realizar un trabajo en pintura monocromática en donde aprenderá a pulir lo que se denomina valor y volumen, es una manera de aprender a SIMPLIFICAR, aplicar los valores más importantes para luego fundirlos"]
-},
-
-{
-"title":"03 · Retrato con paleta de Apeles/Zorn",
+"title":"03 · Retrato con la paleta Reducida de Apeles/Zorn",
 "blurb":"Carnaciones creíbles con paleta reducida.", 
 "thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/curso-3.jpg",
-"price":"37.99 USD",
+"price":"35.99 USD",
 "video":"https://youtu.be/-GJtlkhe1J0",
 "url":"https://valkideonrn.store/products/curso3",
 "specs":["Nivel del curso: principiante, intermedio","Duración: 1 semana en  5 módulos, materiales, paleta de apeles, dibujo, práctica de pintura, pintura final","Proyecto: aprender a trabajar con una paleta reducida, de 4 colores; ayuda al alumno a entrenar el ojo para reconocer colores, trabajar de manera más ordenada y da un vistazo al tipo de pintura tradicional más antigua así como empezar a ver la teoría del color aplicada. Lo más valioso es aprender cómo se relaciona cada color al lado del otro. Aproximación a la temperatura de los colores en la rueda, cálidos y fríos (más en relación entre ellos)"]
 },
-
-{
-"title":"04 · Veladuras y empastes",
-"blurb":"Profundidad óptica y texturas controladas.", 
-"thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-curso-4.jpg", 
-"price":"39.99 USD",
-"video":"https://youtu.be/lTi47_j1IVw",
-"url":"https://valkideonrn.store/products/curso4",
-"specs":["Nivel del curso: intermedio","Duración: 2~3 semanas en 4 módulos, elección de colores, glazing, scumbling, detalles finales","Proyecto: utilizando la pintura monocromática del curso anterior o alguna que hayas hecho, aprenderás a darle profundidad a tus pinturas mediante el “glazing” y “scumbling”, términos que iremos adquiriendo, y el proyecto final el cual será completar a color la pintura monocromática que decida hacer cada alumno."]
-},
-
-{
-"title":"05 · Paleta restringida universal",
-"blurb":"Aplicable a figura, paisaje y naturaleza muerta.", 
-"thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-curso-5.jpg",
-"price":"67.99 USD",
-"video":"https://youtu.be/wb5MYLqhvFw", 
-"url":"https://valkideonrn.store/products/curso5",
-"specs":["Nivel del curso: intermedio, avanzado","Duración: 4 semanas en 5 módulos, materiales, ordena tu paleta, dibujo, explora los colores, proyecto final","Proyecto: lograr una pintura realista de 0 a 100%, aplicando todos los conocimientos adquiridos o sabidos hasta el momento, utilizando una paleta de colores estricta y controlada para lograr el mayor parecido con la imagen de referencia. Que el alumno pueda lograra llevar sus ideas al canvas sin miedo, con un nivel de profesionalidad y calidad"]
-},
-
-{
-"title":"06 · Fondos abstractos como base figurativa",
-"blurb":"Craquelados y pouring como soporte conceptual.", 
-"thumb":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/thumbnail-curso-6.jpg",
-"price":"84.99 USD",
-"video":"https://youtu.be/DpcjAogMO5E", 
-"url":"https://valkideonrn.store/products/curso6",
-"specs":["Nivel del curso: principiante, intermedio","Duración estimada: 1~2 h en  5 módulos + 1 PDF complementario","Técnicas: incompatibilidades controladas, vertidos/Pouring","Proyecto: Guiar al estudiante en la creación de un fondo abstracto con alto impacto visual y profundidad material, mediante técnicas de craquelado natural y vertido controlado, que pueda ser utilizado como obra autónoma o como base expresiva para una pintura figurativa. Se busca comprender el equilibrio entre caos y composición, explorando la interacción entre textura, color y contexto"]
-   }
-
 
     ]
   }
@@ -330,22 +291,7 @@
 
     <section class="section"><div class="container" id="prensa-wrap"><div class="press" id="press"></div></div></section>
 
-<section class="section" style="background:#fff">
-  <div class="container">
-    <h2>¿Por qué el Argentino es el MEJOR?</h2>
-    <div class="two" style="align-items:center;gap:28px">
-      <div>
-        <img src="https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(1).jpg" alt="Libro El Argentino" style="width:100%;border-radius:18px;box-shadow:0 4px 20px rgba(0,0,0,0.1)">
-      </div>
-      <div>
-        <p class="muted" style="font-size:15px">
-          🧠 Te hicieron creer que soñar era de ingenuos.<br>Que confiar era de tontos y que vivir del corazón era imposible.<br>Esa voz interna que antes te impulsaba, hoy te frena.<br>💭 Pero adiviná qué: no es debilidad, es tu poder.<br>📘 “Por qué el Argentino es el Mejor” es para los que sienten que tienen algo grande adentro, pero todavía no se animaron a mostrarlo. Pero naciste con la fuerza de un pueblo que nunca se rinde.<br>Este libro te va a recordar:<br>     ✨ cómo volver a creer en vos,<br>     🔥 cómo reconectar con tu magia,<br>     💛 y cómo transformar la culpa en propósito.<br>     ✔️ Volvé a confiar en tu intuición<br>👉 Leelo y descubrí lo que realmente te hace único.<br>🎁 BONUS – Para acompañar: Incluye “El Diario del Argentino Despierto” — un cuaderno digital con ejercicios, afirmaciones y reflexiones diarias para transformar lo que leés en acción.<br>💬 No es solo un libro. Es un entrenamiento del alma argentina.<br>🔥 un 50% de DESCUENTO por tiempo limitado, solo para los primeros que aprovechen esta oferta.<br>Haz click en el botón “Más Información” ahora y comienza tu transformacion. 👇
-        </p>
-        <a class="btn btn-buy" href="https://valkideonrn.store/products/libro" target="_blank" style="margin-top:12px">Comprar</a>
-      </div>
-    </div>
-  </div>
-</section>
+
    
     <section id="galeria" class="section">
       <div class="container">
@@ -401,6 +347,21 @@
           <div id="about-image-wrap" style="margin-top:12px"></div>
         </div>
 
+                <div class="panel" style="margin-bottom:16px">
+          <h2>¿Por qué el Argentino es el MEJOR?</h2>
+          <div class="two" style="align-items:center;gap:28px">
+            <div>
+              <img src="https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/Dise%C3%B1o%20sin%20t%C3%ADtulo%20(1).jpg" alt="Libro El Argentino" style="width:100%;border-radius:18px;box-shadow:0 4px 20px rgba(0,0,0,0.1)">
+            </div>
+            <div>
+              <p class="muted" style="font-size:15px">
+                🧠 Te hicieron creer que soñar era de ingenuos.<br>Que confiar era de tontos y que vivir del corazón era imposible.<br>Esa voz interna que antes te impulsaba, hoy te frena.<br>💭 Pero adiviná qué: no es debilidad, es tu poder.<br>📘 “Por qué el Argentino es el Mejor” es para los que sienten que tienen algo grande adentro, pero todavía no se animaron a mostrarlo. Pero naciste con la fuerza de un pueblo que nunca se rinde.<br>Este libro te va a recordar:<br>     ✨ cómo volver a creer en vos,<br>     🔥 cómo reconectar con tu magia,<br>     💛 y cómo transformar la culpa en propósito.<br>     ✔️ Volvé a confiar en tu intuición<br>👉 Leelo y descubrí lo que realmente te hace único.<br>🎁 BONUS – Para acompañar: Incluye “El Diario del Argentino Despierto” — un cuaderno digital con ejercicios, afirmaciones y reflexiones diarias para transformar lo que leés en acción.<br>💬 No es solo un libro. Es un entrenamiento del alma argentina.<br>🔥 un 50% de DESCUENTO por tiempo limitado, solo para los primeros que aprovechen esta oferta.<br>Haz click en el botón “Más Información” ahora y comienza tu transformacion. 👇
+              </p>
+              <a class="btn btn-buy" href="https://valkideonrn.store/products/libro" target="_blank" style="margin-top:12px">Comprar</a>
+            </div>
+          </div>
+        </div>
+
         <div class="panel">
           <h3>Suscripción</h3>
           <p class="muted">Recibe adelantos de obras, exhibiciones y lanzamientos de cursos.</p>
@@ -419,8 +380,6 @@
             <div style="height:10px"></div><button class="btn" type="submit">Suscribirme</button>
           </form>
         </div>
-      </div>
-    </section>
 
     <section id="contacto" class="section">
       <div class="container two">
@@ -618,8 +577,7 @@ Valkideon RN se reserva el derecho de rechazar la venta de las obras de arte a c
 
         <div class="body">
           <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
-            <strong itemprop="name">${a.title}</strong><span class="badge" itemprop="artworkSurface">${a.status}</span>
-          </div>
+          <strong itemprop="name">${a.title}</strong><span class="${(a.status||'').trim()==='Disponible' ? 'badge badge-available' : 'badge'}" itemprop="artworkSurface">${a.status}</span>          </div>
           <div class="muted" style="font-size:14px" itemprop="size">${a.size}</div>
           <meta itemprop="artform" content="Pintura">
           <meta itemprop="creator" content="Valkideon RN">
@@ -632,6 +590,27 @@ Valkideon RN se reserva el derecho de rechazar la venta de las obras de arte a c
     /* ===== LIGHTBOX ===== */
     const lb = $('#lightbox'), lbImg = $('#lightbox-img'), lbCap = $('#lightbox-caption'), lbClose = $('#lightbox-close');
 
+       let __scrollY = 0;
+    function lockBodyScroll(){
+      __scrollY = window.scrollY || window.pageYOffset || 0;
+      document.body.classList.add('lb-open');
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${__scrollY}px`;
+      document.body.style.left = '0';
+      document.body.style.right = '0';
+      document.body.style.width = '100%';
+    }
+    function unlockBodyScroll(){
+      document.body.classList.remove('lb-open');
+      const y = __scrollY;
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.width = '';
+      window.scrollTo(0, y);
+    }
+   
     function ytId(url){
       if(!url) return null;
       const m = url.match(/(?:v=|youtu\.be\/)([A-Za-z0-9_-]{6,})/);
@@ -664,6 +643,7 @@ Valkideon RN se reserva el derecho de rechazar la venta de las obras de arte a c
 
       lb.classList.add('open');
       lb.setAttribute('aria-hidden','false');
+           lockBodyScroll();
 
       try { if (typeof fbq === 'function') fbq('track', 'ViewContent', {content_name: art.title, content_category: 'Artwork', content_ids: [art.title], content_type: 'product'}); } catch(e){}
 try {
@@ -685,8 +665,12 @@ try {
   }
 } catch(e){}    }
 
-    function closeLightbox(){ lb.classList.remove('open'); lb.setAttribute('aria-hidden','true'); lbImg.src=''; }
-
+ function closeLightbox(){
+      lb.classList.remove('open');
+      lb.setAttribute('aria-hidden','true');
+      lbImg.src='';
+      unlockBodyScroll();
+    }
     $('#artworks').addEventListener('click', e => {
       const card = e.target.closest('.card[data-art]');
       if(!card) return;
