@@ -117,8 +117,25 @@
     .lightbox-inner{max-width:min(96vw,1400px);max-height:90vh;position:relative;display:grid;grid-template-columns:1.1fr 1fr;gap:18px;align-items:start}
     .lightbox-img{width:100%;max-height:90vh;object-fit:contain;border-radius:12px;box-shadow:var(--shadow);background:#111}
     .lightbox-caption{max-height:90vh;overflow:auto;background:#fff;border-radius:12px;padding:16px 18px;color:#222;border:1px solid var(--line)}
-    .lightbox-close{position:absolute;top:-10px;right:-10px;background:#fff;border:1px solid var(--line);width:36px;height:36px;border-radius:999px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:var(--shadow)}
-    .lightbox-close:hover{transform:translateY(-1px)}
+.lightbox-close{
+  position:absolute;
+  top:-10px;
+  right:-10px;
+  background:#fff;
+  border:1px solid var(--line);
+  width:36px;
+  height:36px;
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  box-shadow:var(--shadow);
+
+  z-index:9999;         /* clave: que no quede tapado */
+  pointer-events:auto;  /* clave: que reciba click sí o sí */
+}
+   .lightbox-close:hover{transform:translateY(-1px)}
 
 /* SCROLL FIX MOBILE LIGHTBOX */
 .lightbox{
@@ -203,10 +220,12 @@
   cursor:zoom-in;
   box-shadow:0 6px 18px rgba(0,0,0,.06);
 }
+/* Imagen del slider: siempre ENTERA */
 .slider-card img{
   width:100%;
-  height:180px;
-  object-fit:cover;
+  height:220px;              /* ajustá si querés más alto */
+  object-fit:contain;        /* clave: NO recorta */
+  background:#111;           /* relleno detrás (se ve prolijo) */
   display:block;
 }
 .slider-card .body{padding:10px 12px}
@@ -1053,7 +1072,12 @@ try {
       openLightbox(data.artworks[+card.getAttribute('data-art')]);
     });
     lb.addEventListener('click', e => { if(e.target===lb) closeLightbox(); });
-    lbClose.addEventListener('click', closeLightbox);
+    lbClose.addEventListener('click', (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  closeLightbox();
+});
+   lbClose.addEventListener('pointerdown', (e) => { e.preventDefault(); e.stopPropagation(); closeLightbox(); }, {passive:false});
     document.addEventListener('keydown', e => { if(e.key==='Escape'){ closeLightbox(); closeCourseModal(); } });
 
     /* ===== Cursos ===== */
