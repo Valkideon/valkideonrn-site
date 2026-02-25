@@ -812,6 +812,10 @@ function yearFromArtwork(a){
 function gridCardHTML(a, idx){
   const st = normStatus(a.status);
   const badgeClass = (a.status||'').trim()==='Disponible' ? 'badge badge-available' : 'badge';
+
+  const tech = (a.technique || techniqueFromSize(a.size) || '').trim(); // <-- NUEVO
+  const techLine = tech ? `<div class="muted" style="font-size:13px;margin-top:2px">${tech}</div>` : '';
+
   return `
     <article class="card" data-art="${idx}" itemscope itemtype="https://schema.org/VisualArtwork">
       <img src="${a.img}" alt="${a.title}" itemprop="image"
@@ -821,9 +825,14 @@ function gridCardHTML(a, idx){
           <strong itemprop="name">${a.title}</strong>
           <span class="${badgeClass}" itemprop="artworkSurface">${st}</span>
         </div>
+
+        ${techLine} <!-- <-- NUEVO: técnica visible -->
+
         <div class="muted" style="font-size:14px" itemprop="size">${a.size}</div>
+
         <meta itemprop="artform" content="Pintura">
         <meta itemprop="creator" content="Valkideon RN">
+
         <div class="muted" style="font-size:13px;margin-top:4px">${a.price || ''}</div>
       </div>
     </article>
