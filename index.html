@@ -111,6 +111,16 @@
     .grid-3{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
     .press{display:flex;flex-wrap:wrap;gap:12px;color:var(--muted);font-size:14px}
 
+   /* Prensa dentro de Sobre mí */
+.press-block{margin-top:18px;padding-top:14px;border-top:1px solid var(--line)}
+.press-block h3{margin:0 0 10px 0;font-size:18px}
+.press-links a{
+  color:#1a73e8;              /* azul típico */
+  text-decoration:underline;
+  font-weight:600;
+}
+.press-links a:hover{opacity:.85}
+   
     /* Lightbox obras */
     .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.8);display:none;align-items:center;justify-content:center;z-index:1000;padding:24px}
     .lightbox.open{display:flex}
@@ -393,7 +403,12 @@
     <div class="container nav-inner">
       <div><strong>Valkideon RN</strong></div>
       <nav style="display:flex;gap:18px;font-size:14px">
-        <a href="#galeria">Galería</a><a href="#cursos">Cursos</a><a href="#terminos">Términos y Condiciones</a><a href="#sobre">Sobre mí</a><a href="#contacto">Contacto</a>
+        <a href="#galeria">Galería</a>
+<a href="#cursos">Cursos</a>
+<a href="#prensa">Prensa</a>
+<a href="#sobre">Sobre mí</a>
+<a href="#contacto">Contacto</a>
+<a href="#terminos">Términos y Condiciones</a>
       </nav>
     </div>
   </header>
@@ -419,7 +434,6 @@
       </div>
     </section>
 
-    <section class="section"><div class="container" id="prensa-wrap"><div class="press" id="press"></div></div></section>
 
 
    
@@ -506,16 +520,23 @@
             Museo Central de Ciencias Médicas, pasando a formar parte de manera permanente. En 2024 participa de muestras en la Legislatura porteña y la Embajada de México, donando obras al patrimonio cultural.
           </p>
 
-          <p>
-            <a href="https://nuevonortedigital.com.ar/secciones/personajes-ilustres/gonzalo-manuel-romero-nigro-un-artista-plastico-que-promete/" target="_blank" style="font-weight:bold; text-decoration:none; color:inherit;">
-              Gonzalo Manuel Romero Nigro, un artista plástico que promete
-            </a>
-          </p>
-          <p>
-            <a href="https://www.perfil.com/noticias/cultura/sentidos-una-exhibicion-de-arte-e-inclusion-que-transforma-vidas-en-buenos-aires.phtml" target="_blank" style="font-weight:bold; text-decoration:none; color:inherit;">
-              “Sentidos”: una exhibición de arte e inclusión que transforma vidas en Buenos Aires
-            </a>
-          </p>
+          <div class="press-block" id="prensa">
+  <h3>Prensa</h3>
+  <div class="press-links">
+    <p>
+      <a href="https://nuevonortedigital.com.ar/secciones/personajes-ilustres/gonzalo-manuel-romero-nigro-un-artista-plastico-que-promete/"
+         target="_blank" rel="noopener">
+        Gonzalo Manuel Romero Nigro, un artista plástico que promete
+      </a>
+    </p>
+    <p>
+      <a href="https://www.perfil.com/noticias/cultura/sentidos-una-exhibicion-de-arte-e-inclusion-que-transforma-vidas-en-buenos-aires.phtml"
+         target="_blank" rel="noopener">
+        “Sentidos”: una exhibición de arte e inclusión que transforma vidas en Buenos Aires
+      </a>
+    </p>
+  </div>
+</div>
 
           <ul class="muted" style="padding-left:18px">
             <li>Calidad de museo: materiales archivísticos y control de color para prints.</li>
@@ -744,10 +765,7 @@ Valkideon RN se reserva el derecho de rechazar la venta de las obras de arte a c
     const heroImg = $('#heroimg'); heroImg.src = data.hero.image;
 
     /* ===== PRESS (si existe) ===== */
-    const pressHTML = (data.press || []).map(p => (
-      `<a href="${p.url}" target="_blank" rel="noopener">• ${p.name} · ${p.year}</a>`
-    )).join(' ');
-    $('#press').innerHTML = pressHTML;
+   
 
     /* ===== GALERÍA: helpers ===== */
 function normStatus(s){
@@ -1066,11 +1084,6 @@ try {
       lbImg.src='';
       unlockBodyScroll();
     }
-    $('#artworks').addEventListener('click', e => {
-      const card = e.target.closest('.card[data-art]');
-      if(!card) return;
-      openLightbox(data.artworks[+card.getAttribute('data-art')]);
-    });
     lb.addEventListener('click', e => { if(e.target===lb) closeLightbox(); });
     lbClose.addEventListener('click', (e) => {
   e.preventDefault();
