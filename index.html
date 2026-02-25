@@ -863,20 +863,7 @@ function sliderCardHTML(a, idx){
     </article>
   `;
 }
-  return `
-    <article class="slider-card" data-art="${idx}">
-      <img src="${a.img}" alt="${a.title}"
-        onerror="this.style.border='2px solid red'; this.alt='(no se encontró: ${a.img})'">
-      <div class="body">
-        <div class="slider-meta">
-          ${line1}
-          ${line2}
-          ${line3}
-        </div>
-      </div>
-    </article>
-  `;
-}
+
 
 /* ===== GALERÍA: separar colecciones ===== */
 const all = (data.artworks || []);
