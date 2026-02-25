@@ -164,6 +164,78 @@
 
     /* Honeypots */
     .hp-wrap{position:absolute;left:-9999px;top:-9999px;height:0;overflow:hidden}
+   /* ===== GALERÍA: headings ===== */
+.h3{font-size:18px;margin:0}
+.subhead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:18px 0 10px}
+.btn-small{padding:.55rem .9rem;font-size:14px}
+
+/* ===== SLIDERS ===== */
+.slider{
+  position:relative;
+  border:1px solid var(--line);
+  border-radius:var(--rad);
+  background:var(--card);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+
+.slider-viewport{
+  overflow:hidden;
+}
+
+.slider-track{
+  display:flex;
+  gap:14px;
+  padding:14px;
+  scroll-behavior:smooth;
+  overflow:auto;
+  scrollbar-width:none;
+}
+.slider-track::-webkit-scrollbar{display:none}
+
+/* Card dentro del slider */
+.slider-card{
+  flex:0 0 260px;
+  border:1px solid var(--line);
+  border-radius:16px;
+  overflow:hidden;
+  background:#fff;
+  cursor:zoom-in;
+  box-shadow:0 6px 18px rgba(0,0,0,.06);
+}
+.slider-card img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+  display:block;
+}
+.slider-card .body{padding:10px 12px}
+.slider-meta{display:flex;flex-direction:column;gap:4px}
+.slider-meta .muted{font-size:13px}
+
+/* Flechas */
+.slider-arrow{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  width:44px;height:44px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.92);
+  box-shadow:var(--shadow);
+  cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  font-size:22px;
+  z-index:5;
+}
+.slider-arrow:hover{transform:translateY(-50%) scale(1.02)}
+.slider-arrow.prev{left:10px}
+.slider-arrow.next{right:10px}
+
+@media (max-width:560px){
+  .slider-card{flex-basis:78vw}
+  .slider-card img{height:220px}
+}
   </style>
 
   <!-- Meta Pixel Code -->
@@ -254,6 +326,31 @@
       {"title":"Ojo de Cáncer","size":"Óleo 30×40 cm","status":"No disponible","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/ojo-de-cancer.jpg","desc":"Ojo de cáncer fue creado en un momento de angustia, habiendo sido diagnosticado con la misma enfermedad, decidí que no me iba a afectar y que lo iba a superar a como dé lugar. Por eso mismo decidí representar un ojo enfermo, golpeado, triste y con la mirada perdida. No para representar mi estado de salud, sino como para dejarlo atrás en los momentos que estuviese mal, como un recordatorio de lo que no soy y nunca seré."},
       {"title":"Shankar ca Chandra","size":"70×50 cm","status":"Vendida","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/shankar-ca-chandra.jpg","desc":"Shankar ca Chandra, Ella fue una tigresa, pero no de la selva, sino del espíritu. Su rugido era silencio; su fuerza, la calma de quien ya ha conocido el fuego. Los pueblos la temían y la veneraban; decían que su andar dejaba rastros de oro y ceniza. Entre joyas y telas sagradas, guarda una mirada lunar: fría, antigua, llena de memoria. Shankar no caza… observa. Domina la oscuridad como quien ha danzado en ella. Su belleza no adorna, protege. Su poder no destruye, recuerda quién fue."},
       {"title":"Copia de Young Pegasus (por @JulioArt)","size":"Óleo 30×40 cm","status":"No disponible","price":"—","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/copia-de-young-pegasus.jpg","desc":"Copia de la obra Young Pegasus del artista JulioArt en Ig. En esta obra pude practicar una de las técnicas mas antiguas de pintura, el temple de yema, que consiste en aglutinar pigmentos en yema de huevo, para este proyecto incluso imprime (prepare) la tabla de madera tal como lo hacían los antiguos maestros, como indican los escritos de Cennino Cennini; fue una actividad increíblemente enriquecedora. En la mitología griega, el Pegaso nace de la sangre de Medusa (quien fue violada por Poseidón en venganza a la diosa Atenea quien había ganado la competencia para ser la regente de la ciudad de Atenas) una vez que Perseo corta su cabeza."}
+
+{
+  "title": "Fénix",
+  "size": "70×100 cm",
+  "year": "2024",
+  "technique": "Óleo sobre tela",
+  "status": "Disponible",
+  "price": "USD 1500",
+  "img": "https://LINK_DE_IMAGEN_EJEMPLO.jpg",
+  "desc": "Fénix, ...",
+  "featured": true
+}
+
+
+   {
+  "title": "Silentium",
+  "size": "27×35 cm",
+  "year": "2025",
+  "technique": "Óleo sobre tela",
+  "status": "Disponible",
+  "price": "USD 500",
+  "img": "https://LINK_DE_IMAGEN_EJEMPLO.jpg",
+  "desc": "informacion a editar por valkideon",
+  "smallFormat": true
+}
     ],
       "courses": [
   {
@@ -277,7 +374,7 @@
     <div class="container nav-inner">
       <div><strong>Valkideon RN</strong></div>
       <nav style="display:flex;gap:18px;font-size:14px">
-        <a href="#galeria">Obras</a><a href="#cursos">Cursos</a><a href="#terminos">Términos y Condiciones</a><a href="#sobre">Sobre mí</a><a href="#contacto">Contacto</a>
+        <a href="#galeria">Galería</a><a href="#cursos">Cursos</a><a href="#terminos">Términos y Condiciones</a><a href="#sobre">Sobre mí</a><a href="#contacto">Contacto</a>
       </nav>
     </div>
   </header>
@@ -290,7 +387,7 @@
           <h1 id="headline"></h1>
           <p class="muted" id="herotext"></p>
           <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
-            <a class="btn" href="#galeria">Ver obras</a>
+            <a class="btn" href="#galeria">Ver galería</a>
             <a class="btn ghost" href="#cursos">Ver cursos</a>
           </div>
         </div>
@@ -308,12 +405,62 @@
 
    
     <section id="galeria" class="section">
-      <div class="container">
-        <h2>Obras destacadas</h2>
-        <p class="muted">Selección reciente · estado y medidas.</p>
-        <div class="cards" id="artworks"></div>
+  <div class="container">
+    <h2>Galería</h2>
+    <p class="muted">Selección curada · colección completa · obras en proceso · obras adquiridas.</p>
+
+    <!-- Obra destacada (slider + botón) -->
+    <div class="subhead">
+      <h3 class="h3">Obra destacada</h3>
+      <a class="btn btn-small" href="#coleccion-completa">Ver galería completa</a>
+    </div>
+
+    <div class="slider" data-slider="featured">
+      <button class="slider-arrow prev" type="button" aria-label="Anterior">‹</button>
+      <div class="slider-viewport" id="featuredViewport">
+        <div class="slider-track" id="featuredTrack"></div>
       </div>
-    </section>
+      <button class="slider-arrow next" type="button" aria-label="Siguiente">›</button>
+    </div>
+
+    <!-- Formato pequeño (slider sin botón) -->
+    <div class="subhead" style="margin-top:18px">
+      <h3 class="h3">Formato pequeño</h3>
+    </div>
+
+    <div class="slider" data-slider="small">
+      <button class="slider-arrow prev" type="button" aria-label="Anterior">‹</button>
+      <div class="slider-viewport" id="smallViewport">
+        <div class="slider-track" id="smallTrack"></div>
+      </div>
+      <button class="slider-arrow next" type="button" aria-label="Siguiente">›</button>
+    </div>
+
+    <!-- Colección completa (tu grilla actual, ahora como sección) -->
+    <div id="coleccion-completa" style="margin-top:28px">
+      <div class="subhead">
+        <h3 class="h3">Colección completa</h3>
+      </div>
+      <div class="cards" id="artworks-all"></div>
+    </div>
+
+    <!-- En proceso -->
+    <div style="margin-top:28px">
+      <div class="subhead">
+        <h3 class="h3">En proceso</h3>
+      </div>
+      <div class="cards" id="artworks-process"></div>
+    </div>
+
+    <!-- Obras adquiridas -->
+    <div style="margin-top:28px">
+      <div class="subhead">
+        <h3 class="h3">Obras adquiridas</h3>
+      </div>
+      <div class="cards" id="artworks-acquired"></div>
+    </div>
+  </div>
+</section>
 
     <section id="cursos" class="section" style="background:#fff">
       <div class="container">
@@ -583,23 +730,238 @@ Valkideon RN se reserva el derecho de rechazar la venta de las obras de arte a c
     )).join(' ');
     $('#press').innerHTML = pressHTML;
 
-    /* ===== ARTWORKS ===== */
-    const artworksHTML = (data.artworks||[]).map((a,idx) => `
-      <article class="card" data-art="${idx}" itemscope itemtype="https://schema.org/VisualArtwork">
-       <img src="${a.img}" alt="${a.title}" itemprop="image"
-     onerror="this.style.border='2px solid red'; this.alt='(no se encontró: ${a.img})'">
+    /* ===== GALERÍA: helpers ===== */
+function normStatus(s){
+  const t = (s||'').trim();
+  if (/^vendida$/i.test(t)) return 'Obra adquirida';
+  return t;
+}
+function isProcess(a){
+  return (a.status||'').trim().toLowerCase() === 'en proceso';
+}
+function isAcquired(a){
+  const st = (a.status||'').trim().toLowerCase();
+  // “Vendida” + instituciones/colecciones (ajustable)
+  if (st === 'vendida') return true;
+  if (st.includes('fundación')) return true;
+  if (st.includes('midmako')) return true;
+  if (st.includes('kotm')) return true;
+  if (st.includes('colección')) return true;
+  return false;
+}
+function dimsFromSize(size){
+  // soporta “70×100”, “70 x 100”, “Óleo 70×100 cm”
+  const m = (size||'').match(/(\d+)\s*[×x]\s*(\d+)/i);
+  if(!m) return null;
+  return {w:+m[1], h:+m[2]};
+}
+function isSmallHeuristic(a){
+  // Heurística si NO marcás smallFormat en el JSON:
+  // Considero “pequeño” si el lado mayor <= 50cm.
+  const d = dimsFromSize(a.size);
+  if(!d) return false;
+  const maxSide = Math.max(d.w, d.h);
+  return maxSide <= 50;
+}
+function techniqueFromSize(size){
+  // Si tu size viene como “Óleo 70×100 cm”, extrae “Óleo”.
+  const m = (size||'').match(/^(Óleo|Oleo|Acrílico|Acrilico|Técnica mixta|Tecnica mixta|Temple|Gouache|Acuarela)/i);
+  return m ? m[1].replace('Oleo','Óleo').replace('Acrilico','Acrílico').replace('Tecnica','Técnica') : '';
+}
+function yearFromArtwork(a){
+  // Si en el JSON luego agregás "year": "2024", lo usa.
+  return a.year ? String(a.year) : '';
+}
 
-        <div class="body">
-          <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
-          <strong itemprop="name">${a.title}</strong><span class="${(a.status||'').trim()==='Disponible' ? 'badge badge-available' : 'badge'}" itemprop="artworkSurface">${a.status}</span>          </div>
-          <div class="muted" style="font-size:14px" itemprop="size">${a.size}</div>
-          <meta itemprop="artform" content="Pintura">
-          <meta itemprop="creator" content="Valkideon RN">
-          <div class="muted" style="font-size:13px;margin-top:4px">${a.price || ''}</div>
+/* ===== GALERÍA: render cards (grilla) ===== */
+function gridCardHTML(a, idx){
+  const st = normStatus(a.status);
+  const badgeClass = (a.status||'').trim()==='Disponible' ? 'badge badge-available' : 'badge';
+  return `
+    <article class="card" data-art="${idx}" itemscope itemtype="https://schema.org/VisualArtwork">
+      <img src="${a.img}" alt="${a.title}" itemprop="image"
+        onerror="this.style.border='2px solid red'; this.alt='(no se encontró: ${a.img})'">
+      <div class="body">
+        <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
+          <strong itemprop="name">${a.title}</strong>
+          <span class="${badgeClass}" itemprop="artworkSurface">${st}</span>
         </div>
-      </article>
-    `).join('');
-    document.getElementById('artworks').innerHTML = artworksHTML;
+        <div class="muted" style="font-size:14px" itemprop="size">${a.size}</div>
+        <meta itemprop="artform" content="Pintura">
+        <meta itemprop="creator" content="Valkideon RN">
+        <div class="muted" style="font-size:13px;margin-top:4px">${a.price || ''}</div>
+      </div>
+    </article>
+  `;
+}
+
+/* ===== GALERÍA: render cards (slider) ===== */
+function sliderCardHTML(a, idx){
+  const tech = a.technique || techniqueFromSize(a.size);
+  const yr = yearFromArtwork(a);
+  // En slider: solo tamaño / año / técnica / precio (sin título, sin descripción)
+  const line1 = a.size ? `<div class="muted">${a.size}</div>` : '';
+  const line2 = (yr || tech) ? `<div class="muted">${[yr, tech].filter(Boolean).join(' · ')}</div>` : '';
+  const line3 = a.price ? `<div style="font-weight:700">${a.price}</div>` : '';
+
+  return `
+    <article class="slider-card" data-art="${idx}">
+      <img src="${a.img}" alt="${a.title}"
+        onerror="this.style.border='2px solid red'; this.alt='(no se encontró: ${a.img})'">
+      <div class="body">
+        <div class="slider-meta">
+          ${line1}
+          ${line2}
+          ${line3}
+        </div>
+      </div>
+    </article>
+  `;
+}
+
+/* ===== GALERÍA: separar colecciones ===== */
+const all = (data.artworks || []);
+const acquired = [];
+const process = [];
+const collection = [];
+
+all.forEach((a)=> {
+  if (isProcess(a)) process.push(a);
+  else if (isAcquired(a)) acquired.push(a);
+  else collection.push(a);
+});
+
+/* ===== SLIDERS: datasets =====
+   Recomendación PRO (para que tengas control total):
+   En el JSON de cada obra podés agregar:
+   "featured": true
+   "smallFormat": true
+*/
+const featured = all.filter(a => a.featured === true);
+const featuredFinal = featured.length ? featured : collection.filter(a => (a.status||'').trim()==='Disponible').slice(0,5);
+
+const small = all.filter(a => a.smallFormat === true);
+const smallFinal = small.length ? small : collection.filter(isSmallHeuristic).slice(0,12);
+
+/* ===== Render sliders ===== */
+document.getElementById('featuredTrack').innerHTML =
+  featuredFinal.map(a => sliderCardHTML(a, all.indexOf(a))).join('');
+
+document.getElementById('smallTrack').innerHTML =
+  smallFinal.map(a => sliderCardHTML(a, all.indexOf(a))).join('');
+
+/* ===== Render grillas ===== */
+document.getElementById('artworks-all').innerHTML =
+  collection.map((a)=> gridCardHTML(a, all.indexOf(a))).join('');
+
+document.getElementById('artworks-process').innerHTML =
+  process.map((a)=> gridCardHTML(a, all.indexOf(a))).join('');
+
+document.getElementById('artworks-acquired').innerHTML =
+  acquired.map((a)=> gridCardHTML(a, all.indexOf(a))).join('');
+
+/* ===== Click para lightbox (sliders + grillas) ===== */
+function attachLightboxClicks(containerId){
+  const el = document.getElementById(containerId);
+  if(!el) return;
+  el.addEventListener('click', e => {
+    const card = e.target.closest('[data-art]');
+    if(!card) return;
+    openLightbox(all[+card.getAttribute('data-art')]);
+  });
+}
+attachLightboxClicks('featuredTrack');
+attachLightboxClicks('smallTrack');
+attachLightboxClicks('artworks-all');
+attachLightboxClicks('artworks-process');
+attachLightboxClicks('artworks-acquired');
+
+/* ===== Sliders: autoplay + arrows + pause on hover/interacción ===== */
+const sliderControllers = [];
+
+function makeSlider(root){
+  const track = root.querySelector('.slider-track');
+  const prev = root.querySelector('.slider-arrow.prev');
+  const next = root.querySelector('.slider-arrow.next');
+
+  let timer = null;
+  let paused = false;
+
+  function cardStep(){
+    const firstCard = track.querySelector('.slider-card');
+    if(!firstCard) return 300;
+    const gap = 14; // coincide con CSS
+    return firstCard.getBoundingClientRect().width + gap;
+  }
+
+  function scrollByDir(dir){
+    track.scrollBy({ left: dir * cardStep(), behavior: 'smooth' });
+  }
+
+  function start(){
+    if (timer) return;
+    timer = setInterval(() => {
+      if (paused) return;
+      scrollByDir(1);
+      // wrap suave si llega al final
+      const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 8;
+      if (atEnd) track.scrollTo({ left: 0, behavior: 'smooth' });
+    }, 3000);
+  }
+
+  function stop(){
+    if (!timer) return;
+    clearInterval(timer);
+    timer = null;
+  }
+
+  function setPaused(v){
+    paused = v;
+  }
+
+  prev.addEventListener('click', () => { setPaused(true); scrollByDir(-1); });
+  next.addEventListener('click', () => { setPaused(true); scrollByDir(1); });
+
+  root.addEventListener('mouseenter', () => setPaused(true));
+  root.addEventListener('mouseleave', () => setPaused(false));
+
+  // touch / pointer interacción
+  root.addEventListener('pointerdown', () => setPaused(true), {passive:true});
+  root.addEventListener('pointerup', () => setPaused(false), {passive:true});
+
+  // al hacer scroll manual, pausa un momento
+  let scrollDebounce = null;
+  track.addEventListener('scroll', () => {
+    setPaused(true);
+    clearTimeout(scrollDebounce);
+    scrollDebounce = setTimeout(() => setPaused(false), 800);
+  }, {passive:true});
+
+  // inicia
+  start();
+
+  const api = { start, stop, pause:()=>setPaused(true), resume:()=>setPaused(false) };
+  sliderControllers.push(api);
+  return api;
+}
+
+document.querySelectorAll('.slider').forEach(makeSlider);
+
+/* Pausar sliders cuando se abre el lightbox */
+function pauseAllSliders(){ sliderControllers.forEach(s => s.pause()); }
+function resumeAllSliders(){ sliderControllers.forEach(s => s.resume()); }
+
+/* Enganchar a tu lightbox existente */
+const __openLightboxOriginal = openLightbox;
+openLightbox = function(art){
+  pauseAllSliders();
+  __openLightboxOriginal(art);
+};
+const __closeLightboxOriginal = closeLightbox;
+closeLightbox = function(){
+  __closeLightboxOriginal();
+  resumeAllSliders();
+};
 
     /* ===== LIGHTBOX ===== */
     const lb = $('#lightbox'), lbImg = $('#lightbox-img'), lbCap = $('#lightbox-caption'), lbClose = $('#lightbox-close');
