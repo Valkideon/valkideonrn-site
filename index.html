@@ -606,26 +606,34 @@
           <p class="muted">Email: <a id="email"></a><br/>Instagram: <a id="insta" target="_blank" rel="noreferrer noopener">@valkideon</a></p>
         </div>
         <div class="panel">
-          <h3>Escríbeme</h3>
-          <form id="form-contact" action="https://formsubmit.co/info@valkideonrn.com" method="POST" onsubmit="return validateAndLock(this,'contact');">
-            <input class="input" type="text" name="name" placeholder="Nombre" required maxlength="120" />
-            <div style="height:10px"></div>
-            <input class="input" type="email" name="email" placeholder="Email" required maxlength="254" />
-            <div style="height:10px"></div>
-            <textarea class="input" rows="5" name="message" placeholder="Mensaje" required maxlength="4000"></textarea>
-            <input type="hidden" name="_subject" value="Nuevo mensaje desde el sitio" />
-            <input type="hidden" name="_next" value="https://valkideonrn.com/gracias.html" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
-            <div class="hp-wrap" aria-hidden="true">
-              <label>Dejar vacío
-                <input type="text" name="website" tabindex="-1" autocomplete="off">
-              </label>
-            </div>
-            <input type="hidden" name="_ts" id="contact_ts" value="">
-            <div style="height:10px"></div><button class="btn" type="submit">Enviar</button>
-            <p class="muted" style="font-size:12px;margin-top:8px">(Formulario gestionado por FormSubmit.)</p>
-          </form>
+         <h3>Escríbeme</h3>
+<form id="form-contact" action="https://api.web3forms.com/submit" method="POST" onsubmit="return validateAndLock(this,'contact');">
+
+  <input type="hidden" name="access_key" value="e4b622a0-6878-4401-806b-844b8ab3cd14">
+
+  <input class="input" type="text" name="name" placeholder="Nombre" required maxlength="120" />
+  <div style="height:10px"></div>
+
+  <input class="input" type="email" name="email" placeholder="Email" required maxlength="254" />
+  <div style="height:10px"></div>
+
+  <textarea class="input" rows="5" name="message" placeholder="Mensaje" required maxlength="4000"></textarea>
+
+  <div class="hp-wrap" aria-hidden="true">
+    <label>Dejar vacío
+      <input type="text" name="website" tabindex="-1" autocomplete="off">
+    </label>
+  </div>
+
+  <input type="hidden" name="_ts" id="contact_ts" value="">
+
+  <div style="height:10px"></div>
+  <button class="btn" type="submit">Enviar</button>
+
+  <p class="muted" style="font-size:12px;margin-top:8px">
+    (Formulario seguro — respuesta directa por email)
+  </p>
+</form>
         </div>
       </div>
     </section>
@@ -1406,16 +1414,20 @@ try {
       }, 3000);
     }
 
-    function looksSpammyText(txt) {
-      if (!txt) return false;
-      const emailLike = txt.match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi) || [];
-      if (emailLike.length > 3) return true;
-      if (/[a-f0-9]{24,}/i.test(txt)) return true;
-      if (/\b(pass|password|pwd)\b/i.test(txt)) return true;
-      const glued = txt.replace(/\s+/g, '');
-      if (/([A-Z][a-z]{2,}){3,}/.test(glued)) return true;
-      return false;
-    }
+   function looksSpammyText(txt) {
+  if (!txt) return false;
+
+  const links = txt.match(/https?:\/\/|www\./gi) || [];
+  if (links.length > 2) return true;
+
+  const emailLike = txt.match(/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi) || [];
+  if (emailLike.length > 2) return true;
+
+  const repeatedChars = /(.)\1{12,}/.test(txt);
+  if (repeatedChars) return true;
+
+  return false;
+}
 
     window.validateAndLock = function(form, kind) {
       try {
