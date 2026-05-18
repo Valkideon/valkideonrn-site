@@ -857,7 +857,7 @@ function gridCardHTML(a, idx){
         onerror="this.style.border='2px solid red'; this.alt='(no se encontró: ${a.img})'">
       <div class="body">
         <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
-          <strong itemprop="name">${a.title}</strong>
+          <strong itemprop="name" translate="no" class="notranslate">${a.title}</strong>
           <span class="${badgeClass}" itemprop="artworkSurface">${st}</span>
         </div>
 
@@ -870,9 +870,7 @@ function gridCardHTML(a, idx){
 
         <div class="muted" style="font-size:13px;margin-top:4px">${a.price || ''}</div>
 
-<div style="margin-top:8px">
-  <a class="btn btn-small ghost" href="#obra/${slugify(a.title)}" onclick="event.stopPropagation()">Link directo</a>
-</div>      </div>
+      </div>
     </article>
   `;
 }
@@ -882,7 +880,7 @@ function sliderCardHTML(a, idx){
   const tech = a.technique || techniqueFromSize(a.size);
   const yr = yearFromArtwork(a);
 
-  const title = `<div class="slider-title">${a.title}</div>`;
+  const title = `<div class="slider-title notranslate" translate="no">${a.title}</div>`;
   const line1 = a.size ? `<div class="muted">${a.size}</div>` : '';
   const line2 = (yr || tech) ? `<div class="muted">${[yr, tech].filter(Boolean).join(' · ')}</div>` : '';
   const line3 = a.price ? `<div class="slider-price">${a.price}</div>` : '';
@@ -1108,7 +1106,7 @@ function unlockBodyScroll(){
 
       lbCap.innerHTML = `
         <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
-          <div><strong>${art.title}</strong></div>
+          <div><strong class="notranslate" translate="no">${art.title}</strong></div>
           <div class="muted" style="display:flex;gap:12px;font-size:14px">
             <span>${art.size}</span><span>·</span><span>${art.status}</span>${art.price?`<span>·</span><span>${art.price}</span>`:''}
           </div>
