@@ -420,6 +420,7 @@
       <div><strong>Valkideon RN</strong></div>
       <nav style="display:flex;gap:18px;font-size:14px">
         <a href="#galeria">Galería</a>
+<a id="translateBtn" href="#" target="_blank" rel="noopener">English</a>
 <a href="#cursos">Cursos</a>
 <a href="#prensa">Prensa</a>
 <a href="#sobre">Sobre mí</a>
@@ -834,6 +835,15 @@ function yearFromArtwork(a){
   return a.year ? String(a.year) : '';
 }
 
+    function slugify(text){
+  return String(text || '')
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/['’]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+    
 /* ===== GALERÍA: render cards (grilla) ===== */
 function gridCardHTML(a, idx){
   const st = normStatus(a.status);
@@ -843,8 +853,7 @@ function gridCardHTML(a, idx){
   const techLine = tech ? `<div class="muted" style="font-size:13px;margin-top:2px">${tech}</div>` : '';
 
   return `
-    <article class="card" data-art="${idx}" itemscope itemtype="https://schema.org/VisualArtwork">
-      <img src="${a.img}" alt="${a.title}" itemprop="image"
+      <article class="card" id="obra-${slugify(a.title)}" data-art="${idx}" itemscope itemtype="https://schema.org/VisualArtwork">      <img src="${a.img}" alt="${a.title}" itemprop="image"
         onerror="this.style.border='2px solid red'; this.alt='(no se encontró: ${a.img})'">
       <div class="body">
         <div style="display:flex;justify-content:space-between;align-items:center;gap:10px">
@@ -860,7 +869,10 @@ function gridCardHTML(a, idx){
         <meta itemprop="creator" content="Valkideon RN">
 
         <div class="muted" style="font-size:13px;margin-top:4px">${a.price || ''}</div>
-      </div>
+
+<div style="margin-top:8px">
+  <a class="btn btn-small ghost" href="#obra/${slugify(a.title)}" onclick="event.stopPropagation()">Link directo</a>
+</div>      </div>
     </article>
   `;
 }
@@ -948,6 +960,22 @@ attachLightboxClicks('artworks-all');
 attachLightboxClicks('artworks-process');
 attachLightboxClicks('artworks-acquired');
 
+function openArtworkFromHash(){
+  const hash = decodeURIComponent(location.hash || '');
+  const match = hash.match(/^#obra\/(.+)$/);
+  if(!match) return;
+
+  const wanted = match[1];
+  const idx = all.findIndex(a => slugify(a.title) === wanted);
+
+  if(idx >= 0){
+    openLightbox(all[idx]);
+  }
+}
+
+window.addEventListener('load', openArtworkFromHash);
+window.addEventListener('hashchange', openArtworkFromHash);
+    
 /* ===== Sliders: autoplay + arrows + pause on hover/interacción ===== */
 const sliderControllers = [];
 
@@ -1475,7 +1503,17 @@ try {
     setTS();
   });
   </script>
-</body>
+
+<script>
+  window.addEventListener('load', function(){
+    const btn = document.getElementById('translateBtn');
+    if(btn){
+      btn.href = 'https://translate.google.com/translate?sl=auto&tl=en&u=' + encodeURIComponent(window.location.href);
+    }
+  });
+</script>
+        
+      </body>
 </html>
 
 
