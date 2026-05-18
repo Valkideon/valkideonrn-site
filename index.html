@@ -1092,6 +1092,10 @@ function unlockBodyScroll(){
     }
 
     function openLightbox(art){
+      const slug = slugify(art.title);
+if(location.hash !== '#obra/' + slug){
+  history.pushState(null, '', '#obra/' + slug);
+}
       lbImg.src = art.img;
       lbImg.alt = art.title;
       const desc = art.desc || "informacion a editar por valkideonRN";
