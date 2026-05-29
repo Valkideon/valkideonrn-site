@@ -1010,10 +1010,14 @@ attachLightboxClicks('artworks-acquired');
 
 function openArtworkFromHash(){
   const hash = decodeURIComponent(location.hash || '');
-  const match = hash.match(/^#obra\/(.+)$/);
-  if(!match) return;
+  const hashMatch = hash.match(/^#obra\/(.+)$/);
 
-  const wanted = match[1];
+  const params = new URLSearchParams(location.search);
+  const queryObra = params.get('obra');
+
+  const wanted = hashMatch ? hashMatch[1] : queryObra;
+  if(!wanted) return;
+
   const idx = all.findIndex(a => slugify(a.title) === wanted);
 
   if(idx >= 0){
@@ -1196,17 +1200,16 @@ renderLightboxImage();
       lbCap.innerHTML = `
   <div style="display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin-bottom:12px">
     <a class="btn btn-small ghost"
-       target="_blank"
-       rel="noopener"
-       href="https://translate.google.com/translate?sl=auto&tl=en&u=${encodeURIComponent(location.origin + location.pathname + '#obra/' + slugify(art.title))}">
-       EN
-    </a>
+   href="#"
+   onclick="event.preventDefault(); window.open('https://translate.google.com/translate?sl=auto&tl=en&u=' + encodeURIComponent(location.origin + location.pathname + '?obra=' + slugify(art.title)), '_blank');">
+   EN
+</a>
 
-    <a class="btn btn-small btn-buy"
-       href="#contacto"
-       onclick="closeLightbox()">
-       Contact
-    </a>
+<a class="btn btn-small btn-buy"
+   href="#"
+   onclick="event.preventDefault(); closeLightbox(); setTimeout(function(){ document.getElementById('contacto').scrollIntoView({behavior:'smooth'}); }, 150);">
+   Contact
+</a>
   </div>
 
   <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
