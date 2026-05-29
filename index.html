@@ -1198,19 +1198,10 @@ renderLightboxImage();
         </div>` : '';
 
       lbCap.innerHTML = `
-  <div style="display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin-bottom:12px">
-    <a class="btn btn-small ghost"
-   href="#"
-   onclick="event.preventDefault(); window.open('https://translate.google.com/translate?sl=auto&tl=en&u=' + encodeURIComponent(location.origin + location.pathname + '?obra=' + slugify(art.title)), '_blank');">
-   EN
-</a>
-
-<a class="btn btn-small btn-buy"
-   href="#"
-   onclick="event.preventDefault(); closeLightbox(); setTimeout(function(){ document.getElementById('contacto').scrollIntoView({behavior:'smooth'}); }, 150);">
-   Contact
-</a>
-  </div>
+ <div style="display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin-bottom:12px">
+  <a id="lb-en-btn" class="btn btn-small ghost" href="#">EN</a>
+  <a id="lb-contact-btn" class="btn btn-small btn-buy" href="#">Contact</a>
+</div>
 
   <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
           <div><strong class="notranslate" translate="no">${art.title}</strong></div>
@@ -1221,6 +1212,36 @@ renderLightboxImage();
         <div style="margin-top:8px;font-size:14px;color:#333"><em>${desc}</em></div>
         ${videoHTML}
       `;
+      const enBtn = document.getElementById('lb-en-btn');
+const contactBtn = document.getElementById('lb-contact-btn');
+
+if(enBtn){
+  enBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+
+    const obraUrl = location.origin + location.pathname + '?obra=' + slugify(art.title);
+
+   window.location.href =
+  'https://translate.google.com/translate?sl=auto&tl=en&u=' + encodeURIComponent(obraUrl);
+  });
+}
+
+if(contactBtn){
+  contactBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+
+    closeLightbox();
+
+    setTimeout(function(){
+      const contacto = document.getElementById('contacto');
+      if(contacto){
+        contacto.scrollIntoView({ behavior:'smooth', block:'start' });
+      }
+    }, 250);
+  });
+}
 
       lb.classList.add('open');
       lb.setAttribute('aria-hidden','false');
