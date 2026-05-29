@@ -1257,6 +1257,14 @@ if(contactBtn && contactFormWrap){
     e.preventDefault();
     e.stopPropagation();
 
+    const isTranslated = location.hostname.includes('translate.goog');
+
+    if(isTranslated){
+      const msg = `Hello Gonzalo, I'm interested in ${art.title}. Could you send me more information?`;
+      window.location.href = 'https://wa.me/5491135872834?text=' + encodeURIComponent(msg);
+      return;
+    }
+
     const isOpen = contactFormWrap.style.display === 'block';
     contactFormWrap.style.display = isOpen ? 'none' : 'block';
 
