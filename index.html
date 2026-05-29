@@ -1236,9 +1236,21 @@ Could you send me more information?</textarea>
         <div style="margin-top:8px;font-size:14px;color:#333"><em>${desc}</em></div>
         ${videoHTML}
       `;
-      const enBtn = document.getElementById('lb-en-btn');
+     const enBtn = document.getElementById('lb-en-btn');
 const contactBtn = document.getElementById('lb-contact-btn');
 const contactFormWrap = document.getElementById('lb-contact-form-wrap');
+
+if(enBtn){
+  enBtn.addEventListener('click', function(e){
+    e.preventDefault();
+    e.stopPropagation();
+
+    const obraUrl = location.origin + location.pathname + '?obra=' + slugify(art.title);
+
+    window.location.href =
+      'https://translate.google.com/translate?sl=auto&tl=en&u=' + encodeURIComponent(obraUrl);
+  });
+}
 
 if(contactBtn && contactFormWrap){
   contactBtn.addEventListener('click', function(e){
@@ -1251,22 +1263,6 @@ if(contactBtn && contactFormWrap){
     if(!isOpen){
       contactFormWrap.scrollIntoView({ behavior:'smooth', block:'nearest' });
     }
-  });
-}
-
-if(contactBtn){
-  contactBtn.addEventListener('click', function(e){
-    e.preventDefault();
-    e.stopPropagation();
-
-    closeLightbox();
-
-    setTimeout(function(){
-      const contacto = document.getElementById('contacto');
-      if(contacto){
-        contacto.scrollIntoView({ behavior:'smooth', block:'start' });
-      }
-    }, 250);
   });
 }
 
