@@ -1198,9 +1198,33 @@ renderLightboxImage();
         </div>` : '';
 
       lbCap.innerHTML = `
- <div style="display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin-bottom:12px">
+<div style="display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin-bottom:12px">
   <a id="lb-en-btn" class="btn btn-small ghost" href="#">EN</a>
-  <a id="lb-contact-btn" class="btn btn-small btn-buy" href="#">Contact</a>
+  <button id="lb-contact-btn" class="btn btn-small btn-buy" type="button">Contact</button>
+</div>
+
+<div id="lb-contact-form-wrap" style="display:none;margin-bottom:14px;padding:14px;border:1px solid var(--line);border-radius:14px;background:#faf9f7">
+  <form action="https://api.web3forms.com/submit" method="POST" onsubmit="return validateAndLock(this,'artwork-lightbox');">
+    <input type="hidden" name="access_key" value="e4b622a0-6878-4401-806b-844b8ab3cd14">
+    <input type="hidden" name="subject" value="Consulta por obra: ${art.title}">
+    <input type="hidden" name="obra" value="${art.title}">
+    <input type="hidden" name="_ts" value="${Date.now()}">
+
+    <input class="input" type="text" name="name" placeholder="Name" required maxlength="120">
+    <div style="height:8px"></div>
+
+    <input class="input" type="email" name="email" placeholder="Email" required maxlength="254">
+    <div style="height:8px"></div>
+
+    <textarea class="input" rows="5" name="message" required maxlength="4000">Hello Gonzalo,
+
+I'm interested in: ${art.title}
+
+Could you send me more information?</textarea>
+
+    <div style="height:10px"></div>
+    <button class="btn btn-buy" type="submit">Send inquiry</button>
+  </form>
 </div>
 
   <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
@@ -1214,16 +1238,19 @@ renderLightboxImage();
       `;
       const enBtn = document.getElementById('lb-en-btn');
 const contactBtn = document.getElementById('lb-contact-btn');
+const contactFormWrap = document.getElementById('lb-contact-form-wrap');
 
-if(enBtn){
-  enBtn.addEventListener('click', function(e){
+if(contactBtn && contactFormWrap){
+  contactBtn.addEventListener('click', function(e){
     e.preventDefault();
     e.stopPropagation();
 
-    const obraUrl = location.origin + location.pathname + '?obra=' + slugify(art.title);
+    const isOpen = contactFormWrap.style.display === 'block';
+    contactFormWrap.style.display = isOpen ? 'none' : 'block';
 
-   window.location.href =
-  'https://translate.google.com/translate?sl=auto&tl=en&u=' + encodeURIComponent(obraUrl);
+    if(!isOpen){
+      contactFormWrap.scrollIntoView({ behavior:'smooth', block:'nearest' });
+    }
   });
 }
 
