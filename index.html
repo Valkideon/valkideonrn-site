@@ -398,6 +398,7 @@
       {"title":"Lady in Red","technique": "Óleo sobre lienzo","size":"50×70 cm","status":"En proceso","price":"USD 2.000","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/lady-in-red.jpg","desc":"Lady in Red, Sus manos, cubiertas de encaje, sostienen la hoja del juicio. La sangre no ha caído todavía, pero su presencia lo anuncia. En su serenidad hay fuego, en su fragilidad, poder. La pureza puede arder sin consumirse. <br>Su vestido carmesí es un manto de fuego; ha aprendido que el sacrificio no siempre se impone: a veces se elige. <br>La luz dibuja un halo sobre su cabeza, pero no es santidad, sino conciencia. sabe que toda pureza necesita una herida, y que la fe también sangra. <br>El oro en su mirada no es reflejo: es memoria. De lo que perdió, de lo que ofreció, de lo que jamás volverá a entregar. <br>Lady in Red no pertenece al tiempo. Es un instante detenido entre el fervor y el silencio."},
       {"title":"Victoria alada Nike","technique": "Óleo sobre lienzo","size":"70×100 cm","status":"En proceso","price":"USD 3.500","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/victoria-alada-nike.jpg","desc":"informacion a editar por valkideon"},
       {"title":"Sigrund","technique": "Óleo sobre lienzo","size":"70×100 cm","status":"En proceso","price":"USD 4.000","img":"https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/sigrund.jpg","gallery":[
+    "https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/sigrund.jpg",
     "https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/sigrund-detalle-1.jpg",
     "https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/sigrund-detalle-3.jpg",
     "https://raw.githubusercontent.com/Valkideon/valkideonrn-site/refs/heads/main/sigrund-detalle-2.jpg"
@@ -1193,7 +1194,22 @@ renderLightboxImage();
         </div>` : '';
 
       lbCap.innerHTML = `
-        <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+  <div style="display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap;margin-bottom:12px">
+    <a class="btn btn-small ghost"
+       target="_blank"
+       rel="noopener"
+       href="https://translate.google.com/translate?sl=auto&tl=en&u=${encodeURIComponent(location.origin + location.pathname + '#obra/' + slugify(art.title))}">
+       EN
+    </a>
+
+    <a class="btn btn-small btn-buy"
+       href="#contacto"
+       onclick="closeLightbox()">
+       Contact
+    </a>
+  </div>
+
+  <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
           <div><strong class="notranslate" translate="no">${art.title}</strong></div>
           <div class="muted" style="display:flex;gap:12px;font-size:14px">
             <span>${art.size}</span><span>·</span><span>${art.status}</span>${art.price?`<span>·</span><span>${art.price}</span>`:''}
